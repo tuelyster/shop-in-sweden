@@ -30,6 +30,10 @@ const ferryFees = [
 
 function reference(overrides: { bridge?: CrossingFeeEntry[]; ferry?: CrossingFeeEntry[] } = {}): ReferenceData {
   return {
+    vehicleDefaults: [
+      { energyType: 'petrol', consumptionPer100Km: 6, consumptionSource: 'test', energyPriceDkk: 19.5, priceSource: 'test', priceDate: '2026-10-05' },
+      { energyType: 'electric', consumptionPer100Km: 18, consumptionSource: 'test', energyPriceDkk: 2.5, priceSource: 'test', priceDate: '2026-10-08' },
+    ],
     seasons: [{ id: 'high', startMonthDay: '06-01', endMonthDay: '08-31', source: 'test' }],
     crossings: [
       {
@@ -52,7 +56,17 @@ const LOW_DAY = '2026-11-14';
 const HIGH_DAY = '2026-07-11';
 
 function inputs(overrides: Partial<TripInputs> = {}): TripInputs {
-  return { tripDate: LOW_DAY, oresundGo: false, autoBizz: false, multiTripCard: null, ...overrides };
+  return {
+    tripDate: LOW_DAY,
+    oresundGo: false,
+    autoBizz: false,
+    multiTripCard: null,
+    energyType: 'petrol',
+    consumptionPer100Km: null,
+    energyPriceDkk: null,
+    distanceKm: { bridge: null, ferry: null },
+    ...overrides,
+  };
 }
 
 function fees(i: TripInputs, ref: ReferenceData = reference()) {
@@ -173,5 +187,53 @@ describe('cheaper Crossing', () => {
       ferry: [fee({ kind: 'round-trip', priceDkk: 600 })],
     });
     expect(calculateTrips(inputs(), ref).trips.filter((t) => t.isCheaper)).toHaveLength(1);
+  });
+});
+
+describe('Driving Cost and Trip Cost', () => {
+  const trip = (i: TripInputs, id: 'bridge' | 'ferry') =>
+    calculateTrips(i, reference()).trips.find((t) => t.crossingId === id)!;
+  const km = (bridge: number | null, ferry: number | null) => ({ bridge, ferry });
+
+  it('is 0 while the distance is unknown, so Trip Cost equals the Crossing Fee', () => {
+    const t = trip(inputs(), 'ferry');
+    expect(t.drivingCostDkk).toBe(0);
+    expect(t.tripCostDkk).toBe(595);
+  });
+
+  it('petrol: 2 x distance x consumption / 100 x price, per Shopping Trip', () => {
+    const i = inputs({ distanceKm: km(50, 100) });
+    expect(trip(i, 'bridge').drivingCostDkk).toBeCloseTo(117, 10);
+    expect(trip(i, 'ferry').drivingCostDkk).toBeCloseTo(234, 10);
+    expect(trip(i, 'ferry').tripCostDkk).toBeCloseTo(595 + 234, 10);
+  });
+
+  it('electric uses the electric defaults', () => {
+    const t = trip(inputs({ energyType: 'electric', distanceKm: km(50, 100) }), 'ferry');
+    expect(t.drivingCostDkk).toBeCloseTo(90, 10);
+  });
+
+  it('edited consumption and energy price replace the defaults independently', () => {
+    const d = km(null, 100);
+    expect(trip(inputs({ distanceKm: d, consumptionPer100Km: 8 }), 'ferry').drivingCostDkk).toBeCloseTo(312, 10);
+    expect(trip(inputs({ distanceKm: d, energyPriceDkk: 20 }), 'ferry').drivingCostDkk).toBeCloseTo(240, 10);
+    expect(
+      trip(inputs({ distanceKm: d, consumptionPer100Km: 8, energyPriceDkk: 20 }), 'ferry').drivingCostDkk,
+    ).toBeCloseTo(320, 10);
+  });
+
+  it('decides the cheaper trip on Trip Cost, not Crossing Fee', () => {
+    // With ØresundGO the bridge fee (364) beats the ferry (595) ...
+    const feesOnly = calculateTrips(inputs({ oresundGo: true }), reference());
+    expect(feesOnly.cheaperCrossingId).toBe('bridge');
+    // ... but a much longer drive to Hyllie flips it: 364 + 585 = 949 vs 595 + 117 = 712.
+    const withDriving = calculateTrips(inputs({ oresundGo: true, distanceKm: km(250, 50) }), reference());
+    expect(withDriving.cheaperCrossingId).toBe('ferry');
+    expect(withDriving.trips.filter((t) => t.isCheaper)).toHaveLength(1);
+  });
+
+  it('throws when the energy type has no defaults', () => {
+    const ref = { ...reference(), vehicleDefaults: [] };
+    expect(() => calculateTrips(inputs(), ref)).toThrow(/petrol/);
   });
 });

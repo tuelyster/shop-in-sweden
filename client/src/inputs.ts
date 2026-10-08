@@ -1,4 +1,4 @@
-import { MULTI_TRIP_BRACKETS, type MultiTripBracket } from '@shop-in-sweden/shared';
+import { MULTI_TRIP_BRACKETS, type EnergyType, type MultiTripBracket } from '@shop-in-sweden/shared';
 import { defineInput } from './url-state';
 
 const ISO_DATE = /^(\d{4})-(\d{2})-(\d{2})$/;
@@ -54,5 +54,50 @@ export const multiTripCard = defineInput<MultiTripBracket | null>({
   serialise: (v) => v ?? 'ingen',
 });
 
+/** Vehicle energy type: `benzin` (petrol) or `el` (electric). */
+export const energyType = defineInput<EnergyType>({
+  name: 'energi',
+  defaultValue: () => 'petrol',
+  parse: (raw) => (raw === 'benzin' ? 'petrol' : raw === 'el' ? 'electric' : undefined),
+  serialise: (v) => (v === 'petrol' ? 'benzin' : 'el'),
+});
+
+/** An optional non-negative number; empty means "not entered" (null). */
+function optionalNumberInput(name: string) {
+  return defineInput<number | null>({
+    name,
+    defaultValue: () => null,
+    parse: (raw) => {
+      if (raw.trim() === '') return null;
+      const n = Number(raw);
+      return Number.isFinite(n) && n >= 0 ? n : undefined;
+    },
+    serialise: (v) => (v === null ? '' : String(v)),
+  });
+}
+
+/** Consumption override (L or kWh per 100 km); null follows the energy type's default. */
+export const consumption = optionalNumberInput('forbrug');
+
+/** Energy price override (DKK per L or kWh); null follows the energy type's default. */
+export const energyPrice = optionalNumberInput('energipris');
+
+/**
+ * One-way distance in km to each Destination, entered by hand. Null means not entered;
+ * a later postcode lookup fills in a value only where this is null, so a manual entry wins.
+ */
+export const distanceBridge = optionalNumberInput('km-bro');
+export const distanceFerry = optionalNumberInput('km-faerge');
+
 /** Registry of every shareable input. Later tickets add theirs here. */
-export const inputs = { tripDate, oresundGo, autoBizz, multiTripCard };
+export const inputs = {
+  tripDate,
+  oresundGo,
+  autoBizz,
+  multiTripCard,
+  energyType,
+  consumption,
+  energyPrice,
+  distanceBridge,
+  distanceFerry,
+};

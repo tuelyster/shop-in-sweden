@@ -21,3 +21,9 @@ h1 { font-size: 1.5rem; }
 .agreements legend { padding: 0 0.25rem; }
 .check { display: flex; gap: 0.5rem; align-items: center; margin: 0.25rem 0; }
 .agreements select { font: inherit; padding: 0.5rem; border: 1px solid #bbc; border-radius: 0.5rem; }
+.breakdown { display: grid; grid-template-columns: 1fr auto; gap: 0.15rem 1rem; margin: 0.5rem 0; }
+.breakdown dt { color: #555; }
+.breakdown dd { margin: 0; text-align: right; }
+.advanced { margin-top: 0.5rem; }
+.hint { color: #555; font-size: 0.9rem; }
+.agreements select { width: 100%; }

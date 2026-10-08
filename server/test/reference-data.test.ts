@@ -68,13 +68,35 @@ describe('GET /api/reference-data', () => {
   });
 
   it('serves data the calculator turns into the right ferry fee for the season', async () => {
-    const inputs = { oresundGo: false, autoBizz: false, multiTripCard: null };
+    const inputs = {
+      oresundGo: false,
+      autoBizz: false,
+      multiTripCard: null,
+      energyType: 'petrol' as const,
+      consumptionPer100Km: null,
+      energyPriceDkk: null,
+      distanceKm: { bridge: null, ferry: null },
+    };
     const feeOn = async (tripDate: string) =>
       calculateTrips({ ...inputs, tripDate }, await fetchFor(tripDate)).trips.find(
         (t) => t.crossingId === 'ferry',
       )!.crossingFeeDkk;
     expect(await feeOn('2026-11-14')).toBe(595);
     expect(await feeOn('2027-07-10')).toBe(620);
+  });
+
+  it('returns Vehicle defaults with a sourced, dated energy price per energy type', async () => {
+    const body = await fetchFor('2026-11-14');
+    const byType = Object.fromEntries(body.vehicleDefaults.map((v) => [v.energyType, v]));
+    expect(byType.petrol!.consumptionPer100Km).toBe(6);
+    expect(byType.petrol!.energyPriceDkk).toBeGreaterThan(10);
+    expect(byType.electric!.consumptionPer100Km).toBeGreaterThan(10);
+    expect(byType.electric!.energyPriceDkk).toBeGreaterThan(0);
+    expect(Object.keys(byType).sort()).toEqual(['electric', 'petrol']);
+    for (const v of body.vehicleDefaults) {
+      expect(v.priceSource.length).toBeGreaterThan(0);
+      expect(v.priceDate).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
   });
 
   it('rejects an invalid Trip Date', async () => {

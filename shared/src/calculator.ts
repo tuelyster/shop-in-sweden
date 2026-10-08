@@ -68,16 +68,28 @@ export function calculateTrips(inputs: TripInputs, reference: ReferenceData): Tr
   if (reference.crossings.length === 0) {
     throw new Error('Reference data has no crossings');
   }
-  const trips: ShoppingTripResult[] = reference.crossings.map((crossing) => ({
-    crossingId: crossing.id,
-    crossingName: crossing.name,
-    destination: crossing.destination,
-    crossingFeeDkk: crossingFee(crossing, inputs, reference),
-    isCheaper: false,
-  }));
+  const vehicle = reference.vehicleDefaults.find((v) => v.energyType === inputs.energyType);
+  if (!vehicle) throw new Error(`No Vehicle defaults for "${inputs.energyType}"`);
+  const consumption = inputs.consumptionPer100Km ?? vehicle.consumptionPer100Km;
+  const energyPrice = inputs.energyPriceDkk ?? vehicle.energyPriceDkk;
+
+  const trips: ShoppingTripResult[] = reference.crossings.map((crossing) => {
+    const crossingFeeDkk = crossingFee(crossing, inputs, reference);
+    const distance = inputs.distanceKm[crossing.id];
+    const drivingCostDkk = distance === null ? 0 : ((2 * distance * consumption) / 100) * energyPrice;
+    return {
+      crossingId: crossing.id,
+      crossingName: crossing.name,
+      destination: crossing.destination,
+      crossingFeeDkk,
+      drivingCostDkk,
+      tripCostDkk: crossingFeeDkk + drivingCostDkk,
+      isCheaper: false,
+    };
+  });
   let cheapest = trips[0]!;
   for (const trip of trips) {
-    if (trip.crossingFeeDkk < cheapest.crossingFeeDkk) cheapest = trip;
+    if (trip.tripCostDkk < cheapest.tripCostDkk) cheapest = trip;
   }
   cheapest.isCheaper = true;
   return { trips, cheaperCrossingId: cheapest.crossingId };

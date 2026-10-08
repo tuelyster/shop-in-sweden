@@ -53,11 +53,31 @@ export interface CrossingReference {
   fees: CrossingFeeEntry[];
 }
 
+/** What the Vehicle runs on. */
+export type EnergyType = 'petrol' | 'electric';
+
+export const ENERGY_TYPES: readonly EnergyType[] = ['petrol', 'electric'];
+
+/** Default Vehicle figures for one energy type, with where the price comes from. */
+export interface VehicleDefault {
+  energyType: EnergyType;
+  /** L/100 km (petrol) or kWh/100 km (electric). */
+  consumptionPer100Km: number;
+  consumptionSource: string;
+  /** DKK per litre (petrol) or per kWh (electric). */
+  energyPriceDkk: number;
+  priceSource: string;
+  /** ISO date the price is from. */
+  priceDate: string;
+}
+
 /**
  * Everything the calculator needs besides the shopper's inputs; served by the
  * reference-data API. Later tickets add Price Gaps, fuel prices, exchange rate etc.
  */
 export interface ReferenceData {
+  /** Default consumption and energy price per energy type. */
+  vehicleDefaults: VehicleDefault[];
   /** Ferry seasons; any date outside all of them is low season. */
   seasons: Season[];
   crossings: CrossingReference[];
@@ -76,6 +96,17 @@ export interface TripInputs {
   autoBizz: boolean;
   /** Ferry multi-trip card bracket, or null for no card. */
   multiTripCard: MultiTripBracket | null;
+  /** What the Vehicle runs on. */
+  energyType: EnergyType;
+  /** Consumption override; null means the energy type's default. */
+  consumptionPer100Km: number | null;
+  /** Energy price override (DKK per L or kWh); null means the energy type's default. */
+  energyPriceDkk: number | null;
+  /**
+   * One-way road distance in km from the Starting Point to each Destination (excluding
+   * the ferry leg); null while unknown, which gives a Driving Cost of 0.
+   */
+  distanceKm: Record<CrossingId, number | null>;
 }
 
 export interface ShoppingTripResult {
@@ -84,6 +115,10 @@ export interface ShoppingTripResult {
   destination: Destination;
   /** Round-trip Crossing Fee in DKK, unrounded. */
   crossingFeeDkk: number;
+  /** Energy cost of driving there and back in DKK, unrounded; 0 while the distance is unknown. */
+  drivingCostDkk: number;
+  /** Crossing Fee plus Driving Cost in DKK, unrounded. */
+  tripCostDkk: number;
   /** True for exactly one trip: the one with the lowest Trip Cost. */
   isCheaper: boolean;
 }

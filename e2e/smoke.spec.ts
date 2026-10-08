@@ -91,3 +91,36 @@ test('Discount Agreements change the fees and are part of the shared URL', async
   await page.getByLabel('AutoBizz (færgen)').check();
   await expect(trips.nth(1)).toContainText('450');
 });
+
+test('distances give Driving Cost, flip the cheaper trip, and are part of the shared URL', async ({ page, browser }) => {
+  await page.goto('/?dato=2026-11-14');
+  const trips = page.getByTestId('shopping-trip');
+  await expect(page.getByTestId('distance-prompt')).toBeVisible();
+  await expect(trips.nth(1).getByTestId('driving-cost')).toContainText('0');
+  await expect(trips.nth(1)).toHaveAttribute('data-cheaper', 'true');
+
+  // Petrol default 6 L/100 km at 19.5 kr: 2 x 300 km = 702 kr to Hyllie, 2 x 10 km = 23 kr to Väla.
+  await page.getByLabel('Kørsel til Hyllie/Emporia (km, én vej)').fill('300');
+  await page.getByLabel('Kørsel til Väla Centrum (km, én vej)').fill('10');
+  await expect(page).toHaveURL(/km-bro=300/);
+  await expect(page).toHaveURL(/km-faerge=10/);
+  await expect(page.getByTestId('distance-prompt')).toHaveCount(0);
+  await expect(trips.first().getByTestId('trip-cost')).toContainText('1.542');
+  await expect(trips.nth(1).getByTestId('trip-cost')).toContainText('618');
+
+  // Electric: unedited consumption and price follow the new energy type.
+  await page.getByLabel('Bilen kører på').selectOption('electric');
+  await expect(page).toHaveURL(/energi=el/);
+  await expect(trips.nth(1).getByTestId('driving-cost')).toContainText('9');
+  await page.getByText('Avanceret').click();
+  await page.getByLabel(/Forbrug/).fill('20');
+  await expect(page).toHaveURL(/forbrug=20/);
+
+  const context = await browser.newContext();
+  const other = await context.newPage();
+  await other.goto(page.url());
+  await expect(other.getByLabel('Bilen kører på')).toHaveValue('electric');
+  await expect(other.getByLabel('Kørsel til Hyllie/Emporia (km, én vej)')).toHaveValue('300');
+  await expect(other.getByTestId('shopping-trip').nth(1).getByTestId('driving-cost')).toContainText('10');
+  await context.close();
+});

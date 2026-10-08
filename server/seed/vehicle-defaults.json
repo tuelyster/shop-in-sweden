@@ -1,0 +1,18 @@
+[
+  {
+    "energyType": "petrol",
+    "consumptionPer100Km": 6,
+    "consumptionSource": "Assumed typical petrol car, about 6 L/100 km",
+    "energyPriceDkk": 19.5,
+    "priceSource": "EU Weekly Oil Bulletin, Euro-super 95 Denmark 2.605 EUR/L (about 19.5 DKK/L): https://energy.ec.europa.eu/data-and-analysis/weekly-oil-bulletin_en",
+    "priceDate": "2026-10-05"
+  },
+  {
+    "energyType": "electric",
+    "consumptionPer100Km": 18,
+    "consumptionSource": "Assumed typical electric car, about 18 kWh/100 km",
+    "energyPriceDkk": 2.5,
+    "priceSource": "Estimate for a Danish household incl. taxes, fees and VAT (typical 2026 range 1.50-3.00 kr/kWh; Forsyningstilsynet elprisstatistik gave 2.92 kr/kWh in Q1 2024): https://forsyningstilsynet.dk/ - replace with a current published figure",
+    "priceDate": "2026-10-08"
+  }
+]

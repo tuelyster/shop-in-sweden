@@ -15,6 +15,13 @@
       "when": 1791460521061,
       "tag": "0001_cuddly_sue_storm",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1791460911885,
+      "tag": "0002_flat_sersi",
+      "breakpoints": true
     }
   ]
 }

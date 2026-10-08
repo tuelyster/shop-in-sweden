@@ -21,7 +21,21 @@ export const seasons = sqliteTable('seasons', {
   source: text('source').notNull(),
 });
 
-export const crossingFees =sqliteTable('crossing_fees', {
+/** Default Vehicle figures per energy type; the price carries its source and date. */
+export const vehicleDefaults = sqliteTable('vehicle_defaults', {
+  /** 'petrol' or 'electric'. */
+  energyType: text('energy_type').primaryKey(),
+  /** L/100 km (petrol) or kWh/100 km (electric). */
+  consumptionPer100Km: real('consumption_per_100_km').notNull(),
+  consumptionSource: text('consumption_source').notNull(),
+  /** DKK per litre (petrol) or per kWh (electric). */
+  energyPriceDkk: real('energy_price_dkk').notNull(),
+  priceSource: text('price_source').notNull(),
+  /** ISO date the price is from. */
+  priceDate: text('price_date').notNull(),
+});
+
+export const crossingFees = sqliteTable('crossing_fees', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   crossingId: text('crossing_id')
     .notNull()

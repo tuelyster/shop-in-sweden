@@ -4,12 +4,13 @@ import type {
   CrossingFeeKind,
   CrossingId,
   DiscountAgreement,
+  EnergyType,
   MultiTripBracket,
   ReferenceData,
   SeasonId,
 } from '@shop-in-sweden/shared';
 import type { Db } from './db/connection';
-import { crossingFees, crossings, destinations, seasons } from './db/schema';
+import { crossingFees, crossings, destinations, seasons, vehicleDefaults } from './db/schema';
 
 const ISO_DATE = /^(\d{4})-(\d{2})-(\d{2})$/;
 
@@ -37,6 +38,11 @@ function loadReferenceData(db: Db, tripDate: string): ReferenceData {
     .all()
     .filter((f) => f.validFrom <= tripDate);
   return {
+    vehicleDefaults: db
+      .select()
+      .from(vehicleDefaults)
+      .all()
+      .map((v) => ({ ...v, energyType: v.energyType as EnergyType })),
     seasons: db
       .select()
       .from(seasons)

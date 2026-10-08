@@ -2,7 +2,7 @@ import { readFileSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Db } from './db/connection';
-import { crossingFees, crossings, destinations, seasons } from './db/schema';
+import { crossingFees, crossings, destinations, seasons, vehicleDefaults } from './db/schema';
 
 const seedDir = resolve(dirname(fileURLToPath(import.meta.url)), '../seed');
 
@@ -31,7 +31,10 @@ export function seedDatabase(db: Db): void {
     { id: string; startMonthDay: string; endMonthDay: string; source: string }[]
   >('seasons.json');
 
+  const vehicleSeed = readSeed<(typeof vehicleDefaults.$inferInsert)[]>('vehicle-defaults.json');
+
   db.transaction((tx) => {
+    for (const v of vehicleSeed) tx.insert(vehicleDefaults).values(v).run();
     for (const c of crossingSeed) {
       tx.insert(crossings).values({ id: c.id, name: c.name }).run();
       tx.insert(destinations).values({ ...c.destination, crossingId: c.id }).run();
