@@ -9,3 +9,6 @@ data/
 playwright-report/
 test-results/
 .env
+
+# Agent worktrees
+.claude/worktrees/
