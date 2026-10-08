@@ -1,4 +1,4 @@
-import { getText, type Importer } from './http';
+import { getText, type FetchFn, type Importer } from './http';
 
 const ECB_URL = 'https://data-api.ecb.europa.eu/service/data/EXR/D.SEK+DKK.EUR.SP00.A?format=csvdata&lastNObservations=1';
 
@@ -46,16 +46,22 @@ function latestPerCurrency(csv: string): Map<string, { date: string; perEur: num
   return latest;
 }
 
+/** The ECB's latest reference rates: DKK and SEK per 1 EUR, and the date they apply to (the older of the two). */
+export async function fetchEcbRates(fetchFn: FetchFn): Promise<{ date: string; dkkPerEur: number; sekPerEur: number }> {
+  const latest = latestPerCurrency(await getText(fetchFn, ECB_URL));
+  const dkk = latest.get('DKK');
+  const sek = latest.get('SEK');
+  if (!dkk || !sek) throw new Error('The ECB response had no DKK or SEK rate');
+  return { date: dkk.date < sek.date ? dkk.date : sek.date, dkkPerEur: dkk.perEur, sekPerEur: sek.perEur };
+}
+
 /** SEK to DKK from the ECB's EUR reference rates: (DKK per EUR) / (SEK per EUR). */
 export const ecbImporter: Importer = {
   name: 'ecb',
   async run({ fetch }) {
-    const latest = latestPerCurrency(await getText(fetch, ECB_URL));
-    const dkk = latest.get('DKK');
-    const sek = latest.get('SEK');
-    if (!dkk || !sek) throw new Error('The ECB response had no DKK or SEK rate');
+    const rates = await fetchEcbRates(fetch);
     return {
-      exchangeRates: [{ date: dkk.date < sek.date ? dkk.date : sek.date, sekToDkk: dkk.perEur / sek.perEur, source: 'ECB euro foreign exchange reference rates' }],
+      exchangeRates: [{ date: rates.date, sekToDkk: rates.dkkPerEur / rates.sekPerEur, source: 'ECB euro foreign exchange reference rates' }],
     };
   },
 };

@@ -5,7 +5,10 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { openDatabase, type Db } from '../src/db/connection';
 import { runImport } from '../src/import/run-import';
 import { buildMatchReport, formatMatchReport } from '../src/match/match-report';
-import { latestExchangeRate, listImportRuns, listPriceObservations } from '../src/prices/store';
+import { latestExchangeRate, latestPetrolPrice, listImportRuns, listPriceObservations } from '../src/prices/store';
+import { parseBulletin } from '../src/sources/oil';
+import { createApp } from '../src/app';
+import type { ReferenceData } from '@shop-in-sweden/shared';
 import { loadSeedData, seedDatabase, syncCatalogue } from '../src/seed';
 
 const fixtureDir = resolve(dirname(fileURLToPath(import.meta.url)), 'fixtures');
@@ -13,6 +16,12 @@ const fixture = (name: string) => readFileSync(resolve(fixtureDir, name), 'utf8'
 const willysSearches = JSON.parse(fixture('willys-search.json')) as Record<string, unknown>;
 const remaPage = fixture('rema-products.json');
 const ecbCsv = fixture('ecb-exr.csv');
+// A trimmed copy of the real "prices with taxes" workbook (reference date 2026-10-05).
+const oilWorkbook = readFileSync(resolve(fixtureDir, 'oil-bulletin.xlsx'));
+const oilPage = `<html><body>
+<a href="/document/download/aaaa_en?filename=Weekly%20Oil%20Bulletin%20Weekly%20prices%20without%20taxes%20-%202024-02-19.xlsx">without taxes</a>
+<a href="/document/download/bbbb_en?filename=Weekly%20Oil%20Bulletin%20Weekly%20prices%20with%20Taxes%20-%202026-09-21.xlsx">with taxes latest prices (xlsx)</a>
+</body></html>`;
 
 const NOW = new Date('2026-10-08T10:00:00Z');
 
@@ -27,7 +36,7 @@ function fakeNetwork(failing: string[] = []): FakeNetwork {
   const fetchFn = (async (input: string | URL | Request) => {
     const url = new URL(typeof input === 'string' ? input : input instanceof URL ? input.href : input.url);
     requests.push(url.href);
-    const source = url.hostname.includes('willys') ? 'willys' : url.hostname.includes('rema1000') ? 'rema' : 'ecb';
+    const source = url.hostname.includes('willys') ? 'willys' : url.hostname.includes('rema1000') ? 'rema' : url.hostname.includes('energy.ec') ? 'oil' : 'ecb';
     if (failing.includes(source)) return new Response('Service Unavailable', { status: 503 });
     if (source === 'willys') {
       const body = willysSearches[url.searchParams.get('q') ?? ''] ?? {
@@ -35,6 +44,9 @@ function fakeNetwork(failing: string[] = []): FakeNetwork {
         pagination: { pageSize: 100, currentPage: 0, numberOfPages: 1, totalNumberOfResults: 0 },
       };
       return Response.json(body);
+    }
+    if (source === 'oil') {
+      return url.pathname.includes('/document/download/bbbb_en') ? new Response(oilWorkbook) : new Response(oilPage);
     }
     if (source === 'rema') return new Response(remaPage, { headers: { 'content-type': 'application/json' } });
     return new Response(ecbCsv);
@@ -215,6 +227,7 @@ describe('import command', () => {
         ['willys', 'success'],
         ['rema', 'failed'],
         ['ecb', 'success'],
+        ['oil', 'success'],
       ]);
       expect(output).toContain('rema: FAILED, HTTP 503');
       expect(output).toContain('willys: ok');
@@ -236,6 +249,8 @@ describe('import command', () => {
         ['willys', 'success'],
         ['rema', 'success'],
         ['ecb', 'failed'],
+        // Oil converts the bulletin's euro prices with the ECB's rates, so it fails with it.
+        ['oil', 'failed'],
       ]);
       expect(runs[0]!.observationCount).toBe(listPriceObservations(db, { source: 'willys' }).length);
       expect(runs[2]!.error).toContain('503');
@@ -247,6 +262,67 @@ describe('import command', () => {
       const { runs } = await runImport(db, { sources: ['willys'], fetch: broken, now: () => NOW, delayMs: 0 });
       expect(runs[0]).toMatchObject({ source: 'willys', outcome: 'failed' });
       expect(runs[0]!.error).toContain('Unexpected Willys search response');
+    });
+  });
+
+  describe('EU Weekly Oil Bulletin', () => {
+    it('stores Danish and Swedish Euro-super 95 per litre in local currency, and reference data serves them', async () => {
+      const { runs, ok } = await importAll(db);
+      expect(runs.find((r) => r.source === 'oil')).toMatchObject({ outcome: 'success', observationCount: 2, error: null });
+      expect(ok).toBe(true);
+
+      // Bulletin: EUR per 1000 l. Denmark 2604.8565, Sweden 1589.3357 (checked: same unit and column).
+      // ECB in the fixture: 7.4745 DKK and 11.224 SEK per EUR.
+      const dk = latestPetrolPrice(db, 'DK')!;
+      expect(dk).toMatchObject({ currency: 'DKK', date: '2026-10-05' });
+      expect(dk.source).toContain('Oil Bulletin');
+      expect(dk.priceEur).toBeCloseTo(2.6048565, 6);
+      expect(dk.pricePerLitre).toBeCloseTo(2.6048565 * 7.4745, 6);
+      const se = latestPetrolPrice(db, 'SE')!;
+      expect(se).toMatchObject({ currency: 'SEK', date: '2026-10-05' });
+      expect(se.pricePerLitre).toBeCloseTo(1.5893357 * 11.224, 6);
+
+      const res = await createApp(db).request('/api/reference-data?dato=2026-11-14');
+      const body = (await res.json()) as ReferenceData;
+      expect(body.petrolPrices.denmark).toMatchObject({ currency: 'DKK', date: '2026-10-05' });
+      expect(body.petrolPrices.denmark!.pricePerLitre).toBeCloseTo(19.47, 2);
+      expect(body.petrolPrices.sweden!.pricePerLitre).toBeCloseTo(17.84, 2);
+      // The imported Danish price replaces the seeded default for Driving Cost.
+      const petrol = body.vehicleDefaults.find((v) => v.energyType === 'petrol')!;
+      expect(petrol.energyPriceDkk).toBeCloseTo(19.47, 2);
+      expect(petrol.priceDate).toBe('2026-10-05');
+      expect(petrol.priceSource).toContain('Oil Bulletin');
+    });
+
+    it('keeps the seeded default petrol price and no petrol prices before any import', async () => {
+      const body = (await (await createApp(db).request('/api/reference-data?dato=2026-11-14')).json()) as ReferenceData;
+      expect(body.petrolPrices).toEqual({ denmark: null, sweden: null });
+      expect(body.vehicleDefaults.find((v) => v.energyType === 'petrol')!.energyPriceDkk).toBe(19.5);
+    });
+
+    it('refuses a sheet whose Euro-super 95 unit is not 1000 l, instead of guessing the scale', () => {
+      const rows = [
+        ['in EUR', 'Euro-super 95  (I)'],
+        [new Date('2026-10-05T00:00:00Z'), 'l'],
+        ['Denmark', 2.6],
+      ];
+      expect(() => parseBulletin(rows, ['Denmark'])).toThrow(/not in EUR per 1000 l/);
+      rows[1]![1] = '1000 l';
+      expect(() => parseBulletin(rows, ['Denmark'])).toThrow(/Implausible/);
+    });
+
+    it('fails, storing nothing, when the workbook is not what is expected', async () => {
+      const network = fakeNetwork();
+      const original = network.fetch;
+      const broken = (async (input: string | URL | Request, init?: RequestInit) => {
+        const href = typeof input === 'string' ? input : input instanceof URL ? input.href : input.url;
+        if (href.includes('/document/download/bbbb_en')) return new Response(new Uint8Array(10));
+        return original(input, init);
+      }) as typeof fetch;
+      const { runs, ok } = await runImport(db, { sources: ['oil'], fetch: broken, now: () => NOW, delayMs: 0 });
+      expect(ok).toBe(false);
+      expect(runs[0]!.outcome).toBe('failed');
+      expect(latestPetrolPrice(db, 'DK')).toBeNull();
     });
   });
 

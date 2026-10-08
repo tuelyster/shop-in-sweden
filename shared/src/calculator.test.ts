@@ -42,7 +42,13 @@ function gaps(destinationId: string, byCategory: Record<string, number | null>):
 }
 
 function reference(
-  overrides: { bridge?: CrossingFeeEntry[]; ferry?: CrossingFeeEntry[]; priceGaps?: DestinationPriceGaps[] } = {},
+  overrides: {
+    bridge?: CrossingFeeEntry[];
+    ferry?: CrossingFeeEntry[];
+    priceGaps?: DestinationPriceGaps[];
+    swedishPetrol?: { pricePerLitre: number; currency: 'DKK' | 'SEK' };
+    sekToDkk?: number;
+  } = {},
 ): ReferenceData {
   return {
     categories: [
@@ -50,8 +56,12 @@ function reference(
       { id: 'soft-drinks', name: 'Soft drinks' },
     ],
     priceGaps: overrides.priceGaps ?? [],
-    exchangeRate: null,
     freshness: { newestObservationDate: null, daysOld: null, stale: false },
+    exchangeRate: overrides.sekToDkk ? { sekToDkk: overrides.sekToDkk, date: '2026-10-08', source: 'test' } : null,
+    petrolPrices: {
+      denmark: null,
+      sweden: overrides.swedishPetrol ? { ...overrides.swedishPetrol, date: '2026-10-05', source: 'test' } : null,
+    },
     vehicleDefaults: [
       { energyType: 'petrol', consumptionPer100Km: 6, consumptionSource: 'test', energyPriceDkk: 19.5, priceSource: 'test', priceDate: '2026-10-05' },
       { energyType: 'electric', consumptionPer100Km: 18, consumptionSource: 'test', energyPriceDkk: 2.5, priceSource: 'test', priceDate: '2026-10-08' },
@@ -88,6 +98,7 @@ function inputs(overrides: Partial<TripInputs> = {}): TripInputs {
     energyPriceDkk: null,
     distanceKm: { bridge: null, ferry: null },
     plannedSpend: {},
+    fillUpLitres: 0,
     ...overrides,
   };
 }
@@ -385,5 +396,61 @@ describe('Break-even Spend', () => {
     // Also with no spend entered, and for a Destination with no price data at all.
     expect(trip(inputs(), none).breakEvenSpend).toEqual({ kind: 'unknown' });
     expect(trip(inputs(), none, 'ferry').breakEvenSpend).toEqual({ kind: 'unknown' });
+  });
+});
+
+describe('Fill-up Saving', () => {
+  const trip = (i: TripInputs, ref: ReferenceData, id: 'bridge' | 'ferry' = 'bridge') =>
+    calculateTrips(i, ref).trips.find((t) => t.crossingId === id)!;
+  // Sweden 18 SEK/L at 0.65 DKK per SEK = 11.70 DKK/L; the Danish default is 19.5 DKK/L.
+  const sweden = reference({ swedishPetrol: { pricePerLitre: 18, currency: 'SEK' }, sekToDkk: 0.65 });
+
+  it('is litres x (Danish price - Swedish price in DKK) for a petrol Vehicle', () => {
+    expect(trip(inputs({ fillUpLitres: 40 }), sweden).fillUpSavingDkk).toBeCloseTo(40 * (19.5 - 11.7), 10);
+  });
+
+  it("uses the shopper's own petrol price as the Danish price when they entered one", () => {
+    expect(trip(inputs({ fillUpLitres: 40, energyPriceDkk: 20 }), sweden).fillUpSavingDkk).toBeCloseTo(40 * (20 - 11.7), 10);
+  });
+
+  it('is none for an electric Vehicle, whatever the litres', () => {
+    expect(trip(inputs({ energyType: 'electric', fillUpLitres: 40 }), sweden).fillUpSavingDkk).toBe(0);
+  });
+
+  it('is none without litres, and 0 while the Swedish price or the exchange rate is missing', () => {
+    expect(trip(inputs({ fillUpLitres: 0 }), sweden).fillUpSavingDkk).toBe(0);
+    expect(trip(inputs({ fillUpLitres: 40 }), reference()).fillUpSavingDkk).toBe(0);
+    const noRate = reference({ swedishPetrol: { pricePerLitre: 18, currency: 'SEK' } });
+    expect(trip(inputs({ fillUpLitres: 40 }), noRate).fillUpSavingDkk).toBe(0);
+  });
+
+  it('is negative, honestly, when Sweden is dearer', () => {
+    const dear = reference({ swedishPetrol: { pricePerLitre: 40, currency: 'SEK' }, sekToDkk: 0.65 });
+    expect(trip(inputs({ fillUpLitres: 10 }), dear).fillUpSavingDkk).toBeCloseTo(10 * (19.5 - 26), 10);
+  });
+
+  it('counts towards Gross Saving and Net Saving', () => {
+    const ref = reference({
+      swedishPetrol: { pricePerLitre: 18, currency: 'SEK' },
+      sekToDkk: 0.65,
+      priceGaps: [gaps('hyllie', { groceries: 0.2 })],
+    });
+    const t = trip(inputs({ fillUpLitres: 40, plannedSpend: { groceries: 1000 } }), ref);
+    expect(t.grossSavingDkk).toBeCloseTo(200 + 312, 10);
+    expect(t.netSavingDkk).toBeCloseTo(200 + 312 - 840, 10);
+  });
+
+  it('lowers the Break-even Spend, and can cover the whole Trip Cost', () => {
+    const ref = reference({
+      swedishPetrol: { pricePerLitre: 18, currency: 'SEK' },
+      sekToDkk: 0.65,
+      priceGaps: [gaps('hyllie', { groceries: 0.2 })],
+    });
+    const without = trip(inputs({ plannedSpend: { groceries: 1000 } }), ref).breakEvenSpend;
+    expect(without.kind === 'amount' && without.dkk).toBeCloseTo(840 / 0.2, 8);
+    const withFillUp = trip(inputs({ fillUpLitres: 40, plannedSpend: { groceries: 1000 } }), ref).breakEvenSpend;
+    expect(withFillUp.kind === 'amount' && withFillUp.dkk).toBeCloseTo((840 - 312) / 0.2, 8);
+    // 120 L saves 936 DKK, more than the 840 DKK Trip Cost.
+    expect(trip(inputs({ fillUpLitres: 120, plannedSpend: { groceries: 1000 } }), ref).breakEvenSpend).toEqual({ kind: 'amount', dkk: 0 });
   });
 });

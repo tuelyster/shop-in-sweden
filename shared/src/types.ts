@@ -131,6 +131,16 @@ export interface ExchangeRateInfo {
   source: string;
 }
 
+/** The latest imported petrol price (Euro-super 95, with taxes) of one country. */
+export interface PetrolPriceInfo {
+  /** Price per litre in the country's own currency. */
+  pricePerLitre: number;
+  currency: 'DKK' | 'SEK';
+  /** ISO date the price is from. */
+  date: string;
+  source: string;
+}
+
 /**
  * Everything the calculator needs besides the shopper's inputs; served by the
  * reference-data API. Later tickets add Price Gaps, fuel prices, exchange rate etc.
@@ -159,6 +169,11 @@ export interface ReferenceData {
   exchangeRate: ExchangeRateInfo | null;
   /** How current the prices are, for the freshness line and stale warning. */
   freshness: DataFreshness;
+  /**
+   * Latest imported petrol prices; null for a country while none has been imported. The Danish
+   * one is also the default petrol price of the Vehicle defaults.
+   */
+  petrolPrices: { denmark: PetrolPriceInfo | null; sweden: PetrolPriceInfo | null };
 }
 
 /**
@@ -187,6 +202,8 @@ export interface TripInputs {
   distanceKm: Record<CrossingId, number | null>;
   /** Planned Spend in DKK at Danish prices, per Category; a missing Category counts as 0. */
   plannedSpend: Record<CategoryId, number>;
+  /** Litres of petrol the shopper would fill up in Sweden; ignored for electric Vehicles. */
+  fillUpLitres: number;
 }
 
 /**
@@ -211,6 +228,12 @@ export interface ShoppingTripResult {
    * known Price Gap here. Can be negative.
    */
   grossSavingDkk: number;
+  /**
+   * Fill-up Saving in DKK, unrounded: litres x (Danish petrol price - Swedish petrol price in DKK).
+   * 0 for electric Vehicles, without litres, or while a petrol price or the exchange rate is missing.
+   * Negative if Sweden is dearer. Already included in the Gross Saving.
+   */
+  fillUpSavingDkk: number;
   /** Categories with Planned Spend but no known Price Gap here; they add nothing to the Gross Saving. */
   unknownGapCategoryIds: CategoryId[];
   /** Gross Saving minus Trip Cost, unrounded; negative is a loss. */

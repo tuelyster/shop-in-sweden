@@ -96,7 +96,7 @@ export const basketItems = sqliteTable('basket_items', {
 
 export const importRuns = sqliteTable('import_runs', {
   id: integer('id').primaryKey({ autoIncrement: true }),
-  /** Importer name: 'willys', 'rema' or 'ecb'. */
+  /** Importer name: 'willys', 'rema', 'ecb' or 'oil'. */
   source: text('source').notNull(),
   startedAt: text('started_at').notNull(),
   finishedAt: text('finished_at').notNull(),
@@ -141,7 +141,27 @@ export const priceObservations = sqliteTable('price_observations', {
   importedAt: text('imported_at').notNull(),
 });
 
-export const exchangeRates = sqliteTable('exchange_rates', {
+/** Retail price of Euro-super 95 (petrol) per country, with taxes. Rows are only ever added. */
+export const petrolPrices = sqliteTable('petrol_prices', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  importRunId: integer('import_run_id')
+    .notNull()
+    .references(() => importRuns.id),
+  /** 'DK' or 'SE'. */
+  country: text('country').notNull(),
+  /** Price per litre in the country's own currency. */
+  pricePerLitre: real('price_per_litre').notNull(),
+  /** 'DKK' or 'SEK'. */
+  currency: text('currency').notNull(),
+  /** Price per litre in euro, as published. */
+  priceEur: real('price_eur').notNull(),
+  /** ISO date the prices are from (the bulletin's reference date). */
+  date: text('date').notNull(),
+  source: text('source').notNull(),
+  importedAt: text('imported_at').notNull(),
+});
+
+export const exchangeRates =sqliteTable('exchange_rates', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   importRunId: integer('import_run_id')
     .notNull()

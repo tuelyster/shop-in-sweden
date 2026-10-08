@@ -14,7 +14,8 @@
     "@shop-in-sweden/shared": "*",
     "better-sqlite3": "^13.0.3",
     "drizzle-orm": "^0.45.4",
-    "hono": "^4.13.13"
+    "hono": "^4.13.13",
+    "read-excel-file": "^9.3.12"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^9.6.0",

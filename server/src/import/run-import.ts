@@ -3,11 +3,12 @@ import type { Db } from '../db/connection';
 import { buildMatchReport, formatMatchReport } from '../match/match-report';
 import { recordImportRun, type ImportRun } from '../prices/store';
 import { ecbImporter } from '../sources/ecb';
+import { oilImporter } from '../sources/oil';
 import type { FetchFn, Importer } from '../sources/http';
 import { remaImporter } from '../sources/rema';
 import { willysImporter } from '../sources/willys';
 
-export const importers: Importer[] = [willysImporter, remaImporter, ecbImporter];
+export const importers: Importer[] = [willysImporter, remaImporter, ecbImporter, oilImporter];
 
 export interface RunImportOptions {
   /** Importer names to run; all of them when omitted or empty. */

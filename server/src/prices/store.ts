@@ -1,7 +1,7 @@
 import { desc, eq } from 'drizzle-orm';
 import type { Quantity, UnitSymbol } from '@shop-in-sweden/shared';
 import type { Db } from '../db/connection';
-import { exchangeRates, importRuns, priceObservations } from '../db/schema';
+import { exchangeRates, importRuns, petrolPrices, priceObservations } from '../db/schema';
 
 /** A price as an importer reports it, before it is stored. */
 export interface ObservationDraft {
@@ -44,6 +44,22 @@ export interface ExchangeRate extends ExchangeRateDraft {
   importedAt: string;
 }
 
+export interface PetrolPriceDraft {
+  country: 'DK' | 'SE';
+  /** Price per litre in the country's own currency. */
+  pricePerLitre: number;
+  currency: 'DKK' | 'SEK';
+  /** Price per litre in euro, as published. */
+  priceEur: number;
+  /** ISO date the price is from. */
+  date: string;
+  source: string;
+}
+
+export interface PetrolPrice extends PetrolPriceDraft {
+  importedAt: string;
+}
+
 export interface ImportRun {
   id: number;
   source: string;
@@ -64,10 +80,12 @@ export function recordImportRun(
     error?: string;
     observations?: ObservationDraft[];
     exchangeRates?: ExchangeRateDraft[];
+    petrolPrices?: PetrolPriceDraft[];
   },
 ): ImportRun {
   const observations = run.observations ?? [];
   const rates = run.exchangeRates ?? [];
+  const petrol = run.petrolPrices ?? [];
   const importedAt = run.finishedAt.toISOString();
   return db.transaction((tx) => {
     const row = tx
@@ -77,7 +95,7 @@ export function recordImportRun(
         startedAt: run.startedAt.toISOString(),
         finishedAt: importedAt,
         outcome: run.error ? 'failed' : 'success',
-        observationCount: observations.length + rates.length,
+        observationCount: observations.length + rates.length + petrol.length,
         error: run.error ?? null,
       })
       .returning()
@@ -109,6 +127,11 @@ export function recordImportRun(
     for (const r of rates) {
       tx.insert(exchangeRates)
         .values({ importRunId: row.id, date: r.date, sekToDkk: r.sekToDkk, source: r.source, importedAt })
+        .run();
+    }
+    for (const p of petrol) {
+      tx.insert(petrolPrices)
+        .values({ importRunId: row.id, country: p.country, pricePerLitre: p.pricePerLitre, currency: p.currency, priceEur: p.priceEur, date: p.date, source: p.source, importedAt })
         .run();
     }
     return { ...row, outcome: row.outcome as ImportRun['outcome'] };
@@ -157,4 +180,26 @@ export function listPriceObservations(db: Db, filter: { source?: string } = {}):
 export function latestExchangeRate(db: Db): ExchangeRate | null {
   const row = db.select().from(exchangeRates).orderBy(desc(exchangeRates.date), desc(exchangeRates.id)).limit(1).get();
   return row ? { date: row.date, sekToDkk: row.sekToDkk, source: row.source, importedAt: row.importedAt } : null;
+}
+
+/** The most recently imported petrol price for a country, or null when none has been imported. */
+export function latestPetrolPrice(db: Db, country: 'DK' | 'SE'): PetrolPrice | null {
+  const row = db
+    .select()
+    .from(petrolPrices)
+    .where(eq(petrolPrices.country, country))
+    .orderBy(desc(petrolPrices.date), desc(petrolPrices.id))
+    .limit(1)
+    .get();
+  return row
+    ? {
+        country,
+        pricePerLitre: row.pricePerLitre,
+        currency: row.currency as 'DKK' | 'SEK',
+        priceEur: row.priceEur,
+        date: row.date,
+        source: row.source,
+        importedAt: row.importedAt,
+      }
+    : null;
 }

@@ -1,5 +1,5 @@
 import type { Catalogue } from '../catalogue';
-import type { ExchangeRateDraft, ObservationDraft } from '../prices/store';
+import type { ExchangeRateDraft, ObservationDraft, PetrolPriceDraft } from '../prices/store';
 
 /** The network, injected so tests can replay recorded responses. */
 export type FetchFn = typeof fetch;
@@ -17,6 +17,7 @@ export interface ImportContext {
 export interface ImportOutput {
   observations?: ObservationDraft[];
   exchangeRates?: ExchangeRateDraft[];
+  petrolPrices?: PetrolPriceDraft[];
 }
 
 export interface Importer {
@@ -50,4 +51,8 @@ export async function getText(fetchFn: FetchFn, url: string): Promise<string> {
 /** ISO date (YYYY-MM-DD) of a moment, in UTC. */
 export function isoDate(date: Date): string {
   return date.toISOString().slice(0, 10);
+}
+
+export async function getBytes(fetchFn: FetchFn, url: string): Promise<Uint8Array> {
+  return new Uint8Array(await (await ok(await fetchFn(url), url)).arrayBuffer());
 }

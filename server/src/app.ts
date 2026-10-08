@@ -7,12 +7,14 @@ import type {
   DiscountAgreement,
   EnergyType,
   MultiTripBracket,
+  PetrolPriceInfo,
   ReferenceData,
   SeasonId,
 } from '@shop-in-sweden/shared';
 import { readCatalogue } from './catalogue';
 import type { Db } from './db/connection';
 import { measurePriceGaps } from './match/price-gaps';
+import { latestPetrolPrice, type PetrolPrice } from './prices/store';
 import { crossingFees, crossings, destinations, priceObservations, seasons, vehicleDefaults } from './db/schema';
 
 const ISO_DATE = /^(\d{4})-(\d{2})-(\d{2})$/;
@@ -42,6 +44,7 @@ function loadReferenceData(db: Db, tripDate: string, today: string): ReferenceDa
     .filter((f) => f.validFrom <= tripDate);
   // Regular prices only; Offers valid on the Trip Date join the Price Gaps in ticket 09.
   const priceGaps = measurePriceGaps(db);
+  const danishPetrol = latestPetrolPrice(db, 'DK');
   return {
     categories: readCatalogue(db).categories,
     priceGaps: priceGaps.destinations,
@@ -51,7 +54,14 @@ function loadReferenceData(db: Db, tripDate: string, today: string): ReferenceDa
       .select()
       .from(vehicleDefaults)
       .all()
-      .map((v) => ({ ...v, energyType: v.energyType as EnergyType })),
+      .map((v) => ({ ...v, energyType: v.energyType as EnergyType }))
+      // The imported Danish petrol price replaces the manually seeded one; the seed stays as fallback.
+      .map((v) =>
+        v.energyType === 'petrol' && danishPetrol
+          ? { ...v, energyPriceDkk: danishPetrol.pricePerLitre, priceSource: danishPetrol.source, priceDate: danishPetrol.date }
+          : v,
+      ),
+    petrolPrices: { denmark: petrolInfo(danishPetrol), sweden: petrolInfo(latestPetrolPrice(db, 'SE')) },
     seasons: db
       .select()
       .from(seasons)
@@ -79,6 +89,10 @@ function loadReferenceData(db: Db, tripDate: string, today: string): ReferenceDa
         })),
     })),
   };
+}
+
+function petrolInfo(p: PetrolPrice | null): PetrolPriceInfo | null {
+  return p ? { pricePerLitre: p.pricePerLitre, currency: p.currency, date: p.date, source: p.source } : null;
 }
 
 /** More than this many days since the newest Price Observation makes the prices stale. */

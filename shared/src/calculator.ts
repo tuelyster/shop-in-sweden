@@ -84,6 +84,21 @@ function breakEven(
 }
 
 /**
+ * Fill-up Saving = litres x (Danish petrol price - Swedish petrol price in DKK). Petrol Vehicles
+ * only. Without a Swedish price or exchange rate it is unknown and counts as 0.
+ */
+function fillUpSaving(inputs: TripInputs, reference: ReferenceData, danishPrice: number): number {
+  if (inputs.energyType !== 'petrol' || inputs.fillUpLitres <= 0) return 0;
+  const sweden = reference.petrolPrices.sweden;
+  if (!sweden) return 0;
+  let swedishDkk: number;
+  if (sweden.currency === 'DKK') swedishDkk = sweden.pricePerLitre;
+  else if (reference.exchangeRate) swedishDkk = sweden.pricePerLitre * reference.exchangeRate.sekToDkk;
+  else return 0;
+  return inputs.fillUpLitres * (danishPrice - swedishDkk);
+}
+
+/**
  * Computes one Shopping Trip per Crossing and marks the cheaper one: the one with the
  * highest Net Saving (with no Planned Spend that is the lowest Trip Cost).
  * Pure: no rounding is applied; round only for display. On a tie the first
@@ -97,6 +112,9 @@ export function calculateTrips(inputs: TripInputs, reference: ReferenceData): Tr
   if (!vehicle) throw new Error(`No Vehicle defaults for "${inputs.energyType}"`);
   const consumption = inputs.consumptionPer100Km ?? vehicle.consumptionPer100Km;
   const energyPrice = inputs.energyPriceDkk ?? vehicle.energyPriceDkk;
+  // The Danish petrol price used for the Fill-up Saving: the shopper's own figure if they gave one,
+  // otherwise the default (the imported price once there is one).
+  const danishPetrolPrice = energyPrice;
 
   const trips: ShoppingTripResult[] = reference.crossings.map((crossing) => {
     const crossingFeeDkk = crossingFee(crossing, inputs, reference);
@@ -118,8 +136,7 @@ export function calculateTrips(inputs: TripInputs, reference: ReferenceData): Tr
       else grossSavingDkk += spend * gap;
     }
     const tripCostDkk = crossingFeeDkk + drivingCostDkk;
-    // Ticket 11 replaces this 0 with the real Fill-up Saving; it feeds Gross Saving and Break-even.
-    const fillUpSavingDkk = 0;
+    const fillUpSavingDkk = fillUpSaving(inputs, reference, danishPetrolPrice);
     const { breakEvenSpend, excluded } = breakEven(tripCostDkk, fillUpSavingDkk, weights);
     return {
       crossingId: crossing.id,
@@ -128,10 +145,11 @@ export function calculateTrips(inputs: TripInputs, reference: ReferenceData): Tr
       crossingFeeDkk,
       drivingCostDkk,
       tripCostDkk,
-      grossSavingDkk,
+      // The Fill-up Saving counts towards the Gross Saving, like the savings on the basket.
+      grossSavingDkk: grossSavingDkk + fillUpSavingDkk,
+      fillUpSavingDkk,
       unknownGapCategoryIds,
-      // Ticket 11 adds the Fill-up Saving to the Gross Saving here.
-      netSavingDkk: grossSavingDkk - tripCostDkk,
+      netSavingDkk: grossSavingDkk + fillUpSavingDkk - tripCostDkk,
       breakEvenSpend,
       breakEvenExcludedCategoryIds: excluded,
       isCheaper: false,

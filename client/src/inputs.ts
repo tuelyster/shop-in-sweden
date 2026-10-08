@@ -108,6 +108,17 @@ export const spendCandySnacks = plannedSpendInput('kr-slik');
 export const spendSoftDrinks = plannedSpendInput('kr-sodavand');
 export const spendPersonalCare = plannedSpendInput('kr-pleje');
 
+/** Litres of petrol the shopper would fill up in Sweden; 0 when none. Only used for petrol Vehicles. */
+export const fillUpLitres = defineInput<number>({
+  name: 'liter',
+  defaultValue: () => 0,
+  parse: (raw) => {
+    const n = Number(raw);
+    return raw.trim() !== '' && Number.isFinite(n) && n >= 0 ? n : undefined;
+  },
+  serialise: (v) => String(v),
+});
+
 /** Registry of every shareable input. Later tickets add theirs here. */
 export const inputs = {
   tripDate,
@@ -123,4 +134,5 @@ export const inputs = {
   spendCandySnacks,
   spendSoftDrinks,
   spendPersonalCare,
+  fillUpLitres,
 };

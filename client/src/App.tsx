@@ -107,6 +107,7 @@ export function App() {
     spendCandySnacks,
     spendSoftDrinks,
     spendPersonalCare,
+    fillUpLitres,
   } = values;
 
   const [reference, setReference] = useState<ReferenceData | null>(null);
@@ -144,6 +145,7 @@ export function App() {
             'soft-drinks': spendSoftDrinks,
             'personal-care-household': spendPersonalCare,
           },
+          fillUpLitres,
         },
         reference,
       );
@@ -165,6 +167,7 @@ export function App() {
     spendCandySnacks,
     spendSoftDrinks,
     spendPersonalCare,
+    fillUpLitres,
   ]);
 
   const vehicleDefault = reference?.vehicleDefaults.find((v) => v.energyType === energyType);
@@ -255,6 +258,24 @@ export function App() {
           <span>Kørsel til Väla Centrum (km, én vej)</span>
           <input type="number" min="0" step="any" inputMode="decimal" value={distanceFerry ?? ''} onChange={numberChange('distanceFerry')} />
         </label>
+        {petrol && (
+          <label className="field">
+            <span>Liter benzin du tanker i Sverige</span>
+            <input
+              type="number"
+              min="0"
+              step="any"
+              inputMode="decimal"
+              data-testid="fill-up-litres"
+              value={fillUpLitres === 0 ? '' : fillUpLitres}
+              placeholder="0"
+              onChange={(e) => {
+                const n = e.target.value === '' ? 0 : Number(e.target.value);
+                setInput('fillUpLitres', Number.isFinite(n) && n >= 0 ? n : 0);
+              }}
+            />
+          </label>
+        )}
         <details className="advanced">
           <summary>Avanceret</summary>
           <label className="field">
@@ -351,8 +372,14 @@ export function App() {
               <p className="fee-label">Turens pris</p>
               <p className="fee" data-testid="trip-cost">{dkk.format(trip.tripCostDkk)}</p>
               <dl className="breakdown">
-                <dt>Besparelse på varerne (brutto)</dt>
+                <dt>Besparelse (brutto)</dt>
                 <dd data-testid="gross-saving">{dkk.format(trip.grossSavingDkk)}</dd>
+                {petrol && fillUpLitres > 0 && (
+                  <>
+                    <dt>heraf billigere benzin</dt>
+                    <dd data-testid="fill-up-saving">{savingText(trip.fillUpSavingDkk)}</dd>
+                  </>
+                )}
               </dl>
               <p className="fee-label">Nettobesparelse</p>
               <p className={trip.netSavingDkk < 0 ? 'fee loss' : 'fee'} data-testid="net-saving">
