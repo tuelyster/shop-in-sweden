@@ -23,4 +23,5 @@ The calculator page also gains two short notes:
 - [ ] A "How we calculate" page in Danish, reachable from the calculator, covering the points above in the language of `CONTEXT.md`.
 - [ ] The alcohol-and-meat note and the Lavpris note appear on the calculator page.
 - [ ] Source attributions match the sources the reference-data API reports.
+- [ ] The page credits GeoNames (CC BY 4.0) for postcode centre points and OpenStreetMap/OSRM for road distances, as their licences require (see ticket 05), and explains that the 31 island postcodes without a road link must enter their distance by hand.
 - [ ] The Playwright smoke test checks that the page is reachable.
