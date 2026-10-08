@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import {
   calculateTrips,
   type BasketItemGap,
+  type BreakEvenSpend,
   type CategoryPriceGap,
   type PricePick,
   ENERGY_TYPES,
@@ -35,6 +36,17 @@ function savingText(amount: number): string {
   const rounded = Math.round(amount);
   if (rounded === 0) return 'Du går i nul';
   return `${rounded > 0 ? 'Du sparer' : 'Du taber'} ${dkk.format(Math.abs(rounded))}`;
+}
+
+function breakEvenText(spend: BreakEvenSpend): string {
+  switch (spend.kind) {
+    case 'amount':
+      return dkk.format(Math.round(spend.dkk));
+    case 'never':
+      return 'Turen kan ikke betale sig med dette indkøb';
+    case 'unknown':
+      return 'Kan ikke beregnes endnu (mangler prisdata)';
+  }
 }
 
 function pickText(pick: PricePick | null): string {
@@ -337,6 +349,15 @@ export function App() {
               <p className={trip.netSavingDkk < 0 ? 'fee loss' : 'fee'} data-testid="net-saving">
                 {savingText(trip.netSavingDkk)}
               </p>
+              <dl className="breakdown">
+                <dt>Break-even indkøb</dt>
+                <dd data-testid="break-even">{breakEvenText(trip.breakEvenSpend)}</dd>
+              </dl>
+              {trip.breakEvenExcludedCategoryIds.length > 0 && (
+                <p className="hint" data-testid="break-even-excluded">
+                  Break-even er beregnet uden: {trip.breakEvenExcludedCategoryIds.map((id) => CATEGORY_LABELS[id] ?? id).join(', ')} (ingen prisdata).
+                </p>
+              )}
               {trip.unknownGapCategoryIds.length > 0 && (
                 <p className="hint" data-testid="unknown-gaps">
                   Ingen prisdata endnu for: {trip.unknownGapCategoryIds.map((id) => CATEGORY_LABELS[id] ?? id).join(', ')}.

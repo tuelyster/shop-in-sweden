@@ -316,3 +316,73 @@ describe('Gross Saving and Net Saving', () => {
     expect(result.trips.filter((t) => t.isCheaper)).toHaveLength(1);
   });
 });
+
+describe('Break-even Spend', () => {
+  const trip = (i: TripInputs, ref: ReferenceData, id: 'bridge' | 'ferry' = 'bridge') =>
+    calculateTrips(i, ref).trips.find((t) => t.crossingId === id)!;
+  const ref = reference({
+    priceGaps: [gaps('hyllie', { groceries: 0.2, 'soft-drinks': 0.5 }), gaps('vala', { groceries: -0.1, 'soft-drinks': 0 })],
+  });
+
+  it('is Trip Cost divided by the spend-weighted average Price Gap, and Net Saving is zero there', () => {
+    // 1000 groceries at 20 % + 200 soft drinks at 50 % -> weighted gap 300 / 1200 = 0.25; Trip Cost 840.
+    const t = trip(inputs({ plannedSpend: { groceries: 1000, 'soft-drinks': 200 } }), ref);
+    expect(t.breakEvenSpend).toEqual({ kind: 'amount', dkk: expect.closeTo(840 / 0.25, 8) });
+    // Scale the same mix to the break-even total: Net Saving is zero.
+    const total = (t.breakEvenSpend as { dkk: number }).dkk;
+    const at = trip(inputs({ plannedSpend: { groceries: (total * 1000) / 1200, 'soft-drinks': (total * 200) / 1200 } }), ref);
+    expect(at.netSavingDkk).toBeCloseTo(0, 8);
+  });
+
+  it('includes the driving cost in the Trip Cost', () => {
+    const t = trip(inputs({ plannedSpend: { groceries: 100 }, distanceKm: { bridge: 100, ferry: null } }), ref);
+    expect(t.breakEvenSpend).toEqual({ kind: 'amount', dkk: expect.closeTo((840 + 234) / 0.2, 8) });
+  });
+
+  it('weights Categories equally when no Planned Spend is entered', () => {
+    expect(trip(inputs(), ref).breakEvenSpend).toEqual({ kind: 'amount', dkk: expect.closeTo(840 / 0.35, 8) });
+  });
+
+  it('a Category with zero spend carries no weight once any spend is entered', () => {
+    const t = trip(inputs({ plannedSpend: { groceries: 500 } }), ref);
+    expect(t.breakEvenSpend).toEqual({ kind: 'amount', dkk: expect.closeTo(840 / 0.2, 8) });
+  });
+
+  it('is never when the weighted Price Gap is zero or negative', () => {
+    expect(trip(inputs({ plannedSpend: { groceries: 100 } }), ref, 'ferry').breakEvenSpend).toEqual({ kind: 'never' });
+    // Zero exactly.
+    expect(trip(inputs({ plannedSpend: { 'soft-drinks': 100 } }), ref, 'ferry').breakEvenSpend).toEqual({ kind: 'never' });
+    // Mixed gaps that cancel out.
+    const cancel = reference({ priceGaps: [gaps('hyllie', { groceries: 0.1, 'soft-drinks': -0.1 })] });
+    expect(trip(inputs({ plannedSpend: { groceries: 100, 'soft-drinks': 100 } }), cancel).breakEvenSpend).toEqual({ kind: 'never' });
+  });
+
+  it('is 0 when the Fill-up Saving covers the Trip Cost', () => {
+    // Fill-up Saving is 0 until ticket 11, so only a free trip shows the rule today.
+    const free = reference({
+      bridge: [fee({ kind: 'single', priceDkk: 0 })],
+      priceGaps: [gaps('hyllie', { groceries: 0.2 })],
+    });
+    expect(trip(inputs({ plannedSpend: { groceries: 100 } }), free).breakEvenSpend).toEqual({ kind: 'amount', dkk: 0 });
+    // Nothing left to earn back, so 0 holds even where the gap is not positive.
+    const freeNegative = reference({ bridge: [fee({ kind: 'single', priceDkk: 0 })], priceGaps: [gaps('hyllie', { groceries: -0.1 })] });
+    expect(trip(inputs({ plannedSpend: { groceries: 100 } }), freeNegative).breakEvenSpend).toEqual({ kind: 'amount', dkk: 0 });
+  });
+
+  it('leaves Categories with an unknown Price Gap out of the weighting and lists them', () => {
+    const partial = reference({ priceGaps: [gaps('hyllie', { groceries: 0.2, 'soft-drinks': null })] });
+    const t = trip(inputs({ plannedSpend: { groceries: 1000, 'soft-drinks': 1000 } }), partial);
+    expect(t.breakEvenSpend).toEqual({ kind: 'amount', dkk: expect.closeTo(840 / 0.2, 8) });
+    expect(t.breakEvenExcludedCategoryIds).toEqual(['soft-drinks']);
+  });
+
+  it('is unknown, not never, when every weighted Category has an unknown Price Gap', () => {
+    const none = reference({ priceGaps: [gaps('hyllie', { groceries: null, 'soft-drinks': null })] });
+    const t = trip(inputs({ plannedSpend: { groceries: 1000 } }), none);
+    expect(t.breakEvenSpend).toEqual({ kind: 'unknown' });
+    expect(t.breakEvenExcludedCategoryIds).toEqual(['groceries']);
+    // Also with no spend entered, and for a Destination with no price data at all.
+    expect(trip(inputs(), none).breakEvenSpend).toEqual({ kind: 'unknown' });
+    expect(trip(inputs(), none, 'ferry').breakEvenSpend).toEqual({ kind: 'unknown' });
+  });
+});

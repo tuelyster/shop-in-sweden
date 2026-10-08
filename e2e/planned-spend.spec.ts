@@ -13,6 +13,8 @@ test('Planned Spend gives a Net Saving, shows missing price data honestly, and i
   await expect(trips.first().getByTestId('net-saving')).toHaveText(/Du taber .*840/);
   await expect(trips.nth(1).getByTestId('net-saving')).toHaveText(/Du taber .*595/);
   await expect(trips.first().getByTestId('unknown-gaps')).toContainText('Dagligvarer');
+  // Every Price Gap is unknown, so the Break-even Spend is unknown too (not "never pays off").
+  await expect(trips.first().getByTestId('break-even')).toContainText('mangler prisdata');
   await expect(trips.nth(1)).toHaveAttribute('data-cheaper', 'true');
 
   // A Category expands to its Basket Items.

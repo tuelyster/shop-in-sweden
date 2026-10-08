@@ -177,6 +177,13 @@ export interface TripInputs {
   plannedSpend: Record<CategoryId, number>;
 }
 
+/**
+ * The Break-even Spend of a Shopping Trip: `amount` is the total Planned Spend in DKK (unrounded)
+ * at which Net Saving is zero; `never` means the weighted Price Gap is zero or negative, so no
+ * spend makes the trip pay off; `unknown` means every Category in the mix has an unknown Price Gap.
+ */
+export type BreakEvenSpend = { kind: 'amount'; dkk: number } | { kind: 'never' } | { kind: 'unknown' };
+
 export interface ShoppingTripResult {
   crossingId: CrossingId;
   crossingName: string;
@@ -196,6 +203,10 @@ export interface ShoppingTripResult {
   unknownGapCategoryIds: CategoryId[];
   /** Gross Saving minus Trip Cost, unrounded; negative is a loss. */
   netSavingDkk: number;
+  /** Spend at which Net Saving is zero for the shopper's Category mix at this Destination. */
+  breakEvenSpend: BreakEvenSpend;
+  /** Categories left out of the Break-even Spend weighting because their Price Gap is unknown here. */
+  breakEvenExcludedCategoryIds: CategoryId[];
   /** True for exactly one trip: the one with the highest Net Saving. */
   isCheaper: boolean;
 }
