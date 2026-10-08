@@ -1,16 +1,52 @@
 [
   {
-    "crossingId": "bridge",
-    "kind": "single",
-    "priceDkk": 420,
+    "crossingId": "bridge", "kind": "single", "priceDkk": 420, "agreement": "none", "season": null, "bracket": null,
     "validFrom": "2026-09-14",
     "source": "https://www.oresundsbron.com/da/priser (researched 2026-10-08): online ticket, single trip"
   },
   {
-    "crossingId": "ferry",
-    "kind": "round-trip",
-    "priceDkk": 595,
+    "crossingId": "bridge", "kind": "single", "priceDkk": 182, "agreement": "oresundgo", "season": null, "bracket": null,
+    "validFrom": "2026-09-14",
+    "source": "https://www.oresundsbron.com/da/priser (researched 2026-10-08): OresundGO, per trip (annual fee not counted)"
+  },
+  {
+    "crossingId": "ferry", "kind": "round-trip", "priceDkk": 595, "agreement": "none", "season": "low", "bracket": null,
     "validFrom": "2026-01-01",
     "source": "https://www.oresundslinjen.dk/priser (researched 2026-10-08): same-day round trip, low season"
+  },
+  {
+    "crossingId": "ferry", "kind": "round-trip", "priceDkk": 620, "agreement": "none", "season": "high", "bracket": null,
+    "validFrom": "2026-01-01",
+    "source": "https://www.oresundslinjen.dk/priser (researched 2026-10-08): same-day round trip, high season"
+  },
+  {
+    "crossingId": "ferry", "kind": "single", "priceDkk": 225, "agreement": "autobizz", "season": "low", "bracket": null,
+    "validFrom": "2026-01-01",
+    "source": "https://www.oresundslinjen.dk/priser (researched 2026-10-08): AutoBizz single, low season (annual fee not counted)"
+  },
+  {
+    "crossingId": "ferry", "kind": "single", "priceDkk": 255, "agreement": "autobizz", "season": "high", "bracket": null,
+    "validFrom": "2026-01-01",
+    "source": "https://www.oresundslinjen.dk/priser (researched 2026-10-08): AutoBizz single, high season (annual fee not counted)"
+  },
+  {
+    "crossingId": "ferry", "kind": "single", "priceDkk": 359, "agreement": "multi-trip", "season": null, "bracket": "3-9",
+    "validFrom": "2026-01-01",
+    "source": "https://www.oresundslinjen.dk/turkort (researched 2026-10-08): multi-trip card 3-9 trips, per trip"
+  },
+  {
+    "crossingId": "ferry", "kind": "single", "priceDkk": 249, "agreement": "multi-trip", "season": null, "bracket": "10-19",
+    "validFrom": "2026-01-01",
+    "source": "https://www.oresundslinjen.dk/turkort (researched 2026-10-08): multi-trip card 10-19 trips, per trip"
+  },
+  {
+    "crossingId": "ferry", "kind": "single", "priceDkk": 189, "agreement": "multi-trip", "season": null, "bracket": "20-34",
+    "validFrom": "2026-01-01",
+    "source": "https://www.oresundslinjen.dk/turkort (researched 2026-10-08): multi-trip card 20-34 trips, per trip"
+  },
+  {
+    "crossingId": "ferry", "kind": "single", "priceDkk": 159, "agreement": "multi-trip", "season": null, "bracket": "35+",
+    "validFrom": "2026-01-01",
+    "source": "https://www.oresundslinjen.dk/turkort (researched 2026-10-08): multi-trip card 35+ trips, per trip"
   }
 ]

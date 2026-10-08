@@ -1,3 +1,4 @@
+import { MULTI_TRIP_BRACKETS, type MultiTripBracket } from '@shop-in-sweden/shared';
 import { defineInput } from './url-state';
 
 const ISO_DATE = /^(\d{4})-(\d{2})-(\d{2})$/;
@@ -14,7 +15,7 @@ export function nextSaturday(now: Date = new Date()): string {
   return toIsoDate(d);
 }
 
-/** Trip Date. A plain date for now; ticket 03 wires it into seasons. */
+/** Trip Date: decides the ferry season and which Crossing Fees are valid. */
 export const tripDate = defineInput<string>({
   name: 'dato',
   defaultValue: () => nextSaturday(),
@@ -29,5 +30,29 @@ export const tripDate = defineInput<string>({
   serialise: (v) => v,
 });
 
+function yesNoInput(name: string) {
+  return defineInput<boolean>({
+    name,
+    defaultValue: () => false,
+    parse: (raw) => (raw === '1' ? true : raw === '0' ? false : undefined),
+    serialise: (v) => (v ? '1' : '0'),
+  });
+}
+
+/** Discount Agreement: ØresundGO (bridge). */
+export const oresundGo = yesNoInput('oresundgo');
+
+/** Discount Agreement: AutoBizz (ferry). */
+export const autoBizz = yesNoInput('autobizz');
+
+/** Discount Agreement: ferry multi-trip card bracket; `ingen` means no card. */
+export const multiTripCard = defineInput<MultiTripBracket | null>({
+  name: 'turkort',
+  defaultValue: () => null,
+  parse: (raw) =>
+    raw === 'ingen' ? null : MULTI_TRIP_BRACKETS.find((b) => b === raw),
+  serialise: (v) => v ?? 'ingen',
+});
+
 /** Registry of every shareable input. Later tickets add theirs here. */
-export const inputs = { tripDate };
+export const inputs = { tripDate, oresundGo, autoBizz, multiTripCard };
