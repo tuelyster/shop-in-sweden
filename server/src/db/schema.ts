@@ -67,6 +67,8 @@ export const retailers = sqliteTable('retailers', {
   country: text('country').notNull(),
   /** Phrases in offer text that mark an Offer as member-only (JSON string array). */
   memberOfferPhrases: text('member_offer_phrases').notNull().default('[]'),
+  /** Tjek dealer id of a Danish Retailer's leaflets; Swedish Stores carry their own. */
+  tjekDealerId: text('tjek_dealer_id'),
 });
 
 export const stores = sqliteTable('stores', {
@@ -96,7 +98,7 @@ export const basketItems = sqliteTable('basket_items', {
 
 export const importRuns = sqliteTable('import_runs', {
   id: integer('id').primaryKey({ autoIncrement: true }),
-  /** Importer name: 'willys', 'rema', 'ecb' or 'oil'. */
+  /** Importer name: 'willys', 'rema', 'ecb', 'oil' or 'tjek'. */
   source: text('source').notNull(),
   startedAt: text('started_at').notNull(),
   finishedAt: text('finished_at').notNull(),

@@ -10,6 +10,7 @@ import { parseBulletin } from '../src/sources/oil';
 import { createApp } from '../src/app';
 import type { ReferenceData } from '@shop-in-sweden/shared';
 import { loadSeedData, seedDatabase, syncCatalogue } from '../src/seed';
+import { noLeaflets, replayTjek } from './tjek-fake';
 
 const fixtureDir = resolve(dirname(fileURLToPath(import.meta.url)), 'fixtures');
 const fixture = (name: string) => readFileSync(resolve(fixtureDir, name), 'utf8');
@@ -36,7 +37,15 @@ function fakeNetwork(failing: string[] = []): FakeNetwork {
   const fetchFn = (async (input: string | URL | Request) => {
     const url = new URL(typeof input === 'string' ? input : input instanceof URL ? input.href : input.url);
     requests.push(url.href);
-    const source = url.hostname.includes('willys') ? 'willys' : url.hostname.includes('rema1000') ? 'rema' : url.hostname.includes('energy.ec') ? 'oil' : 'ecb';
+    const source = url.hostname.includes('willys')
+      ? 'willys'
+      : url.hostname.includes('rema1000')
+        ? 'rema'
+        : url.hostname.includes('energy.ec')
+          ? 'oil'
+          : url.hostname.includes('tjek')
+            ? 'tjek'
+            : 'ecb';
     if (failing.includes(source)) return new Response('Service Unavailable', { status: 503 });
     if (source === 'willys') {
       const body = willysSearches[url.searchParams.get('q') ?? ''] ?? {
@@ -48,6 +57,7 @@ function fakeNetwork(failing: string[] = []): FakeNetwork {
     if (source === 'oil') {
       return url.pathname.includes('/document/download/bbbb_en') ? new Response(oilWorkbook) : new Response(oilPage);
     }
+    if (source === 'tjek') return replayTjek(url, noLeaflets);
     if (source === 'rema') return new Response(remaPage, { headers: { 'content-type': 'application/json' } });
     return new Response(ecbCsv);
   }) as typeof fetch;
@@ -228,6 +238,7 @@ describe('import command', () => {
         ['rema', 'failed'],
         ['ecb', 'success'],
         ['oil', 'success'],
+        ['tjek', 'success'],
       ]);
       expect(output).toContain('rema: FAILED, HTTP 503');
       expect(output).toContain('willys: ok');
@@ -251,6 +262,7 @@ describe('import command', () => {
         ['ecb', 'failed'],
         // Oil converts the bulletin's euro prices with the ECB's rates, so it fails with it.
         ['oil', 'failed'],
+        ['tjek', 'success'],
       ]);
       expect(runs[0]!.observationCount).toBe(listPriceObservations(db, { source: 'willys' }).length);
       expect(runs[2]!.error).toContain('503');

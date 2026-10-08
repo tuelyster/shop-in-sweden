@@ -31,17 +31,17 @@ function toPick(picked: Picked, seller: string): PricePick | null {
 }
 
 /**
- * Measures the Price Gap of every Category at every Destination, reusing the match report's
+ * Measures the Price Gap of every Category at every Destination on a Trip Date (Offers valid that day count), reusing the match report's
  * Match Rule evaluation. Per Basket Item: cheapest Swedish Unit Price among the Destination's Stores
  * (in DKK at the latest exchange rate) against the cheapest Danish Unit Price over all Danish Retailers.
  * A national Swedish price counts at every Store of its Retailer; a Retailer with no Store at the
  * Destination does not count there. Basket Items not priced in both countries are left out and listed.
  */
-export function measurePriceGaps(db: Db): PriceGaps {
+export function measurePriceGaps(db: Db, tripDate: string): PriceGaps {
   const catalogue = readCatalogue(db);
   const rate = latestExchangeRate(db);
   const retailers = new Map(catalogue.retailers.map((r) => [r.id, r]));
-  const observations = candidateObservations(listPriceObservations(db));
+  const observations = candidateObservations(listPriceObservations(db), tripDate);
   const allStores = db.select().from(storesTable).all();
   const destinationIds = [...new Set(allStores.map((s) => s.destinationId))];
 

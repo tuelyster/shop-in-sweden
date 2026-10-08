@@ -8,6 +8,7 @@ import { openDatabase, type Db } from '../src/db/connection';
 import { runImport } from '../src/import/run-import';
 import { recordImportRun, type ObservationDraft } from '../src/prices/store';
 import { seedDatabase } from '../src/seed';
+import { noLeaflets, replayTjek } from './tjek-fake';
 
 const fixtureDir = resolve(dirname(fileURLToPath(import.meta.url)), 'fixtures');
 const fixture = (name: string) => readFileSync(resolve(fixtureDir, name), 'utf8');
@@ -23,6 +24,7 @@ const SEK_TO_DKK = 7.4745 / 11.224;
 /** Replays the recorded responses; anything not recorded is an empty result. */
 const fakeFetch = (async (input: string | URL | Request) => {
   const url = new URL(typeof input === 'string' ? input : input instanceof URL ? input.href : input.url);
+  if (url.hostname.includes('tjek')) return replayTjek(url, noLeaflets);
   if (url.hostname.includes('willys')) {
     return Response.json(
       willysSearches[url.searchParams.get('q') ?? ''] ?? {

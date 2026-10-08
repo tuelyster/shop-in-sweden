@@ -42,8 +42,7 @@ function loadReferenceData(db: Db, tripDate: string, today: string): ReferenceDa
     .from(crossingFees)
     .all()
     .filter((f) => f.validFrom <= tripDate);
-  // Regular prices only; Offers valid on the Trip Date join the Price Gaps in ticket 09.
-  const priceGaps = measurePriceGaps(db);
+  const priceGaps = measurePriceGaps(db, tripDate);
   const danishPetrol = latestPetrolPrice(db, 'DK');
   return {
     categories: readCatalogue(db).categories,

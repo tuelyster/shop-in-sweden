@@ -5,7 +5,7 @@ import { loadSeedData, syncCatalogue } from './seed';
 
 const usage = `Usage:
   npm run import -- [source ...]   fetch prices from all sources, or only the named ones (${importers.map((i) => i.name).join(', ')}), then print the match report
-  npm run report                   print the match report from stored prices without fetching (picks up Match Rule edits in the seed files)`;
+  npm run report -- [YYYY-MM-DD]  print the match report from stored prices without fetching (picks up Match Rule edits in the seed files); for a Trip Date, the coming Saturday by default`;
 
 const args = process.argv.slice(2);
 if (args.includes('--help') || args.includes('-h')) {
@@ -18,7 +18,7 @@ const db = openDatabase(process.env.DATABASE_PATH ?? defaultDatabasePath);
 syncCatalogue(db, loadSeedData());
 
 if (args[0] === 'report') {
-  console.log(formatMatchReport(buildMatchReport(db)));
+  console.log(formatMatchReport(buildMatchReport(db, /^\d{4}-\d{2}-\d{2}$/.test(args[1] ?? '') ? args[1] : undefined)));
 } else {
   try {
     const result = await runImport(db, { sources: args, fetch });

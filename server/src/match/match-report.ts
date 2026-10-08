@@ -2,7 +2,8 @@ import type { BaseUnit, Quantity } from '@shop-in-sweden/shared';
 import { readCatalogue, type BasketItem, type Category, type Retailer } from '../catalogue';
 import type { Db } from '../db/connection';
 import { latestExchangeRate, listPriceObservations, type ExchangeRate, type PriceObservation } from '../prices/store';
-import { evaluateCandidate, type Country } from './match-rule';
+import { nextSaturday } from '../dates';
+import { evaluateCandidate, textMatchesPhrase, type Country } from './match-rule';
 
 export interface Product {
   retailer: string;
@@ -47,21 +48,65 @@ export interface ItemMatch {
 }
 
 export interface MatchReport {
+  tripDate: string;
   exchangeRate: ExchangeRate | null;
   items: ItemMatch[];
 }
 
+/** An Offer that cannot set a price, and why. */
+export interface ExcludedOffer {
+  observation: PriceObservation;
+  reason: string;
+}
+
+export interface Candidates {
+  candidates: PriceObservation[];
+  excludedOffers: ExcludedOffer[];
+}
+
+/** Offers that ended longer ago than this before the Trip Date are not worth reporting as rejected. */
+const REPORT_EXPIRED_WITHIN_DAYS = 14;
+
+function daysBefore(isoDate: string, days: number): string {
+  const d = new Date(`${isoDate}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() - days);
+  return d.toISOString().slice(0, 10);
+}
+
 /**
- * The Price Observations that can set a price: the newest regular price of every product. Ticket 09
- * adds the Offers valid on the Trip Date here, so Price Gaps and the report both pick them up.
+ * The Price Observations that can set a price on a Trip Date: the newest regular price of every
+ * product, and the newest version of every Offer that is valid on the Trip Date
+ * (valid-from <= Trip Date <= valid-to, as local dates) and not member-only. The other Offers are
+ * returned as excluded, with the reason, for the match report.
  */
-export function candidateObservations(observations: PriceObservation[]): PriceObservation[] {
+export function selectCandidates(observations: PriceObservation[], tripDate: string): Candidates {
   const latest = new Map<string, PriceObservation>();
-  for (const o of observations) {
-    if (o.kind !== 'regular') continue;
-    latest.set(`${o.retailerId}|${o.storeId ?? ''}|${o.productId}`, o);
+  for (const o of observations) latest.set(`${o.kind}|${o.retailerId}|${o.storeId ?? ''}|${o.productId}`, o);
+
+  const candidates: PriceObservation[] = [];
+  const excludedOffers: ExcludedOffer[] = [];
+  for (const o of latest.values()) {
+    if (o.kind === 'regular') {
+      candidates.push(o);
+      continue;
+    }
+    const valid = o.validFrom <= tripDate && (o.validTo === null || o.validTo === undefined || tripDate <= o.validTo);
+    if (!valid) {
+      if (!o.validTo || o.validTo >= daysBefore(tripDate, REPORT_EXPIRED_WITHIN_DAYS)) {
+        excludedOffers.push({ observation: o, reason: `Offer valid ${o.validFrom} to ${o.validTo ?? 'open end'}, not on Trip Date ${tripDate}` });
+      }
+    } else if (o.memberOnly) {
+      excludedOffers.push({ observation: o, reason: 'member-only Offer' });
+    } else {
+      candidates.push(o);
+    }
   }
-  return [...latest.values()];
+  return { candidates, excludedOffers };
+}
+
+/** The Price Observations that can set a price on a Trip Date; see `selectCandidates`. */
+export function candidateObservations(observations: PriceObservation[], tripDate: string): PriceObservation[] {
+  return selectCandidates(observations, tripDate).candidates;
 }
 
 /**
@@ -75,6 +120,7 @@ export function matchItem(
   retailers: Map<string, Retailer>,
   rate: ExchangeRate | null,
   include: (o: PriceObservation) => boolean = () => true,
+  excludedOffers: ExcludedOffer[] = [],
 ): CountryMatch {
   const result: CountryMatch = { country, picked: null, accepted: 0, rejected: [], unrelated: 0 };
   for (const o of observations) {
@@ -89,7 +135,7 @@ export function matchItem(
     };
     const verdict = evaluateCandidate(item.matchRule, country, {
       text: o.productText,
-      foundBy: o.foundBy,
+      foundBy: foundBy(item, country, o),
       quantity: o.quantity,
     });
     if (!verdict.accepted) {
@@ -113,27 +159,42 @@ export function matchItem(
       };
     }
   }
+  for (const { observation: o, reason } of excludedOffers) {
+    const retailer = retailers.get(o.retailerId);
+    if (!retailer || retailer.country !== country || !include(o)) continue;
+    const verdict = evaluateCandidate(item.matchRule, country, { text: o.productText, foundBy: foundBy(item, country, o), quantity: o.quantity });
+    if (!verdict.accepted && !verdict.nameMatched) continue;
+    result.rejected.push({ retailer: retailer.name, text: o.productText, price: o.price, currency: o.currency, quantity: o.quantity, reason });
+  }
   return result;
+}
+
+/**
+ * Offers are not found by searching, so the search words that "found" one are the current search
+ * words its text contains; stored regular prices keep the words that returned them.
+ */
+function foundBy(item: BasketItem, country: Country, o: PriceObservation): string[] {
+  return o.kind === 'offer' ? item.matchRule.searchWords[country].filter((w) => textMatchesPhrase(o.productText, w)) : o.foundBy;
 }
 
 /**
  * Applies the Match Rules to the stored Price Observations. Nothing about matching is stored, so
  * editing a rule and building the report again changes the result without a re-import.
  */
-export function buildMatchReport(db: Db): MatchReport {
+export function buildMatchReport(db: Db, tripDate: string = nextSaturday(new Date())): MatchReport {
   const catalogue = readCatalogue(db);
   const rate = latestExchangeRate(db);
   const retailers = new Map(catalogue.retailers.map((r) => [r.id, r]));
-  const observations = candidateObservations(listPriceObservations(db));
+  const { candidates: observations, excludedOffers } = selectCandidates(listPriceObservations(db), tripDate);
 
   const items: ItemMatch[] = catalogue.basketItems.map((item) => ({
     category: catalogue.categories.find((c) => c.id === item.categoryId)!,
     item,
-    DK: matchItem(item, 'DK', observations, retailers, rate),
-    SE: matchItem(item, 'SE', observations, retailers, rate),
+    DK: matchItem(item, 'DK', observations, retailers, rate, undefined, excludedOffers),
+    SE: matchItem(item, 'SE', observations, retailers, rate, undefined, excludedOffers),
   }));
 
-  return { exchangeRate: rate, items };
+  return { tripDate, exchangeRate: rate, items };
 }
 
 const MAX_REJECTED_SHOWN = 8;
@@ -155,12 +216,15 @@ function formatCountry(match: CountryMatch): string[] {
   if (p) {
     const unit = `${money(p.unitPrice.value)} ${p.currency}/${p.unitPrice.per}`;
     const dkk = p.currency === 'SEK' ? (p.unitPriceDkk !== null ? ` = ${money(p.unitPriceDkk)} DKK/${p.unitPrice.per}` : ' (no exchange rate)') : '';
-    lines.push(`    ${label}: PICKED ${p.retailer}: ${p.text}`);
+    const offer = p.kind === 'offer' ? ` [Offer, valid until ${p.validTo ?? 'further notice'}]` : '';
+    lines.push(`    ${label}: PICKED ${p.retailer}: ${p.text}${offer}`);
     lines.push(`      ${money(p.price)} ${p.currency} for ${describeQuantity(p.quantity)} = ${unit}${dkk}  (cheapest of ${match.accepted} accepted)`);
   } else {
     lines.push(`    ${label}: NO PRICE (${match.rejected.length} rejected, ${match.unrelated} unrelated products)`);
   }
-  const shown = match.rejected.slice(0, MAX_REJECTED_SHOWN);
+  // Member-only Offers first, so they are never lost behind the cap.
+  const ordered = [...match.rejected].sort((a, b) => Number(b.reason.startsWith('member-only')) - Number(a.reason.startsWith('member-only')));
+  const shown = ordered.slice(0, MAX_REJECTED_SHOWN);
   for (const r of shown) lines.push(`      rejected ${r.retailer}: ${r.text} (${money(r.price)} ${r.currency}): ${r.reason}`);
   if (match.rejected.length > shown.length) lines.push(`      ... and ${match.rejected.length - shown.length} more rejected`);
   return lines;
@@ -168,7 +232,7 @@ function formatCountry(match: CountryMatch): string[] {
 
 /** The match report as text for the maintainer. */
 export function formatMatchReport(report: MatchReport): string {
-  const lines: string[] = ['MATCH REPORT'];
+  const lines: string[] = ['MATCH REPORT', `Trip Date: ${report.tripDate} (Offers valid that day count; member-only Offers never do)`];
   lines.push(
     report.exchangeRate
       ? `Exchange rate: 1 SEK = ${report.exchangeRate.sekToDkk.toFixed(4)} DKK (${report.exchangeRate.source}, ${report.exchangeRate.date})`

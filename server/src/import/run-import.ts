@@ -1,4 +1,5 @@
 import { readCatalogue } from '../catalogue';
+import { nextSaturday } from '../dates';
 import type { Db } from '../db/connection';
 import { buildMatchReport, formatMatchReport } from '../match/match-report';
 import { recordImportRun, type ImportRun } from '../prices/store';
@@ -6,9 +7,10 @@ import { ecbImporter } from '../sources/ecb';
 import { oilImporter } from '../sources/oil';
 import type { FetchFn, Importer } from '../sources/http';
 import { remaImporter } from '../sources/rema';
+import { tjekImporter } from '../sources/tjek';
 import { willysImporter } from '../sources/willys';
 
-export const importers: Importer[] = [willysImporter, remaImporter, ecbImporter, oilImporter];
+export const importers: Importer[] = [willysImporter, remaImporter, ecbImporter, oilImporter, tjekImporter];
 
 export interface RunImportOptions {
   /** Importer names to run; all of them when omitted or empty. */
@@ -17,6 +19,8 @@ export interface RunImportOptions {
   now?: () => Date;
   /** Pause between requests to the same source. */
   delayMs?: number;
+  /** The Trip Date the closing match report is built for; the coming Saturday when omitted. */
+  tripDate?: string;
   /** Replaces the built-in importers (for tests). */
   importers?: Importer[];
 }
@@ -66,6 +70,6 @@ export async function runImport(db: Db, options: RunImportOptions): Promise<RunI
     }
   }
 
-  const output = ['IMPORT', ...runs.map(describeRun), '', formatMatchReport(buildMatchReport(db))].join('\n');
+  const output = ['IMPORT', ...runs.map(describeRun), '', formatMatchReport(buildMatchReport(db, options.tripDate ?? nextSaturday(now())))].join('\n');
   return { runs, output, ok: runs.every((r) => r.outcome === 'success') };
 }

@@ -54,7 +54,7 @@ export interface SeedData {
   seasons: { id: string; startMonthDay: string; endMonthDay: string; source: string }[];
   vehicleDefaults: (typeof vehicleDefaults.$inferInsert)[];
   categories: { id: string; name: string }[];
-  retailers: { id: string; name: string; country: 'DK' | 'SE'; memberOfferPhrases: string[] }[];
+  retailers: { id: string; name: string; country: 'DK' | 'SE'; memberOfferPhrases: string[]; tjekDealerId?: string }[];
   stores: SeedStore[];
   basketItems: SeedBasketItem[];
 }
@@ -88,7 +88,12 @@ export function syncCatalogue(db: Db, seed: SeedData): void {
         .run();
     });
     for (const r of seed.retailers) {
-      const values = { name: r.name, country: r.country, memberOfferPhrases: JSON.stringify(r.memberOfferPhrases) };
+      const values = {
+        name: r.name,
+        country: r.country,
+        memberOfferPhrases: JSON.stringify(r.memberOfferPhrases),
+        tjekDealerId: r.tjekDealerId ?? null,
+      };
       tx.insert(retailers).values({ id: r.id, ...values }).onConflictDoUpdate({ target: retailers.id, set: values }).run();
     }
     for (const s of seed.stores) {

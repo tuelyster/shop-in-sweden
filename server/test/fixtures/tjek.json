@@ -1,0 +1,7974 @@
+{
+ "recorded": "2026-10-08",
+ "stores": {
+  "7a65rAb": {
+   "id": "7a65rAb",
+   "name": "Willys Malmö Emporia",
+   "latitude": 55.5643,
+   "longitude": 12.9735,
+   "dealer_id": "c371GA"
+  },
+  "YzJ69npj3PcAYqG1bj1DX": {
+   "id": "YzJ69npj3PcAYqG1bj1DX",
+   "name": "",
+   "latitude": 55.5613941,
+   "longitude": 12.9827731,
+   "dealer_id": "bfe5hA"
+  },
+  "h_z9FjxOgZH9KymAuCzjV": {
+   "id": "h_z9FjxOgZH9KymAuCzjV",
+   "name": "Malmö Delsjögatan",
+   "latitude": 55.57914,
+   "longitude": 12.9787,
+   "dealer_id": "03a7b3"
+  },
+  "c275u3b": {
+   "id": "c275u3b",
+   "name": "Willys Helsingborg Väla",
+   "latitude": 56.0913,
+   "longitude": 12.7501,
+   "dealer_id": "c371GA"
+  },
+  "tUi5HC-DoNpB8sk5QW527": {
+   "id": "tUi5HC-DoNpB8sk5QW527",
+   "name": "Stora Coop Väla Hbg",
+   "latitude": 56.0933993,
+   "longitude": 12.7650085,
+   "dealer_id": "6c28SD"
+  },
+  "H-mApR-J3kKBcw8_cFeMY": {
+   "id": "H-mApR-J3kKBcw8_cFeMY",
+   "name": "H-borg Drottninghög",
+   "latitude": 56.06652,
+   "longitude": 12.72305,
+   "dealer_id": "03a7b3"
+  }
+ },
+ "catalogs": [
+  {
+   "id": "17K26VB5",
+   "label": "Willys Malmö Emporia",
+   "run_from": "2026-10-04T22:00:00+0000",
+   "run_till": "2026-10-11T21:59:59+0000",
+   "offer_count": 120,
+   "dealer_id": "c371GA",
+   "_region": "hyllie"
+  },
+  {
+   "id": "6FzLLr_b",
+   "label": "Vecka 41",
+   "run_from": "2026-10-04T22:00:00+0000",
+   "run_till": "2026-10-11T21:59:59+0000",
+   "offer_count": 117,
+   "dealer_id": "bfe5hA",
+   "_region": "hyllie"
+  },
+  {
+   "id": "Hstu0DYp",
+   "label": "Vecka 41",
+   "run_from": "2026-10-04T22:00:00+0000",
+   "run_till": "2026-10-11T21:59:59+0000",
+   "offer_count": 185,
+   "dealer_id": "03a7b3",
+   "_region": "hyllie"
+  },
+  {
+   "id": "ST0IWh9J",
+   "label": "Willys Helsingborg Väla",
+   "run_from": "2026-10-04T22:00:00+0000",
+   "run_till": "2026-10-11T21:59:59+0000",
+   "offer_count": 120,
+   "dealer_id": "c371GA",
+   "_region": "vala"
+  },
+  {
+   "id": "kLhgJ7DE",
+   "label": "Stora Coop Väla Hbg",
+   "run_from": "2026-10-11T22:00:00+0000",
+   "run_till": "2026-10-18T21:59:59+0000",
+   "offer_count": 67,
+   "dealer_id": "6c28SD",
+   "_region": "vala"
+  },
+  {
+   "id": "Qs_kATy1",
+   "label": "Stora Coop Väla Hbg",
+   "run_from": "2026-10-04T22:00:00+0000",
+   "run_till": "2026-10-11T21:59:59+0000",
+   "offer_count": 60,
+   "dealer_id": "6c28SD",
+   "_region": "vala"
+  },
+  {
+   "id": "Hstu0DYp",
+   "label": "Vecka 41",
+   "run_from": "2026-10-04T22:00:00+0000",
+   "run_till": "2026-10-11T21:59:59+0000",
+   "offer_count": 185,
+   "dealer_id": "03a7b3",
+   "_region": "vala"
+  },
+  {
+   "id": "LsFVgdcr",
+   "label": "Uge 42",
+   "run_from": "2026-10-10T22:00:00+0000",
+   "run_till": "2026-10-17T21:59:59+0000",
+   "offer_count": 140,
+   "dealer_id": "11deC",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "2g2CAjpP",
+   "label": "Uge 41",
+   "run_from": "2026-10-03T22:00:00+0000",
+   "run_till": "2026-10-10T21:59:59+0000",
+   "offer_count": 124,
+   "dealer_id": "11deC",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "fLCJBame",
+   "label": "Uge 41 Indstik",
+   "run_from": "2026-10-07T22:00:00+0000",
+   "run_till": "2026-10-10T21:59:59+0000",
+   "offer_count": 8,
+   "dealer_id": "11deC",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "dGOZd77N",
+   "label": "Meget Mere Halloween ",
+   "run_from": "2026-10-03T22:00:00+0000",
+   "run_till": "2026-11-01T22:59:59+0000",
+   "offer_count": 0,
+   "dealer_id": "11deC",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "KSRKRHcj",
+   "label": "Meget mere sæson - oktober",
+   "run_from": "2026-09-30T22:00:00+0000",
+   "run_till": "2026-10-31T22:59:59+0000",
+   "offer_count": 0,
+   "dealer_id": "11deC",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "0lfB7rI1",
+   "label": "Netto uge 42",
+   "run_from": "2026-10-09T22:00:00+0000",
+   "run_till": "2026-10-16T21:59:59+0000",
+   "offer_count": 195,
+   "dealer_id": "9ba51",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "VRknURDg",
+   "label": "Netto uge 41",
+   "run_from": "2026-10-02T22:00:00+0000",
+   "run_till": "2026-10-09T21:59:59+0000",
+   "offer_count": 235,
+   "dealer_id": "9ba51",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "1uF_h3V5",
+   "label": "Halloween",
+   "run_from": "2026-09-21T22:00:00+0000",
+   "run_till": "2026-10-31T22:59:59+0000",
+   "offer_count": 0,
+   "dealer_id": "9ba51",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "1JBfaxkf",
+   "label": "Lidl avis (uge 42)",
+   "run_from": "2026-10-10T22:00:00+0000",
+   "run_till": "2026-10-17T21:59:59+0000",
+   "offer_count": 225,
+   "dealer_id": "71c90",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "ta8mAXfO",
+   "label": "Weekendavis (uge 41)",
+   "run_from": "2026-10-07T22:00:00+0000",
+   "run_till": "2026-10-10T21:59:59+0000",
+   "offer_count": 237,
+   "dealer_id": "71c90",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "VE4dDRAN",
+   "label": "Lidl avis (uge 41)",
+   "run_from": "2026-10-03T22:00:00+0000",
+   "run_till": "2026-10-10T21:59:59+0000",
+   "offer_count": 236,
+   "dealer_id": "71c90",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "Xu-iwtQf",
+   "label": "Fast lav pris i Lidl",
+   "run_from": "2026-09-29T22:00:00+0000",
+   "run_till": "2026-12-31T22:59:59+0000",
+   "offer_count": 255,
+   "dealer_id": "71c90",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "nIYwBzZL",
+   "label": "Uge 42",
+   "run_from": "2026-10-08T22:00:00+0000",
+   "run_till": "2026-10-15T21:59:59+0000",
+   "offer_count": 400,
+   "dealer_id": "bdf5A",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "lU_YDFnh",
+   "label": "Uge 41",
+   "run_from": "2026-10-01T22:00:00+0000",
+   "run_till": "2026-10-08T21:59:59+0000",
+   "offer_count": 412,
+   "dealer_id": "bdf5A",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "zQZWEtmo",
+   "label": "føtex ud af huset",
+   "run_from": "2026-09-08T22:00:00+0000",
+   "run_till": "2026-12-31T22:59:59+0000",
+   "offer_count": 39,
+   "dealer_id": "bdf5A",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "hQa_qidx",
+   "label": "føtex ud af huset",
+   "run_from": "2026-04-30T22:00:00+0000",
+   "run_till": "2026-11-01T22:59:59+0000",
+   "offer_count": 0,
+   "dealer_id": "bdf5A",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "Fhu8_pxG",
+   "label": "Mindre madspild",
+   "run_from": "2025-12-31T23:00:00+0000",
+   "run_till": "2026-12-31T22:59:59+0000",
+   "offer_count": 0,
+   "dealer_id": "bdf5A",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "vsFWO1ph",
+   "label": "Bilka Food Uge 42 – Fødevarer & Personlig Pleje",
+   "run_from": "2026-10-08T22:00:00+0000",
+   "run_till": "2026-10-15T21:59:59+0000",
+   "offer_count": 189,
+   "dealer_id": "93f13",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "dmlbrDnh",
+   "label": "Bilka Nonfood Uge 41 2026 - Elektronik, Bolig, Have & Tekstil",
+   "run_from": "2026-10-01T22:00:00+0000",
+   "run_till": "2026-10-08T21:59:59+0000",
+   "offer_count": 272,
+   "dealer_id": "93f13",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "CNVYSkv9",
+   "label": "Bilka Food Uge 41 2026 - Fødevarer & Personlig Pleje",
+   "run_from": "2026-10-01T22:00:00+0000",
+   "run_till": "2026-10-08T21:59:59+0000",
+   "offer_count": 237,
+   "dealer_id": "93f13",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "JrDWSadK",
+   "label": "Billies Bedste Legetøjskatalog 2026 ",
+   "run_from": "2026-10-08T22:00:00+0000",
+   "run_till": "2026-12-31T22:59:59+0000",
+   "offer_count": 615,
+   "dealer_id": "93f13",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "cCYceUX7",
+   "label": "Bilka Nonfood Uge 42 – Elektronik, Bolig, Have & Tekstil ",
+   "run_from": "2026-10-08T22:00:00+0000",
+   "run_till": "2026-10-15T21:59:59+0000",
+   "offer_count": 247,
+   "dealer_id": "93f13",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "oeDzomt1",
+   "label": "Bilka Prosonic 2026",
+   "run_from": "2026-09-24T22:00:00+0000",
+   "run_till": "2026-12-31T22:59:59+0000",
+   "offer_count": 100,
+   "dealer_id": "93f13",
+   "_region": "copenhagen"
+  },
+  {
+   "id": "eT3qf58J",
+   "label": "Bilka Halloween 2026",
+   "run_from": "2026-09-17T22:00:00+0000",
+   "run_till": "2026-10-31T22:59:59+0000",
+   "offer_count": 74,
+   "dealer_id": "93f13",
+   "_region": "copenhagen"
+  }
+ ],
+ "offers": {
+  "17K26VB5": [
+   {
+    "id": "FAWOXKfFPtMEbLOjs_2Aa",
+    "heading": "HUSHÅLLSPAPPER 8-PACK, TOALETTPAPPER 16-PACK",
+    "description": "LAMBI • 8-16p • Jämförpris 38:60-61:88 kr/kg\nMax 3 köp/hushåll • Lägsta 30-dgrspris 79:90-93:90 kr\nFör dig med WillysPlus\nSPARA 20:00-34:00",
+    "pricing": {
+     "price": 59.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "Am387XuXdLorhl_0rgnMZ",
+    "heading": "COCA COLA 15-PACK",
+    "description": "COCA-COLA ZERO • COCA-COLA • 15p/33cl\nOlika sorter • Jämförpris 12:10 kr/l +pant\nMax 3 köp/hushåll • Lägsta 30-dgrspris 99:90 kr\nFör dig med WillysPlus\n+pant\nSPARA 40:00",
+    "pricing": {
+     "price": 59.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 15,
+      "to": 15,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "fzf2WBkgajU-alVT69n-g",
+    "heading": "HUSHÅLLSOST",
+    "description": "ARLA • Ca 2,2kg • Olika sorter\nJämförpris 69:90 kr/kg • Max 2 förp/hushåll\nLägsta 30-dgrspris 108:90 kr/kg\nFör dig med WillysPlus\nSPARA 39:00 PER KG",
+    "pricing": {
+     "price": 69.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 2
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "qGnrXdBFg7hIi3MGo82KV",
+    "heading": "BLÖJOR",
+    "description": "Per förp\nSPARA 20:00\nELDORADO • 68-80p • Olika sorter • Jämförpris 1:61-1:90 kr/st • Lägsta 30-dgrspris 149:00 kr",
+    "pricing": {
+     "price": 129,
+     "pre_price": 149,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-27T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "c-XhxEPvulzSUm8IRQOb9",
+    "heading": "GLASS",
+    "description": "BEN & JERRY’S • 0,427-0,465l • Olika sorter Jämförpris 96:56-105:15 kr/l Lägsta 30-dgrspris 56:90-58:58 kr SPARA 12:00-13:68",
+    "pricing": {
+     "price": 44.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "l",
+      "si": {
+       "symbol": "l",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 0.427,
+      "to": 0.465
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "W6ZCJfUtH8hK077UF2czj",
+    "heading": "GRYTBITAR AV LAX",
+    "description": "FALKENBERG • 200g • Jämförpris 224:50 kr/kg • Max 5 köp/hushåll",
+    "pricing": {
+     "price": 44.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 200
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 5
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "Z0kO6vTUjQvNacKYM5PPR",
+    "heading": "OLIVOLJA",
+    "description": "För dig med WillysPlus SPARA 44:64 FARCHIONI • 500ml • Extra virgin Jämförpris 99:80 kr/l • Max 3 köp/hushåll Lägsta 30-dgrspris 94:54 kr",
+    "pricing": {
+     "price": 49.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "ml",
+      "si": {
+       "symbol": "l",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "xDuxLdAbPoAxzHW2D_gbZ",
+    "heading": "KYCKLINGBRÖSTFILÉ",
+    "description": "IVARS • 2kg • Djupfryst • Tillfälligt parti Jämförpris 54:50 kr/kg • Max 3 köp/hushåll",
+    "pricing": {
+     "price": 109,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 2,
+      "to": 2
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "scLSiU9XCxHcWNfY6jjJM",
+    "heading": "FÄRSK FLÄSKFILÉ",
+    "description": "DANISH CROWN • Danmark • Ca 650g\nJämförpris 69:90 kr/kg • Max 3 förp/hushåll\nFör dig med WillysPlus\nSPARA 46:10 PER KG",
+    "pricing": {
+     "price": 69.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "5m_cN32pmYEWHS4Cm3_04",
+    "heading": "FRANSYSKA",
+    "description": "PRIME • Irland • Ca 1,2kg • Jämförpris 118:90 kr/kg • Max 3 förp/hushåll Lägsta 30-dgrspris 119:00 kr/kg",
+    "pricing": {
+     "price": 118.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   }
+  ],
+  "6FzLLr_b": [
+   {
+    "id": "tfYm9ZT1cKyOv21qx1AlM",
+    "heading": "Pepsi Max",
+    "description": "Pepsi Max. 1,5 lit. Gäller ej Koffeinfri, Lemon. Jfr. pris 9,09/lit +pant. Ord. pris 17,90/st. Max 2 köp/hushåll.",
+    "pricing": {
+     "price": 109,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "l",
+      "si": {
+       "symbol": "l",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1.5,
+      "to": 1.5
+     },
+     "pieces": {
+      "from": 8,
+      "to": 8,
+      "min": null,
+      "max": 2
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "1GYTzHx10IjrSSFTBrtFL",
+    "heading": "Svenskt smör",
+    "description": "Arla. 500 g. 81-82%. Olika sorter. Gäller ej ekologiskt, laktosfritt. Jfr. pris 75,90/kg. Lägsta 30-dgrspris 59,95/st. Max 2 st/hushåll.",
+    "pricing": {
+     "price": 37.95,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 2
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "d6NyV4fq3BW4JP3pi5k-T",
+    "heading": "Snabbkaffe",
+    "description": "Nescafé Gold. 150 g. Olika sorter. Jfr. pris 496,67/kg.",
+    "pricing": {
+     "price": 149,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 150,
+      "to": 150
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "NCNSW4NiWwHM03zhOW3jX",
+    "heading": "Maskindisktabletter",
+    "description": "Yes Allt i ett. Original 70-pack, Platinum 51-pack. Jfr. pris 1,41-1,94/st. Lägsta 30-dgrspris 119:-/förp.",
+    "pricing": {
+     "price": 99,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "Jn-503Ogwyk6nZ5MNXhQP",
+    "heading": "Tvättmedel",
+    "description": "A+. 725 g, 880-920 ml. Flytande, Pulver. Olika sorter. Jfr. pris 1,05-1,20/tvätt. Ord. pris 45,95-49,95/st. Max 2 köp/ PRIO-medlem. Priset gäller våra PRIO-medlemmar.",
+    "pricing": {
+     "price": 79,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 3,
+      "to": 3,
+      "min": null,
+      "max": 2
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "871wzF-ceNPEGc6XavX0_",
+    "heading": "Stora buffén",
+    "description": "Vår goda stora buffé med Ost & skinkpaj, chili laxspett, aioli, tomat & fetaostsallad, fläskfilé teriyaki, bbq-marinerad kycklingfilé, frukt & bär, oliver, ost, marmelad, kex. Bilden visar fatuppläggning för 8 personer.",
+    "pricing": {
+     "price": 330.3,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "5DkFyKpUnSGBqkxrzuqwu",
+    "heading": "Glass flerpack, Magnum pint",
+    "description": "GB Glace, Magnum. 3-10-pack, 440 ml. Djupfryst. Olika sorter. Jfr. pris 3,45-11,50/st, 78,41/lit.",
+    "pricing": {
+     "price": 69,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "se1mtRQaGVUfcVxUKqKgM",
+    "heading": "Kycklingdelar",
+    "description": "Garant. 1 kg. Djupfryst. Klubbor, Vingar, Ben. Lägsta 30-dgrspris 39,95/st. Ord. pris 39,95/st. Max 4 st/hushåll.",
+    "pricing": {
+     "price": 24.95,
+     "pre_price": 39.95,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 4
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "vSCQMyqwxEygUw7B8gQLu",
+    "heading": "Toalettpapper",
+    "description": "Lotus Comfort. 16-pack. Jfr. pris 54,31/kg.",
+    "pricing": {
+     "price": 79.95,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "XYgInWadpE37aUpJJH9Kt",
+    "heading": "Olivolja 100% italiensk",
+    "description": "Farchioni. 500 ml. Extra virgin. Jfr. pris 199,90/lit. Lägsta 30-dgrspris 112,60/st.",
+    "pricing": {
+     "price": 99.95,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "ml",
+      "si": {
+       "symbol": "l",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "PSe2Nu2Q8pfcd6NXoUhwx",
+    "heading": "Falukorv",
+    "description": "Scan. 800 g. Klassisk ring. Jfr. pris 31,25/kg. Ord. pris 37,80/st. Max 1 köp/PRIO-medlem. Priset gäller våra PRIO-medlemmar.",
+    "pricing": {
+     "price": 50,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 800,
+      "to": 800
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": 1
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "Jx94afIphsyODcFI6u32a",
+    "heading": "Spaghetti",
+    "description": "Barilla. 1 kg. Original. Gäller ej fullkorn. Lägsta 30-dgrspris 20,50/st. Ord. pris 20,50/st. Priset gäller våra PRIO-medlemmar.",
+    "pricing": {
+     "price": 17.95,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   }
+  ],
+  "Hstu0DYp": [
+   {
+    "id": "BNa7XDsNj--lPkBXegLP-",
+    "heading": "NUTELLA Nötcreme",
+    "description": "1 kg\nSuperpris",
+    "pricing": {
+     "price": 75.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "aHKerz9jS4j9XctUY5U3r",
+    "heading": "KANIA Kryddor",
+    "description": "frän pris. Köp 3 få billigaste på köpet\nVälj mellan olika sorter\nOrd. pris: 6.53–23.56\nKampanjpris: 4.38–15.79\n7,5 g–500 g/förp.\nJfr 21,42–1174,67 kr/kg\nNYHET!",
+    "pricing": {
+     "price": 4.38,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 7.5,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "rpoF5h8Z7vkGRW_Chzlo8",
+    "heading": "Gurka",
+    "description": "Ursprung: Spanien\nStyckpris\nMed Lidl Plus -40%\n/st",
+    "pricing": {
+     "price": 8.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "LK9AToAX05Q5fIwJfXZ7y",
+    "heading": "FIN CARRÉ Chokladkaka",
+    "description": "100 g\nLägsta 30-dgrs pris: 11.30–20.72\nVälj mellan olika sorter\nOrd.pris: 11.30–20.72\nKampanjpris: 9.03–16.57\nJfr 90,30– 165,70 kr/kg\nMax 6 förp./hushåll\n-20%",
+    "pricing": {
+     "price": 9.03,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 100,
+      "to": 100
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "7TA51saI6nSWcB4PdqU3r",
+    "heading": "Zucchini",
+    "description": "Ursprung: Spanien\nStyckpris\n-44%",
+    "pricing": {
+     "price": 11,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "1-hIw49JFAhrOLxMYxgdT",
+    "heading": "MATRIKET Yoghurt",
+    "description": "Välj mellan olika sorter\nOrd. pris: 14.90–20.72\nKampanjpris: 11.17–15.54\n1 kg Max 3 förp./hushåll\n-25%",
+    "pricing": {
+     "price": 11.17,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "NCpwDRJ5j4SgLywC9yetj",
+    "heading": "HARVEST BASKET Fryst potatis",
+    "description": "frän pris. Lägsta 30-dgrs pris: 14.10–33.50\nVälj mellan olika sorter\nOrd. pris: 14.10–33.50\nKampanjpris: 11.28–26.80\n500 g–2 kg\nJfr 13,40–26,80 kr/kg\nLidl Plus kupong\n-20%",
+    "pricing": {
+     "price": 11.28,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 2000
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "KC6bI50-E_v_n8Xc2LqcC",
+    "heading": "Romansallad",
+    "description": "Ursprung: Spanien\nStyckpris -29%\n/st",
+    "pricing": {
+     "price": 11.9,
+     "pre_price": 16.9,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "-ntzayNe80m-OUknuL9mx",
+    "heading": "Röda äpplen",
+    "description": "Sort: Gala\nUrsprung: Polen\nLösvikt\nSuperpris\n/kg",
+    "pricing": {
+     "price": 12.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "KLqu6zBo8wc9Jazudo6WD",
+    "heading": "ÖLANDSKROPPKAKAN Kroppkakor",
+    "description": "3-pack\nSmålands-/\nÖlandskroppkakor\n300 g\nJfr 49,67kr/kg\nSuperpris",
+    "pricing": {
+     "price": 14.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 300,
+      "to": 300
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "EMxMbNjF5WoCbiPJYTUTC",
+    "heading": "Morötter",
+    "description": "Ursprung: Sverige\n1 kg\nMed Lidl Plus -40%",
+    "pricing": {
+     "price": 8.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   }
+  ],
+  "ST0IWh9J": [
+   {
+    "id": "ZseyCYzZR_b0pZkv2ySdk",
+    "heading": "HUSHÅLLSPAPPER 8-PACK, TOALETTPAPPER 16-PACK",
+    "description": "LAMBI • 8-16p • Jämförpris 38:60-61:88 kr/kg\nMax 3 köp/hushåll • Lägsta 30-dgrspris 79:90-93:90 kr\nFör dig med WillysPlus\nSPARA 20:00-34:00",
+    "pricing": {
+     "price": 59.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "qdSWzCVTLzVw1OzV6u6Vx",
+    "heading": "COCA COLA 15-PACK",
+    "description": "COCA-COLA ZERO • COCA-COLA • 15p/33cl\nOlika sorter • Jämförpris 12:10 kr/l +pant\nMax 3 köp/hushåll • Lägsta 30-dgrspris 99:90 kr\nFör dig med WillysPlus\n+pant\nSPARA 40:00",
+    "pricing": {
+     "price": 59.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 15,
+      "to": 15,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "usqia-5ya48dvW9oyazH9",
+    "heading": "HUSHÅLLSOST",
+    "description": "ARLA • Ca 2,2kg • Olika sorter\nJämförpris 69:90 kr/kg • Max 2 förp/hushåll\nLägsta 30-dgrspris 108:90 kr/kg\nFör dig med WillysPlus\nSPARA 39:00 PER KG",
+    "pricing": {
+     "price": 69.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 2
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "tftPfGfEnuqyBOjBk5hlC",
+    "heading": "BLÖJOR",
+    "description": "Per förp\nSPARA 20:00\nELDORADO • 68-80p • Olika sorter • Jämförpris 1:61-1:90 kr/st • Lägsta 30-dgrspris 149:00 kr",
+    "pricing": {
+     "price": 129,
+     "pre_price": 149,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-27T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "jyOVQyaPTSavl81veEBtZ",
+    "heading": "GLASS",
+    "description": "BEN & JERRY’S • 0,427-0,465l • Olika sorter Jämförpris 96:56-105:15 kr/l Lägsta 30-dgrspris 56:90-58:58 kr SPARA 12:00-13:68",
+    "pricing": {
+     "price": 44.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "l",
+      "si": {
+       "symbol": "l",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 0.427,
+      "to": 0.465
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "Zc47nFKjsnotM-iQSmJZV",
+    "heading": "GRYTBITAR AV LAX",
+    "description": "FALKENBERG • 200g • Jämförpris 224:50 kr/kg • Max 5 köp/hushåll",
+    "pricing": {
+     "price": 44.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 200
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 5
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "h2Q5IVYeZnBfXNZyQV6sK",
+    "heading": "OLIVOLJA",
+    "description": "För dig med WillysPlus SPARA 44:64 FARCHIONI • 500ml • Extra virgin Jämförpris 99:80 kr/l • Max 3 köp/hushåll Lägsta 30-dgrspris 94:54 kr",
+    "pricing": {
+     "price": 49.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "ml",
+      "si": {
+       "symbol": "l",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "6ovlKbZQ26tx7M53evg0S",
+    "heading": "KYCKLINGBRÖSTFILÉ",
+    "description": "IVARS • 2kg • Djupfryst • Tillfälligt parti Jämförpris 54:50 kr/kg • Max 3 köp/hushåll",
+    "pricing": {
+     "price": 109,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 2,
+      "to": 2
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "OJNJ8iVraOeLTss224vPt",
+    "heading": "FÄRSK FLÄSKFILÉ",
+    "description": "DANISH CROWN • Danmark • Ca 650g\nJämförpris 69:90 kr/kg • Max 3 förp/hushåll\nFör dig med WillysPlus\nSPARA 46:10 PER KG",
+    "pricing": {
+     "price": 69.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "2Z_ZhmLGV2jUuJs74CB9U",
+    "heading": "FRANSYSKA",
+    "description": "PRIME • Irland • Ca 1,2kg • Jämförpris 118:90 kr/kg • Max 3 förp/hushåll Lägsta 30-dgrspris 119:00 kr/kg",
+    "pricing": {
+     "price": 118.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   }
+  ],
+  "kLhgJ7DE": [
+   {
+    "id": "grt-qUfhng_aqzNCNzGfJ",
+    "heading": "Nötfärs",
+    "description": "MAX 1 KÖP/HUSHÅLL. Irland/John’s Selection. Kyld. Fetthalt max 20%. 500 g. Jfr-pris 99:-/kg.",
+    "pricing": {
+     "price": 99,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 500
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": 1
+     }
+    },
+    "run_from": "2026-10-11T22:00:00+0000",
+    "run_till": "2026-10-18T21:59:59+0000"
+   },
+   {
+    "id": "FQiGrE44xXzjjTbPWlnht",
+    "heading": "Gårdsgoda",
+    "description": "Medlemspris\nValio. Välj mellan olika sorter. 400-500 g. Jfr-pris 65:80-82:25/kg.",
+    "pricing": {
+     "price": 32.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-11T22:00:00+0000",
+    "run_till": "2026-10-18T21:59:59+0000"
+   },
+   {
+    "id": "Tz0GDjE4DLCBEcoZBigyL",
+    "heading": "Läsk",
+    "description": "Pepsi/Zingo/7-up/Pommac. Välj mellan olika sorter. 140-150 cl. Jfr-pris 9:20-9:86/liter. Pant tillkommer.",
+    "pricing": {
+     "price": 69,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 140,
+      "to": 150
+     },
+     "pieces": {
+      "from": 5,
+      "to": 5,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-11T22:00:00+0000",
+    "run_till": "2026-10-18T21:59:59+0000"
+   },
+   {
+    "id": "RYcCi-zvS5U7fleahEX9p",
+    "heading": "Snackpaprika",
+    "description": "Nederländerna/Spanien/Coop. Klass 1. 200 g. Jfr-pris 75:-/kg.",
+    "pricing": {
+     "price": 15,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 200
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-11T22:00:00+0000",
+    "run_till": "2026-10-18T21:59:59+0000"
+   },
+   {
+    "id": "0cDB-pBtxE_n8A9OvxUM2",
+    "heading": "Morötter i påse",
+    "description": "Sverige/Xtra. Klass 1. 2 kg. Jfr-pris 9:50/kg.",
+    "pricing": {
+     "price": 19,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 2,
+      "to": 2
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-11T22:00:00+0000",
+    "run_till": "2026-10-18T21:59:59+0000"
+   },
+   {
+    "id": "XPILd53AifjkZ_fXKss_P",
+    "heading": "Spaghetti",
+    "description": "KLIPP! Zeta. 500 g. Jfr-pris 20:-/kg.",
+    "pricing": {
+     "price": 20,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 500
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-11T22:00:00+0000",
+    "run_till": "2026-10-18T21:59:59+0000"
+   },
+   {
+    "id": "Erwz_OvHRhjJp4XP1XDeA",
+    "heading": "Yoghurt",
+    "description": "KLIPP!\nSverige/Arla. Välj mellan olika sorter. 1500 g. Jfr-pris 13:93/kg.",
+    "pricing": {
+     "price": 20.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 1500,
+      "to": 1500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-11T22:00:00+0000",
+    "run_till": "2026-10-18T21:59:59+0000"
+   },
+   {
+    "id": "WzUYduauH5ftGqBZLZGBf",
+    "heading": "Bacon",
+    "description": "KÖTT FRÅN SVERIGE\nSverige/Coop. Kyld. I skivor. 140 g. Jfr-pris 78:57/kg.",
+    "pricing": {
+     "price": 22,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 140,
+      "to": 140
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-11T22:00:00+0000",
+    "run_till": "2026-10-18T21:59:59+0000"
+   },
+   {
+    "id": "2r3kGce2Ijce9a1VkbE2-",
+    "heading": "Grekiskt lantbröd",
+    "description": "Gräddas i butik\nBonjour. Välj mellan grekiskt bröd och grekiskt lantbröd. 525-600 g. Jfr-pris 41:67-47:62/kg.",
+    "pricing": {
+     "price": 25,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 525,
+      "to": 600
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-11T22:00:00+0000",
+    "run_till": "2026-10-18T21:59:59+0000"
+   },
+   {
+    "id": "bcv9xXTkR5Ukq8OA86a01",
+    "heading": "Aubergine",
+    "description": "Spanien/Coop. Klass 1. Ca 230 g. Jfr-pris 54:35/kg.",
+    "pricing": {
+     "price": 25,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 230,
+      "to": 230
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-11T22:00:00+0000",
+    "run_till": "2026-10-18T21:59:59+0000"
+   },
+   {
+    "id": "Wgl7w52mL-Zz3v7FjFDR9",
+    "heading": "Ätklar kyckling",
+    "description": "Medlemspris\nSverige/Kronfågel. Kyld. Välj mellan olika sorter. 200 g. Jfr-pris 172:50/kg.",
+    "pricing": {
+     "price": 69,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 200
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-11T22:00:00+0000",
+    "run_till": "2026-10-18T21:59:59+0000"
+   }
+  ],
+  "Qs_kATy1": [
+   {
+    "id": "lZ87A1bA5JVySsKu9rXLf",
+    "heading": "Läsk 4-pack",
+    "description": "Coca-Cola/Fanta. Välj mellan olika sorter. 4x150 cl. Jfr-pris 8:25/liter. Pant tillkommer.",
+    "pricing": {
+     "price": 99,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 600,
+      "to": 600
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "8RWz-20EjgytVrqktX-YL",
+    "heading": "Matlagnings-/ vispgrädde",
+    "description": "Sverige/Arla Köket. Fetthalt 13-36%. Välj mellan vispgrädde och matlagningsgrädde. Gäller även laktosfri. 5 dl. Jfr-pris 44:-/liter.",
+    "pricing": {
+     "price": 22,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "dl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.1
+      }
+     },
+     "size": {
+      "from": 5,
+      "to": 5
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "HIZkaZjEWLPJzSEfZtShC",
+    "heading": "Energidryck",
+    "description": "Nocco. Välj mellan olika sorter. 330-355 ml. Jfr-pris 42:25-45:45/liter. Pant tillkommer.",
+    "pricing": {
+     "price": 30,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "ml",
+      "si": {
+       "symbol": "l",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 330,
+      "to": 355
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "8hYaqgwGmf2KIvmGEqkuX",
+    "heading": "Lösviktsgodis",
+    "description": "Lågt pris varje fredag\nMAX 2 KG/HUSHÅLL.\nVid köp över 2 kg gäller ord. pris 103:15-109:-/kg.",
+    "pricing": {
+     "price": 74.9,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "thbh0a0tOTg8nXaJjwp4F",
+    "heading": "Kycklinglårfilé",
+    "description": "SVENSK FÅGEL\nSverige/Kronfågel. Fryst. 700 g. Jfr-pris 77:86/kg.",
+    "pricing": {
+     "price": 109,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 700,
+      "to": 700
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "uBD10jfKVG5dOtx9uGgnS",
+    "heading": "Svenskt smör",
+    "description": "MAX 2 ST/HUSHÅLL.\nSverige/Arla.\nVälj mellan osaltat, normalsaltat och extrasaltat. 500 g. Jfr-pris 90:-/kg.",
+    "pricing": {
+     "price": 45,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 2
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "rIr9sa-q8pDOvQx1U9dO0",
+    "heading": "Crème fraiche",
+    "description": "Sverige/Coop. Naturell. Välj mellan 13% och 32%. 2 dl. Jfr-pris 37:50/liter.",
+    "pricing": {
+     "price": 15,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "dl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.1
+      }
+     },
+     "size": {
+      "from": 2,
+      "to": 2
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "ojRjrflpuKS91JVaE8Ess",
+    "heading": "Kvarg",
+    "description": "Lindahls. Välj mellan olika sorter. 150 g. Jfr-pris 56:67/kg.",
+    "pricing": {
+     "price": 17,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 150,
+      "to": 150
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "tSMVdoP25uHErlKIHjIsi",
+    "heading": "Bordsmargarin",
+    "description": "Becel/Flora. Välj mellan olika sorter. 500-600 g. Jfr-pris 41:67-50:-/kg.",
+    "pricing": {
+     "price": 25,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 600
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "uP8J7e3lzSauGjlwRSynJ",
+    "heading": "Gräddglass storpack",
+    "description": "Sia Glass. Fryst. Välj mellan olika sorter. 1,5 liter. Jfr-pris 23:-/liter.",
+    "pricing": {
+     "price": 69,
+     "pre_price": null,
+     "currency": "SEK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "l",
+      "si": {
+       "symbol": "l",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1.5,
+      "to": 1.5
+     },
+     "pieces": {
+      "from": 2,
+      "to": 2,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-04T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   }
+  ],
+  "LsFVgdcr": [
+   {
+    "id": "6YeEkiTQB8rc_5h_2j1ST",
+    "heading": "Skrabeæg M/L",
+    "description": "10 stk.\n2.00 pr. stk.",
+    "pricing": {
+     "price": 20,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 10,
+      "to": 10
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "TlBHU8jIa3leXJn5oRBgz",
+    "heading": "REMA 1000 hakket dansk oksekød 4-7% eller Burger Boost",
+    "description": "350 g\n100.00 pr. kg",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 350,
+      "to": 350
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "yYjwsg1BjWmlKLlzsIaeT",
+    "heading": "REMA 1000 Mørbrad",
+    "description": "Dansk gris\nPR. ½ KG\n50.00 pr. kg\nVed køb af flere end 6 stk. pr. dag er prisen 39.95 pr. ½ kg",
+    "pricing": {
+     "price": 25,
+     "pre_price": 39.95,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 0.5,
+      "to": 0.5
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "r9_8DQ1DK0grQ3R-dDUY9",
+    "heading": "BKI formalet eller instant kaffe",
+    "description": "150-400 g\nMax. 260.00 pr. kg",
+    "pricing": {
+     "price": 39,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 150,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "GDNeJI-LeLVCRAJuSgPjR",
+    "heading": "Haribo slikpose",
+    "description": "150-170 g\nPartivare. Max. 100.00 pr. kg",
+    "pricing": {
+     "price": 15,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 150,
+      "to": 170
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "qtYfKHTpmBd_SX4TISpvl",
+    "heading": "KiMs chips eller snacks",
+    "description": "130-160 g\nMax. 107.69 pr. kg",
+    "pricing": {
+     "price": 14,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 130,
+      "to": 160
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "59mvHOIqUPJ3Ru4hdh7Wb",
+    "heading": "Président brie eller smøresost",
+    "description": "100-140 g\n100.00 pr. kg\nVed køb af flere end 6 stk. pr. variant pr. dag er prisen op til 19.09 pr. stk.",
+    "pricing": {
+     "price": 10,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 100,
+      "to": 140
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-14T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "qtDubbzEAQgiQtIiY7X4R",
+    "heading": "REMA 1000 Kyllingekebab eller Frilandsgris gyros",
+    "description": "Dybfrost\n300 g\n83.33 pr. kg",
+    "pricing": {
+     "price": 25,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 300,
+      "to": 300
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "cQuNUSyZz1jMT-WvH_xd-",
+    "heading": "Libresse hygiejnebind, trusseindlæg eller Tena discreet",
+    "description": "6-60 stk.\nMax. 5.00 pr. stk.",
+    "pricing": {
+     "price": 30,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "JackwAgnQSCZk867Q4FD6",
+    "heading": "Coca-Cola eller Fanta",
+    "description": "Ved køb af flere end 72 stk. pr. variant pr. dag er prisen op til 5.95 pr. stk.\n33 cl. Ex. pant\nKasse med 24 stk. 72.00/9.09 pr. liter",
+    "pricing": {
+     "price": 3,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 72
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   }
+  ],
+  "2g2CAjpP": [
+   {
+    "id": "M58luT9r1oGzTCfyHfu7a",
+    "heading": "REMA 1000 Hakket dansk oksekød med grønt, grise- og kalvekød, kyllingekød eller Frilandgris hakket skinkekød",
+    "description": "400 g\n62.50 pr. kg",
+    "pricing": {
+     "price": 25,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "Z4dpvn3HTG4VhcmBGmtDr",
+    "heading": "REMA 1000 Soft køkkenrulle eller Soft toiletpapir",
+    "description": "3 rl./484 g eller\n6 rl./684 g\nVed køb af flere end 6 stk. pr. variant pr. dag er prisen op til 14.20 pr. stk.\nMax. 24.79 pr. kg",
+    "pricing": {
+     "price": 12,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "EsNuIbpwfyS0z1KrfsHwA",
+    "heading": "Coca-Cola, Fanta, Tuborg Squash eller Schweppes",
+    "description": "Ved køb af flere end 6 stk. pr. variant pr. dag er prisen 18.00 pr. stk.\n1.25-1.5 liter. Ex. pant\nMax. 8.00 pr. liter",
+    "pricing": {
+     "price": 10,
+     "pre_price": 18,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "l",
+      "si": {
+       "symbol": "l",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1.25,
+      "to": 1.5
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "xLde6wj_g91LR8TQsMaxB",
+    "heading": "REMA 1000 Dansk kyllingebrystfilet eller -inderfilet",
+    "description": "600-650 g\nPartivare. Max. 81.67 pr. kg",
+    "pricing": {
+     "price": 49,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 600,
+      "to": 650
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "2TDN_gJIjsuUH_Fr2fgSH",
+    "heading": "REMA 1000 Kronekilde skæreost",
+    "description": "604-749 g\nVed køb af flere end 6 stk. pr. variant pr. dag er prisen op til 57.95 pr. stk.\nMax. 64.57 pr. kg",
+    "pricing": {
+     "price": 39,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 604,
+      "to": 749
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "nTcUdtRhR5fFlkg3hz36S",
+    "heading": "Pålækker pålæg, baconpostej eller salami-hapser",
+    "description": "50-200 g\nVed køb af flere end 6 stk. pr. variant pr. dag er prisen op til 14.95 pr. stk.\nMax. 200.00 pr. kg",
+    "pricing": {
+     "price": 10,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 50,
+      "to": 200
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "-PTaHECmAVDbTMJeh0-Xf",
+    "heading": "REMA 1000 Frilandsgris",
+    "description": "250-340 g\nPaneret flæsk med persillesauce\nMax. 116.00 pr. kg",
+    "pricing": {
+     "price": 29,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 250,
+      "to": 340
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "t9Qj-u-wARpoPdczjff9G",
+    "heading": "A+ vaskekapsler eller vaskemiddel",
+    "description": "20 stk./20 vaske\n1350 ml/30 vaske\n1352 ml/26 vaske\nPartivare. Max. 2.45 pr. vask",
+    "pricing": {
+     "price": 49,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "UBLNgKyRVw_wtlw_B3zPU",
+    "heading": "Zendium tandpasta, Jordan tandbørster, flosser refill eller tandstikker",
+    "description": "2x50 ml/1-250 stk.\nPartivare. 270.00 pr. liter/Max. 27.00 pr. stk.",
+    "pricing": {
+     "price": 27,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "-KNK3MAPgjE6KrK5oL7cT",
+    "heading": "REMA 1000 Mesterpålæg",
+    "description": "70-110 g\nMax. 214.29 pr. kg",
+    "pricing": {
+     "price": 15,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 70,
+      "to": 110
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   }
+  ],
+  "fLCJBame": [
+   {
+    "id": "bZ_2adrMNrmT6BhGjVgGX",
+    "heading": "Coca-Cola, Fanta, Tuborg Squash eller Schweppes",
+    "description": "1.25-1.5 liter. Ex. pant\nVed køb af flere end 6 stk. pr. variant pr. dag er prisen 18.00 pr. stk.\nMax. 8.00 pr. liter",
+    "pricing": {
+     "price": 10,
+     "pre_price": 18,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "l",
+      "si": {
+       "symbol": "l",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1.25,
+      "to": 1.5
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "d41Ju6nUUW0_WXbuWLF4S",
+    "heading": "REMA 1000 Kronekilde skæreost",
+    "description": "604-749 g\nVed køb af flere end 6 stk. pr. variant pr. dag er prisen op til 57.95 pr. stk.\nMax. 64.57 pr. kg",
+    "pricing": {
+     "price": 39,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 604,
+      "to": 749
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   }
+  ],
+  "0lfB7rI1": [
+   {
+    "id": "eR9CCRtZBXx_jOfWb3B15",
+    "heading": "Faxe Kondi eller Pepsi Max sodavand",
+    "description": "PRISEN GÆLDER KUN VED KØB AF HELE FORPAKNINGER\n24 x 33 cl. + pant.\nPr. liter 8,71\nMax. 6 stk. pr. variant pr. kunde pr. dag til denne pris",
+    "pricing": {
+     "price": 69,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 24,
+      "to": 24,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "4f8VL_6_4nmfIlNMqya4f",
+    "heading": "Faxe Kondi eller Pepsi Max sodavand",
+    "description": "NYHED SPOT 1,5 liter. + pant. Pr. liter 6,67 Max. 6 stk. pr. variant pr. kunde pr. dag til denne pris",
+    "pricing": {
+     "price": 10,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "l",
+      "si": {
+       "symbol": "l",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1.5,
+      "to": 1.5
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "AJ9xyG2InpeFcDt8aAtl2",
+    "heading": "Netto hakket oksekød 14-18%",
+    "description": "400 g. Pr. kg 75,00",
+    "pricing": {
+     "price": 30,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "6JWxPJj-b1I2sbALRhtQM",
+    "heading": "Karat original eller Peter Larsen Kaffe blanding 66 formalet kaffe",
+    "description": "400 g. Pr. kg 87,50 Max. 6 stk. pr. variant pr. kunde pr. dag til denne pris",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "RpfTt9tpodu3bJQmyOxjE",
+    "heading": "Maoam eller Haribo slikpose",
+    "description": "80-120 g.\nPr. kg max. 125,00",
+    "pricing": {
+     "price": 10,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 80,
+      "to": 120
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "9eik6RLbCkhlCakSLB_iw",
+    "heading": "Grøn Tuborg eller Carlsberg Pilsner",
+    "description": "PRISEN GÆLDER KUN VED KØB AF HELE FORPAKNINGER\n18 x 33 cl. + pant.\nPr. liter 11,62\nMax 6 rammer pr. variant pr. kunde pr. dag til denne pris",
+    "pricing": {
+     "price": 69,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 18,
+      "to": 18,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "vRb_jMxFnhXoJRV8DPL5M",
+    "heading": "Godt papir",
+    "description": "6 rl. toiletpapir eller 3 rl. køkkenrulle.\nPr. kg max. 30,08",
+    "pricing": {
+     "price": 12,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "rmaSuGzcWAzE0_zaop7pv",
+    "heading": "Castello hård ost eller Cheasy skæreost",
+    "description": "350-633 g. Pr. kg max. 157,14",
+    "pricing": {
+     "price": 55,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 350,
+      "to": 633
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "oIHI8gezeKAL1a_xuD0gG",
+    "heading": "H.C. Andersen skæreost",
+    "description": "STORT STYKKE 931-1469 g. Pr. kg max. 106,34",
+    "pricing": {
+     "price": 99,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 931,
+      "to": 1469
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "7ptnrxAQESUXsDUNczhX3",
+    "heading": "Cocio",
+    "description": "SPOT\n60 cl.\nPr. liter 21,67\nMax. 10 stk. pr. variant pr. kunde pr. dag til denne pris",
+    "pricing": {
+     "price": 13,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 60,
+      "to": 60
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 10
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "h2PXHIPX6HBT7Q5ZQl2N9",
+    "heading": "Super Kræs kebab",
+    "description": "+ PRIS 25.- Pr. kg 90,91 Gælder kun med Netto+ appen 275 g. Pr. kg 105,45",
+    "pricing": {
+     "price": 29,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 275,
+      "to": 275
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "C_APC96MJfofVpOeQ5xzF",
+    "heading": "Athena græsk yoghurt",
+    "description": "400 g.\nPr. kg 42,50\n+ PRIS\nPr. kg 37,50\nGælder kun med Netto+ appen",
+    "pricing": {
+     "price": 17,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "DgyOz5gX_2ppvURmyg2lP",
+    "heading": "Amper isotonisk drik",
+    "description": "75 cl. + pant.\nPr. liter 9,33\n+ PRIS 5:-\nPr. liter 6,67\nGælder kun med Netto+ appen",
+    "pricing": {
+     "price": 7,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 75,
+      "to": 75
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-09T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   }
+  ],
+  "VRknURDg": [
+   {
+    "id": "cw7ymqSLuJFqFt3Hc3Mr2",
+    "heading": "Coca-Cola eller Fanta sodavand",
+    "description": "PRISEN GÆLDER KUN VED KØB AF HELE FORPAKNINGER\nSPOT\n24x33 cl. + pant.\nPr. liter 7,45\nMax. 6 rammer pr. variant pr. kunde pr. dag til denne pris",
+    "pricing": {
+     "price": 59,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 24,
+      "to": 24,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-02T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "MDVNSpXD6g593DycGc-lR",
+    "heading": "Netto hakket oksekød 8-12%",
+    "description": "400 g. Pr. kg 87,50 VELSMAG bliver til Netto",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-02T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "046XHa5Mu6RsxSeImtm5U",
+    "heading": "Dansk kyllingebrystfilet",
+    "description": "PRISEN GÆLDER HELE OKTOBER 1000 g.",
+    "pricing": {
+     "price": 75,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 1000,
+      "to": 1000
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-30T22:00:00+0000",
+    "run_till": "2026-10-31T22:59:59+0000"
+   },
+   {
+    "id": "fWssGJQHQUcE9f6q0XShg",
+    "heading": "Merrild eller Gevalia original formalet kaffe 3-pak",
+    "description": "SÆLGES VEST FOR STOREBÆLT\nSÆLGES ØST FOR STOREBÆLT\nSVARER TIL 53,75 PR. HALVE KG\n3-pak\n1,2 kg.\nPr. kg 107,50",
+    "pricing": {
+     "price": 129,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1.2,
+      "to": 1.2
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-02T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "dqJMt0dMF8M9Eu9397HgR",
+    "heading": "Heineken eller Royal",
+    "description": "PRISEN GÆLDER KUN VED KØB AF HELE FORPAKNINGER\n18 x 33 cl. + pant.\nPr. liter 11,62\nMax 6 rammer pr. variant pr. kunde pr. dag til denne pris",
+    "pricing": {
+     "price": 69,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 18,
+      "to": 18,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-02T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "1l5EAd_-CI7adti_bKur5",
+    "heading": "Libero comfort eller up&go bleer",
+    "description": "27-37 stk. Str. 4-6. Pr. stk. max. 2,04",
+    "pricing": {
+     "price": 55,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-02T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "pLR9REJa6LyjBXoe6EOzl",
+    "heading": "Velsmag mørbrad af gris",
+    "description": "1650-2300 g. Pr. kg max. 66,06",
+    "pricing": {
+     "price": 109,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 1650,
+      "to": 2300
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-02T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "qSZA_CODcgIGGohjKTRjA",
+    "heading": "Sierra Tequila, Kahlua, Grants whisky, Gammel Dansk eller Bacardi rom",
+    "description": "50-70 cl. Pr. liter max. 218,00 + PRIS Pr. liter max 198,00 Gælder kun med Netto+ appen",
+    "pricing": {
+     "price": 109,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 50,
+      "to": 70
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-02T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "tUwkxuQxDisGxQZmlNXsR",
+    "heading": "Riberhus mellemlagret skiveost, Cheasy mild eller mellemlagret skiveost",
+    "description": "200-240 g. Pr. kg max. 120,00 + PRIS 20: Pr. kg max. 100,00 Gælder kun med Netto+ appen",
+    "pricing": {
+     "price": 24,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 240
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-02T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "jum83DONoR4Q9QkGbUliJ",
+    "heading": "A+ flydende vaskemiddel eller pods",
+    "description": "0,98-1,35 liter/20 stk.\nPr. vask max. 2,60",
+    "pricing": {
+     "price": 52,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-02T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "UpRaz-KfQVP3uJOVlyWSq",
+    "heading": "Black Coffee eller Löfbergs helbønner",
+    "description": "+ PRIS\n59:-\nPr. kg 147,50\nGælder kun med Netto+ appen\n400 g.\nPr. kg 162,50",
+    "pricing": {
+     "price": 65,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-02T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   }
+  ],
+  "1JBfaxkf": [
+   {
+    "id": "Sie0aTt9vWlIMQJQGNMkM",
+    "heading": "DAVA Skrabeæg",
+    "description": "M/L. 8 stk. Pr. stk. 2,00 Maks. 3 bk. pr. kunde pr. dag. Spot¹",
+    "pricing": {
+     "price": 16,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 8,
+      "to": 8
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "wTXtrst-j_OUKtt-1K9YQ",
+    "heading": "COCA-COLA/FANTA Sodavand",
+    "description": "Ekskl. pant. 24 x 330 ml. Pr. l 9,47 Maks. 3 pk. pr. kunde pr. dag. Sælges kun i hele rammer. Pr. l 8,71 Med Lidl Plus³",
+    "pricing": {
+     "price": 75,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "ml",
+      "si": {
+       "symbol": "l",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 330,
+      "to": 330
+     },
+     "pieces": {
+      "from": 24,
+      "to": 24,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "mteddNAAsmR9cIcBmmqvN",
+    "heading": "VITA D'OR Solsikke- eller rapsolie",
+    "description": "Fredags deal Gælder kun 16. okt.\n1 l. Pr. l 10,00 Maks. 3 stk. pr. kunde.\nKuponpris ved køb på min. 200 kr.3*\n*Køb af modermælkserstatning, tobaksvarer, håndkøbsmedicin, dag- og ugeblade, gavekort, madspildspose samt pant og/eller indløsning af Lidl Plus-kuponer eller pant vil blive fratrukket dit køb.",
+    "pricing": {
+     "price": 10,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "l",
+      "si": {
+       "symbol": "l",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-15T22:00:00+0000",
+    "run_till": "2026-10-16T21:59:59+0000"
+   },
+   {
+    "id": "8nYyGGRWfJnFXet6zbNXj",
+    "heading": "LAY'S Chips",
+    "description": "175 g. Pr. kg 68,57\nSpot¹",
+    "pricing": {
+     "price": 12,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 175,
+      "to": 175
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "B5L5xDs97Wjgs0SvLbwnd",
+    "heading": "MERRILD Kaffe",
+    "description": "Fast lav pris\n500 g. Pr. kg 119,90\n-24 %",
+    "pricing": {
+     "price": 59.95,
+     "pre_price": 78.95,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "kWuBdBkninBU57oT1q8ut",
+    "heading": "GOLDEN SUN Basmatiris",
+    "description": "1 kg. Pr. kg 15,00",
+    "pricing": {
+     "price": 15,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-14T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "45FjEU9KTuWe6ogSL2iYo",
+    "heading": "KNORR Lasagne eller lasagnette",
+    "description": "335-350 g. Pr. kg maks. 74,48\nFast lav pris",
+    "pricing": {
+     "price": 24.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 335,
+      "to": 350
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "YKJ_jSVrrhXVyTRUR9WWM",
+    "heading": "A+ Vaskemiddel",
+    "description": "1440 ml\nWinter Magic. 1440 ml. Pr. l 27,08\nSpot¹",
+    "pricing": {
+     "price": 39,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "ml",
+      "si": {
+       "symbol": "l",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 1440,
+      "to": 1440
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "WV8HQ0q-m1VB8aiCbw1TU",
+    "heading": "SONDEY Farmercookies, sandwichkiks med kakaocreme eller minisandwichkiks",
+    "description": "210-500 g. Pr. kg maks. 71,43",
+    "pricing": {
+     "price": 15,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 210,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-14T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "iok5ocOKSbnQ9Luc46ljT",
+    "heading": "ALESTO Peanuts",
+    "description": "1000 g\nRistede og saltede. 1000 g. Pr. kg 29,00",
+    "pricing": {
+     "price": 29,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 1000,
+      "to": 1000
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-14T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   },
+   {
+    "id": "M-xF_noq99pxNZB4shWnr",
+    "heading": "BON GELATI Is",
+    "description": "Dybfrost\n2000-2500 ml. Pr. l maks. 17,50 Maks. 3 stk. pr. kunde pr. dag.\nMed Lidl Plus³",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "ml",
+      "si": {
+       "symbol": "l",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 2000,
+      "to": 2500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-14T22:00:00+0000",
+    "run_till": "2026-10-17T21:59:59+0000"
+   }
+  ],
+  "ta8mAXfO": [
+   {
+    "id": "bKtV23UooY5iOa0cRhfxK",
+    "heading": "MATILDE Kakaoskummetmælk",
+    "description": "Fredagsdeal\nGælder kun 9. okt.\n1 l. Pr. l 7,00 Maks. 6 stk. pr. kunde.\nKuponpris ved køb på min. 200 kr.³\nLidl Plus\n21,75",
+    "pricing": {
+     "price": 7,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "l",
+      "si": {
+       "symbol": "l",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "YTUkOkcHg0OeFW3HNQiBo",
+    "heading": "KIMS Chips",
+    "description": "130-160 g. Pr. kg maks. 92,31\nSpot¹",
+    "pricing": {
+     "price": 12,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 130,
+      "to": 160
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "7riuvvB9m1XxFQBEWkP_y",
+    "heading": "MADVÆRKET Kyllingebryst- eller -inderfilet",
+    "description": "Storkøb\n1800-2000 g. Pr. kg maks. 77,22\nSpot¹",
+    "pricing": {
+     "price": 139,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 1800,
+      "to": 2000
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "lz-_a0Pygwf7Atw_UN-is",
+    "heading": "COSTA BRAVA Salchichón, serrano eller chorizo i skiver",
+    "description": "Fast lav pris\n60-80 g. Pr. kg maks. 165,83",
+    "pricing": {
+     "price": 9.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 60,
+      "to": 80
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "Hu3mQYiQFp_elRhOeAAyX",
+    "heading": "LIBERO Bleer",
+    "description": "Str. 4 / 7-12 kg.\nStr. 5 / 9-14 kg.\nStr. 6 / 13-20 kg.\n32-37 stk.\nPr. stk. maks. 1,84",
+    "pricing": {
+     "price": 59,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "x1AA46a2EJHYRnU4hINoj",
+    "heading": "MISTER CHOC Flødeboller eller chokoladeæg",
+    "description": "200-300 g. Pr. kg maks. 145,00",
+    "pricing": {
+     "price": 29,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 300
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "f3KkxuF0A95b1npI1Vkx6",
+    "heading": "FRESHONA Helbladet spinat",
+    "description": "Dybfrost\nFast lav pris\n450 g. Pr. kg 19,89\n-18 %\n10,95",
+    "pricing": {
+     "price": 8.95,
+     "pre_price": 10.95,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 450,
+      "to": 450
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "Hd2x_5ui_mlLQx4KdJlNK",
+    "heading": "CHEF SELECT Forårsruller",
+    "description": "Fast lav pris\n-25 %\nDybfrost\n400 g. Pr. kg 37,38",
+    "pricing": {
+     "price": 14.95,
+     "pre_price": 19.95,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "lH9YNZI0YMzGocDV0Uc1k",
+    "heading": "NAUTICA Røget-, gravad- eller varmrøget laks",
+    "description": "Fast lav pris\n100-125 g. Pr. kg maks. 299,50\nSpar 17-25 %\n36,25-39,95",
+    "pricing": {
+     "price": 29.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 100,
+      "to": 125
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "0a6TWPoHiuFJPsohxcF-W",
+    "heading": "RED BULL Energidrik",
+    "description": "4-pak Ekskl. pant. 4 x 25 cl. Pr. l 45,00",
+    "pricing": {
+     "price": 45,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 25,
+      "to": 25
+     },
+     "pieces": {
+      "from": 4,
+      "to": 4,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "y6LVaqQf8t40hD3NowQnx",
+    "heading": "TUBORG Øl",
+    "description": "Sælges kun i hele rammer\n0,0-4,6 % alc. Ekskl. pant. 15-18 x 33 cl. Pr. l maks. 15,15 Maks. 3 ks. pr. kunde pr. dag.\nMed Lidl Plus³\nPr. l maks. 13,13",
+    "pricing": {
+     "price": 75,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 15,
+      "to": 18,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "_wsKBDA2B67Gjr1NPJgBP",
+    "heading": "FERRERO Nutella",
+    "description": "350 g. Pr. kg 82,86 Maks. 3 stk. pr. kunde pr. dag.\nMed Lidl Plus³ -41 %",
+    "pricing": {
+     "price": 29,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 350,
+      "to": 350
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   }
+  ],
+  "VE4dDRAN": [
+   {
+    "id": "Zvtc3q0Q-80UqyXCn1bV3",
+    "heading": "MATILDE Kakaoskummetmælk",
+    "description": "1 l. Pr. l 7,00 Maks. 6 stk. pr. kunde.\nFredags-deal Gælder kun 9. okt.\nKuponpris ved køb på min. 200 kr.³\n*Køb af modermælkserstatning, tobaksvarer, håndkøbsmedicin, dag- og ugeblade, gavekort, madspildspose samt pant og/eller indløsning af Lidl Plus-kuponer eller pant vil blive fratrukket dit køb.",
+    "pricing": {
+     "price": 7,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "l",
+      "si": {
+       "symbol": "l",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-09T21:59:59+0000"
+   },
+   {
+    "id": "xk8Ji1vCrBezUVUyqgjSB",
+    "heading": "KIMS Chips",
+    "description": "130-160 g. Pr. kg maks. 92,31\nSpot¹",
+    "pricing": {
+     "price": 12,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 130,
+      "to": 160
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "MDZnK48GI8cCuiUIiid0O",
+    "heading": "Nakkefilet",
+    "description": "Pr. 1/2 kg\nMADVÆRKET\nPr. kg 59,90\nFast lav pris",
+    "pricing": {
+     "price": 29.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "1_W7U9P33ifg2YMaBrvYo",
+    "heading": "COSTA BRAVA Salchichón, serrano eller chorizo i skiver",
+    "description": "Fast lav pris\n60-80 g.\nPr. kg maks. 165,83",
+    "pricing": {
+     "price": 9.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 60,
+      "to": 80
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "WqUXkr1nd59CeYkgZEx4U",
+    "heading": "LIBERO Bleer",
+    "description": "Str. 4 / 7-12 kg. Str. 5 / 9-14 kg. Str. 6 / 13-20 kg. 32-37 stk. Pr. stk. maks. 1,84",
+    "pricing": {
+     "price": 59,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "u9ko9WSV2wsMB67LrA5Xd",
+    "heading": "MISTER CHOC Flødeboller eller chokoladeæg",
+    "description": "200-300 g. Pr. kg maks. 145,00",
+    "pricing": {
+     "price": 29,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 300
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "I9m93CC7pRM3CKoHA4Fp5",
+    "heading": "FRESHONA Helbladet spinat",
+    "description": "Dybfrost\nFast lav pris\n-18 %\n10,95\n450 g.\nPr. kg 19,89",
+    "pricing": {
+     "price": 8.95,
+     "pre_price": 10.95,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 450,
+      "to": 450
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "LP47IlfL7EI0kxR-I5ECA",
+    "heading": "Kyllingebryst- eller -inderfilet",
+    "description": "MADVÆRKET\nStorkøb\n1800-2000 g. Pr. kg maks. 77,22",
+    "pricing": {
+     "price": 139,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 1800,
+      "to": 2000
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "cV6fsjlDaFq2_lFUIrmtA",
+    "heading": "NAUTICA Røget-, gravad- eller varmrøget laks",
+    "description": "Fast lav pris\n100-125 g.\nPr. kg maks. 299,50\nSpar 17-25 %\n36,25-39,95",
+    "pricing": {
+     "price": 29.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 100,
+      "to": 125
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-03T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "8guSGXwIiQfl6BpbqJN0n",
+    "heading": "RED BULL Energidrik",
+    "description": "4-pak\nEkskl. pant. 4 x 25 cl. Pr. l 45,00",
+    "pricing": {
+     "price": 45,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 25,
+      "to": 25
+     },
+     "pieces": {
+      "from": 4,
+      "to": 4,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "sbveHao3pkfcpgjXh0wiK",
+    "heading": "TUBORG Øl",
+    "description": "Sælges kun i hele rammer\n0,0-4,6 % alc. Ekskl. pant. 15-18 x 33 cl. Pr. l maks. 15,15 Maks. 3 ks. pr. kunde pr. dag.\nMed Lidl Plus³\nPr. l maks. 13,13",
+    "pricing": {
+     "price": 75,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 495,
+      "to": 594
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   },
+   {
+    "id": "d99sOZp7MbC7QQKelwDnN",
+    "heading": "FERRERO Nutella",
+    "description": "350 g. Pr. kg 82,86 Maks. 3 stk. pr. kunde pr. dag.\nMed Lidl Plus³ -41%",
+    "pricing": {
+     "price": 29,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 350,
+      "to": 350
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 3
+     }
+    },
+    "run_from": "2026-10-07T22:00:00+0000",
+    "run_till": "2026-10-10T21:59:59+0000"
+   }
+  ],
+  "Xu-iwtQf": [
+   {
+    "id": "g2XC9BH4Ut2q8W6-UFAgL",
+    "heading": "DANISH CROWN Hakket oksekød med 35 % grøntsager",
+    "description": "400 g / pk. Pr. kg 74,88 Fast lav pris",
+    "pricing": {
+     "price": 29.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-05-02T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "93YhvAaggBVbKAoTvFYCW",
+    "heading": "MADVÆRKET Kyllingebrystfilet eller hele -lår med ryg",
+    "description": "Storkøb\n1000-1600 g / pk.\nPr. kg maks. 64,95\nFast lav pris",
+    "pricing": {
+     "price": 64.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 1000,
+      "to": 1600
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-29T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "MdSsQIgEgwOX0CkllliLt",
+    "heading": "MADVÆRKET Hakket oksekød",
+    "description": "14-18 % fedt. 800 g / pk. Pr. kg 91,19 Fast lav pris",
+    "pricing": {
+     "price": 72.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 800,
+      "to": 800
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-05-02T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "ydKbGl-mE34D3CklCfQ2b",
+    "heading": "MADVÆRKET Piskefløde",
+    "description": "36 % fedt. 500 ml / stk. Pr. liter 29,90\nFast lav pris",
+    "pricing": {
+     "price": 14.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "ml",
+      "si": {
+       "symbol": "l",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-29T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "aM3urV82Yuwdl_AgNqCNq",
+    "heading": "HAVBLÅ Hel laksefilet med skind",
+    "description": "Pr. 1/2 kg\nPr. kg 149,90\nFast lav pris",
+    "pricing": {
+     "price": 74.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 0.5,
+      "to": 0.5
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-29T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "b8xi12ZUcLI-CxcYICG1Z",
+    "heading": "MILBONA Letsaltet smør eller smørbar",
+    "description": "200-250 g / stk. Pr. kg maks. 49,75\nFast lav pris",
+    "pricing": {
+     "price": 9.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 250
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-05-02T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "3I62RNKtlM88plU6gnNfk",
+    "heading": "LURPAK Smør eller smørbar",
+    "description": "200 g / stk. Pr. kg 99,75\nFast lav pris",
+    "pricing": {
+     "price": 19.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 200
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-05-02T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "k1Oj14I7FAy7TQWQIp4W9",
+    "heading": "MADVÆRKET Økologisk smør",
+    "description": "200 g / stk. Pr. kg 74,75",
+    "pricing": {
+     "price": 14.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 200
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-05-02T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "_gwYF-L2nX4EEcUUscDJ7",
+    "heading": "MILBONA Hytteost",
+    "description": "400 g / stk. Pr. kg 32,38\nFast lav pris",
+    "pricing": {
+     "price": 12.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-05-02T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "SmtexkRDPSiqRHi7YPYsL",
+    "heading": "MADVÆRKET Kyllingevinger, -lårfilet, -underlår eller -overlår med ryg",
+    "description": "400-800 g / pk.\nPr. kg maks. 74,88\nFast lav pris",
+    "pricing": {
+     "price": 29.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 800
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-29T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   }
+  ],
+  "nIYwBzZL": [
+   {
+    "id": "I9cLrJyBAzroXuy_-NY-u",
+    "heading": "Merrild eller Lavazza kaffe",
+    "description": "340-500 g formalet kaffe eller 150 g Merrild gold instant kaffe. Flere varianter. Pr. kg max. 393,33",
+    "pricing": {
+     "price": 59,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 150,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "MIiI9JjQkhtvVTyZWBjvt",
+    "heading": "Bakkedal smørbar",
+    "description": "200 g. Pr. kg 60,-",
+    "pricing": {
+     "price": 12,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 200
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "dPj3l9pQI2hkl1jyuiO_v",
+    "heading": "Kohberg familierugbrød eller protein boller",
+    "description": "450-750 g. Pr. kg max. 26,67 Pris ugens øvrige dage op til 22,95",
+    "pricing": {
+     "price": 12,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 450,
+      "to": 750
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "2v6bLu2hyug0vosFPGOzy",
+    "heading": "Ovnklar flæskesteg af dansk gris",
+    "description": "Pr. 1/2 kg\nPr. kg 37,90",
+    "pricing": {
+     "price": 18.95,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 0.5,
+      "to": 0.5
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "Snl9SfubmbA1HbtUg45E0",
+    "heading": "Danske skrabeæg",
+    "description": "10 stk. Str. M/L. Pr. stk. 2,90",
+    "pricing": {
+     "price": 29,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 10,
+      "to": 10
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "rnW5nNBM-Z8o0Zy6EkRVB",
+    "heading": "Nakkefilet af dansk gris, entrecotes eller ribeyes",
+    "description": "600-2800 g. Pr. kg max. 215,-",
+    "pricing": {
+     "price": 129,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 600,
+      "to": 2800
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "gmJT-2-XaHVZoBTl7BrhX",
+    "heading": "Omo vaskemiddel eller Bamseline skyllemiddel",
+    "description": "700ml/700 g vaskemiddel eller 762-925 ml skyllemiddel. Flere varianter. Pr. liter max. 32,81 /pr. vask 2,50",
+    "pricing": {
+     "price": 25,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "oCpyXd4rvupP4r_90zOvv",
+    "heading": "Økologiske hakkede eller flåede tomater",
+    "description": "salling ØKO 400 g. Pr. kg 15,- Pris ugens øvrige dage op til 7,50",
+    "pricing": {
+     "price": 6,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-10T22:00:00+0000",
+    "run_till": "2026-10-11T21:59:59+0000"
+   },
+   {
+    "id": "gYCg1L2tXM2uFp2TRJc-Z",
+    "heading": "Carlsberg eller Tuborg alkoholfri øl",
+    "description": "Det nemme alternativ Vi gør det nemt at vælge alkoholfrit – til samme pris pr. dåse 6x33 cl. ds. Flere varianter. Gælder kun lukkede forpakninger. Ekskl. embl. Pr. liter 15,15",
+    "pricing": {
+     "price": 30,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 6,
+      "to": 6,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "xPmsMG5oXqDZX6PE0lwLO",
+    "heading": "Always discreet",
+    "description": "a 6-24 stk. Bind, trusseindlæg eller pants. Pr. stk. max. 3,33 Max. 1 stk. til denne pris",
+    "pricing": {
+     "price": 20,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 1
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "Urie3mbUsBbh_HB9gnjdM",
+    "heading": "Grana Padano",
+    "description": "200 g. Pr. kg 175,- Pr. kg 160,- Gælder kun med føtex plus appen",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 200,
+      "to": 200
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "uItqbQyX42WRswdEdZUen",
+    "heading": "salling FRI Vådservietter",
+    "description": "100 stk. Pr. stk. 0,10\nPr. stk. 0,09\nGælder kun med føtex plus appen",
+    "pricing": {
+     "price": 10,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "TJQly3z7DIAm5v3o4CfXN",
+    "heading": "Hakket dansk grisekød",
+    "description": "400 g. 4-7% fedt. Pr. kg 62,50\nplus pris 20,-\nPr. kg 50,-\nGælder kun med føtex plus appen",
+    "pricing": {
+     "price": 25,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 400,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   }
+  ],
+  "lU_YDFnh": [
+   {
+    "id": "4pWtY9dBUJIoKe2ztTEaT",
+    "heading": "Danpo hel kylling eller hakket kyllingekød",
+    "description": "700-1350 g. Hakket kyllingekød med 3-7% fedt. Max. 4 stk. til denne pris",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 700,
+      "to": 1350
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 4
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "L5V0_Qc3XrJMLrFVGwYCl",
+    "heading": "Dava danske frilandsæg",
+    "description": "10 stk. Str. S/M/L. Pr. stk. 2,90",
+    "pricing": {
+     "price": 29,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 10,
+      "to": 10
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "3h8tdwRB2f4Ul7FGe-mf0",
+    "heading": "Ølmarked",
+    "description": "15x33 cl. ds. Tuborg Classic, Classic alkoholfri eller Carlsberg IPA. 18x33 cl. ds. Carlsberg Pilsner eller Tuborg Grøn. Gælder kun lukkede forpakninger. Ekskl. embl. Pr. liter max. 18,18\nplus pris 70,- Pr. liter max. 14,14 Gælder kun med føtex plus appen",
+    "pricing": {
+     "price": 90,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 15,
+      "to": 18,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "wQmbaQi0BgXJegs8PmWaY",
+    "heading": "Rose dansk kyllingebrystfilet eller udbenet lår",
+    "description": "900-1000 g. Pr. kg max. 72,22",
+    "pricing": {
+     "price": 65,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 900,
+      "to": 1000
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "I6UKXZ1yKSTXHlyJRLai_",
+    "heading": "Faxe eller Pepsi sodavand",
+    "description": "Max. 12 stk. til denne pris 1,5 liter fl. Flere varianter. Ekskl. embl. Pr. liter 7,33",
+    "pricing": {
+     "price": 11,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "l",
+      "si": {
+       "symbol": "l",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1.5,
+      "to": 1.5
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 12
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "Z8nQpsCUs2C0PGGdkHC-D",
+    "heading": "Pågen Gifflar eller brød",
+    "description": "280-800 g. Udvalgte varianter. Pr. kg max. 57,69 plus pris Pr. kg max 38,46 Gælder kun med føtex plus appen",
+    "pricing": {
+     "price": 15,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 280,
+      "to": 800
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "qozLOW2SbUSBNWi091jV5",
+    "heading": "Ribbenssteg eller mørbrad af dansk gris",
+    "description": "1,65-3 kg. Pr. kg max. 53,94",
+    "pricing": {
+     "price": 89,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1.65,
+      "to": 3
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "tSe9cuQgBZPBXeoOWVXFq",
+    "heading": "Toms guldbarre, Haribo eller Katjes slikpose",
+    "description": "45-80 g. Flere varianter. Pr. kg max. 222,22",
+    "pricing": {
+     "price": 10,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 45,
+      "to": 80
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "wHqcn5auM5s4ydmwhXT9H",
+    "heading": "Peter Larsen Kaffe, Gevalia, Café Noir eller Illy kaffe",
+    "description": "400-500 g Gevalia, Café Noir eller Peter Larsen perfekt med mælk, blanding 72 eller 95 formalet kaffe, 95-250 g Illy kaffe. Flere varianter. Pr. kg max. 578,95",
+    "pricing": {
+     "price": 55,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 95,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "yo83a742okEo4EEXQhW3T",
+    "heading": "Coca Cola sodavand",
+    "description": "24x33 cl. ds. Regular eller zero. Gælder kun lukkede forpakninger. Ekskl. embl.\nMax. 6 rammer til denne pris",
+    "pricing": {
+     "price": 69,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 24,
+      "to": 24,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "ICD3cf-hyPzEExe83oANm",
+    "heading": "Spangsberg flødeboller",
+    "description": "124 g. Flere varianter. Pr. kg 201,61 Pr. kg 161,29 Gælder kun med føtex plus appen",
+    "pricing": {
+     "price": 25,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 124,
+      "to": 124
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   }
+  ],
+  "zQZWEtmo": [
+   {
+    "id": "6pFqq2-OT27mqyUAm2lBW",
+    "heading": "Luksus julefrokost",
+    "description": "Marinerede sild med løgringe og karrysalat Æg og rejer Fiskefilet med remoulade og citron Røget laks med æggestand og asparges Ribbensteg med rødkål Tartelet med høns i asparges Glaseret skinke med grønlangkål Leverpostej med bacon og champignon Risalamande med kirsebærsauce Brød fra føtex bageren og smørbart Pr. kuvert",
+    "pricing": {
+     "price": 199,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "57bNB3ZI8nh0MBuUl87b8",
+    "heading": "Den store julefrokost",
+    "description": "Marinerede sild med løgringe og karrysalat Fiskefilet med remoulade og citron Ribbensteg med rødkål Leverpostej med stegt bacon og champignon Tartelet med høns i asparges Æg og rejer Risalamande med kirsebærsauce Brød fra føtex bageren og smørbart Pr. kuvert",
+    "pricing": {
+     "price": 159,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "4I14e6azXC6yXYMdw3o73",
+    "heading": "Den klassiske julefrokost",
+    "description": "Marinerede sild med løgringe og karrysalat\nFiskefilet med remoulade og citron\nFrikadeller med rødkål\nÆg og rejer\nRisalamande med kirsebærsauce\nBrød fra føtex bageren og smørbart\nBestil senest 4 dage før afhentning. Kan afhentes fra d. 9. oktober til og med d. 30. december\nMinimumsbestilling på 6 kuverter.\nKlar til servering - ingen opvarmning nødvendig\nPr. kuvert",
+    "pricing": {
+     "price": 119,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": 6,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-12-30T22:59:59+0000"
+   },
+   {
+    "id": "14G6WlVQXBUcpFCjfeZA6",
+    "heading": "Nytårstapas",
+    "description": "En indbydende tapasanretning med nøje udvalgte smagsoplevelser. Kød & charcuteri: Udvalget af charcuteri spænder fra krydret chorizo, fintskåret parmaskinke og italiensk salami til mini fuet og søde dadler svøbt i bacon. Fisk & skaldyr: Fra havet byder anretningen på rørt lakserilette, tunmousse og saftige, marinerede vannamei-rejer. Ost: Et udvalg af klassiske og smagfulde oste – cremet brie, Aged havarti og gouda med chili. Tilbehør & specialiteter: Et udvalg med alt fra hummus, frisk basilikumpesto og aioli til klassisk hønsesalat og tapenade, suppleret af marinerede rødløg, oliven med hvidløg, cornichoner og flødeostfyldte peberdew. Frugt & grønt: Friske druer og bær, sød melon og cherrytomater. Brød & sprødt: Til at fuldende serveringen får du friskbagt baguette, sprøde rugbrødssnacks, saltmandler og delikate ostekiks. Anretning til 2 personer",
+    "pricing": {
+     "price": 399,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "LZttfwqGZ5oyFv-ihNCeY",
+    "heading": "Mørbrad med svampesauce",
+    "description": "Du kan sætte dit personlige præg på julebordet og tilvælge dine helt egne favoritter som supplement til vores julemenuer. Tilvalgene kan ikke bestilles særskilt. Minimumsbestilling på 6 kuverter.",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": 6,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "LHjO4R5d4yfNh3ao9H6mS",
+    "heading": "Nytårsbuffet",
+    "description": "Ønsker du, at menuen skal stå på valgmuligheder, er vores nytårsbuffet det oplagte valg. Buffeten byder på saftig sous vide oksefilet og marineret kyllingebryst toppet med mozzarella og soltørrede tomater. Serveret med urtemarinerede kartofler og cremede flødekartofler. På den grønne side finder du en klassisk broccolisalat samt en sprød spidskålssalat med grillede græskar, salattern og mandler. Dertil medfølger bearnaisesauce samt sprødt brød og smørbart.",
+    "pricing": {
+     "price": 189,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": 6,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "u-puEunPdLd9KgPdWwmbg",
+    "heading": "Tarteletter med høns i asparges",
+    "description": "Du kan sætte dit personlige præg på julebordet og tilvælge dine helt egne favoritter som supplement til vores julemenuer. Tilvalgene kan ikke bestilles særskilt. Minimumsbestilling på 6 kuverter.",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": 6,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "c24n3uMX1J4_wDHmRVKyU",
+    "heading": "Ostebord med tre delikate oste, kiks og marmelade",
+    "description": "Du kan sætte dit personlige præg på julebordet og tilvælge dine helt egne favoritter som supplement til vores julemenuer. Tilvalgene kan ikke bestilles særskilt. Minimumsbestilling på 6 kuverter.",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": 6,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "VJRXxn_z3_uWKiAs3i2wG",
+    "heading": "Glaseret skinke med grønlangkål",
+    "description": "Du kan sætte dit personlige præg på julebordet og tilvælge dine helt egne favoritter som supplement til vores julemenuer. Tilvalgene kan ikke bestilles særskilt. Minimumsbestilling på 6 kuverter.",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": 6,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "6Ewrd_-1TPSjZYvn9lJVu",
+    "heading": "Laks med røræg og asparges",
+    "description": "Du kan sætte dit personlige præg på julebordet og tilvælge dine helt egne favoritter som supplement til vores julemenuer. Tilvalgene kan ikke bestilles særskilt. Minimumsbestilling på 6 kuverter.",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": 6,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   }
+  ],
+  "vsFWO1ph": [
+   {
+    "id": "9BVNOMp2boz3lAoUzPtQw",
+    "heading": "Danske skrabeæg",
+    "description": "10 stk. M/L. Pr. stk. 1.90",
+    "pricing": {
+     "price": 19,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 10,
+      "to": 10
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "UKQBa0qoO-ptbdDQqJOwL",
+    "heading": "Tuborg Classic, Grøn Tuborg eller Carlsberg Pilsner",
+    "description": "30x33 cl. fl. Ekskl. embl. Pr. liter 13.03\nMax. 6 kasser til denne pris\nFrit valg",
+    "pricing": {
+     "price": 129,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 30,
+      "to": 30,
+      "min": null,
+      "max": 6
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "PgFp8TvCvdGi0VOhpkL82",
+    "heading": "BKI, Karat eller Peter Larsen kaffe",
+    "description": "300-400 g Peter Larsen blanding 66, Karat original, BKI extra, guld, mørk, morgen eller økologisk formalet kaffe. Flere varianter. Pr. kg max. 116.67",
+    "pricing": {
+     "price": 35,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 300,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "XyUm5BJ_D7HHzDhXjOeiu",
+    "heading": "Ribbensteg eller nakkefilet af dansk gris",
+    "description": "1,9-3 kg. Pr. kg max. 57.37",
+    "pricing": {
+     "price": 109,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1.9,
+      "to": 3
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "FSKTYHdZQ1D4Xw2jGpvcn",
+    "heading": "Lurpak smør, smørbar eller pisket smør",
+    "description": "150-200 g. Flere varianter. Pr. kg max. 100.-\nFrit valg",
+    "pricing": {
+     "price": 20,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 150,
+      "to": 200
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "vXcnMnin7SC5MDwT71Wcl",
+    "heading": "Hakket grise/kalvekød eller mørbrad af gris",
+    "description": "2,2-2,9 kg. Hakket grise/kalvekød 8-12% fedt. Pr. kg max. 54.09\nFRIT VALG",
+    "pricing": {
+     "price": 119,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 2.2,
+      "to": 2.9
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "AeB5hORXp4ZEXZbYKrL-O",
+    "heading": "Danpo kyllingebrystfilet eller -inderfilet",
+    "description": "2,4 kg. Pr. kg 70.42",
+    "pricing": {
+     "price": 169,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 2.4,
+      "to": 2.4
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "ZTQ7tboKm5fh8ATxeAMFM",
+    "heading": "KiMs chips eller Popz popcorn",
+    "description": "a 80-270 g. Flere varianter. Pr. kg max. v/merkøb 166.67",
+    "pricing": {
+     "price": 40,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 80,
+      "to": 270
+     },
+     "pieces": {
+      "from": 3,
+      "to": 3,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "zyL-fiyFIQfgV7iltQpAw",
+    "heading": "Secreto, presa eller koteletter af Iberico gris",
+    "description": "DYBFROST\n180-300 g. Flere varianter. Pr. kg max. 327.78\nFRIT VALG",
+    "pricing": {
+     "price": 59,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 180,
+      "to": 300
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "UrfjHGD4af6Q7fDzvfshk",
+    "heading": "Always eller Tampax",
+    "description": "3 pk. Always bind, organic eller Tampax a 8-30 stk. eller 6 pk. Trusseindlæg a 22-40 stk. Flere varianter. Pr. stk. max. v/merkøb 2.75",
+    "pricing": {
+     "price": 99,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 3,
+      "to": 6,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "frkXpxXW6AlH7xVipAOdq",
+    "heading": "Faxe Kondi eller Pepsi Max sodavand",
+    "description": "24x33 cl. ds. Gælder kun lukkede forpakninger. Ekskl. Embl. Pr. liter 11.24\nPr. liter 9.47\nGÆLDER KUN MED BILKA PLUS APPEN",
+    "pricing": {
+     "price": 89,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 24,
+      "to": 24,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "dR4pnF-sJeV9BfQQjif6B",
+    "heading": "Puck ost",
+    "description": "500 g. Pr. kg 56.-\nPr. stk.\nPLUS PRIS PR. STK.\nPr. kg 50.-\nGÆLDER KUN MED BILKA PLUS APPEN",
+    "pricing": {
+     "price": 28,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 500,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "_fM5O-9PHDtdh3PCLIjC7",
+    "heading": "Frost marked",
+    "description": "salling DYBFROST\n300-400 g. Flere varianter. Pr. stk. 120.-\nFrit valg\nPLUS PRIS FRIT VALG\nPr. kg max. 100.-\nGÆLDER KUN MED BILKA PLUS APPEN",
+    "pricing": {
+     "price": 36,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 300,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   }
+  ],
+  "dmlbrDnh": [
+   {
+    "id": "6oTa7ixQHqkbWM1H0K0EO",
+    "heading": "iPhone 17e 256GB",
+    "description": "MAX. 1 STK. TIL DENNE PRIS. Husk PanzerGlass til din nye iPhone. Fra 199,-. iPhone 17e har en smuk 6,1” Super Retina XDR-skærm, den hurtige og effektive A19-chip, batteritid til hele dagen og lagerplads på 256 GB og opefter.",
+    "pricing": {
+     "price": 5699,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 1
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "hQxtwXanjDhQbIWNS-yBp",
+    "heading": "Windsor fyrfadslys",
+    "description": "225 stk. 6 timer eller 200 stk. 8 timer. Normalpris 220.- SPAR 61.-",
+    "pricing": {
+     "price": 159,
+     "pre_price": 220,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "zHboQC9aDiXDsaN_79tt1",
+    "heading": "Breeze kuffert sæt",
+    "description": "Består af en large og en kabine kuffert. Fredag d. 25/9 - torsdag d. 8/10. Normalpris 999.-",
+    "pricing": {
+     "price": 599.4,
+     "pre_price": 999,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "4eAavOFsh8-xvuo2sKcJ9",
+    "heading": "Varme-tæppe, varmepude & fodvarmer",
+    "description": "• Fodvarmer har 6 justerbare varmeindstillinger • Automatisk slukning efter 90 minutter • Varmetæppe har 10 varmeindstillinger • Plaiden kan maskinvaskes, når controlleren fjernes, så du kan holde den ren og frisk. Fredag d. 2/10 - torsdag d. 22/10. Normalpris op til 249.-",
+    "pricing": {
+     "price": 149,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-22T21:59:59+0000"
+   },
+   {
+    "id": "7lKiCIV2L0EGcEz-pSzOs",
+    "heading": "iPhone 18 Pro 256GB",
+    "description": "iPhone 18 Pro. 6,3” ProMotion-skærm, 48 MP Fusion-hovedkamera med variabel blændeåbning, kæmpe boost i batteritid og A20 Pro-chip. \nMAX. 1 STK. TIL DENNE PRIS",
+    "pricing": {
+     "price": 10999,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 1
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "9Vg2hl_ABpVez83ofjcL6",
+    "heading": "Lucca trolley",
+    "description": "Sort. • Mellem 399,20 Normalpris 499,- Stor 479,20 Normalpris 599,- Normalpris 399.- Håndbagagetrolley",
+    "pricing": {
+     "price": 319.2,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-24T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "AT8vz0Wls_MzCDqrdRkxL",
+    "heading": "ulddragt",
+    "description": "B. 50/56-86/92 cm. Normalpris 349.-",
+    "pricing": {
+     "price": 261.75,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "N6Mz9vkaC_cVG3Dtjs7Bh",
+    "heading": "Denver PR-2500 FHD projektor",
+    "description": "• Skærmstørrelse fra 37\"-170\" • Full HD • HDMI og USB-C • 175 ANSI Lumens. Fredag d. 2/10 - torsdag d. 15/10. Normalpris 499.- SPAR 150.- MAX. 1 STK. TIL DENNE PRIS",
+    "pricing": {
+     "price": 349,
+     "pre_price": 499,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 1
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "IwZyblaescxHadE6GOT7f",
+    "heading": "BOSCH Støvsuger med pose",
+    "description": "• Model: BGLS2LW1 • Lille kompakt støvsuger, vejer kun 4,7 kg • Vaskbart filter og 3,5 liter støvsugerpose. Fredag d. 2/10 - torsdag d. 29/10. Normalpris 899.-",
+    "pricing": {
+     "price": 599,
+     "pre_price": 899,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-29T22:59:59+0000"
+   },
+   {
+    "id": "hY4NZm3BPqV22jYhHZyRJ",
+    "heading": "Vacation trolley",
+    "description": "Sort, rosa, grøn, grå eller blå. • Mellem 479,20 Normalpris 599,- Stor 559,20 Normalpris 699,- Normalpris 499.- Håndbagagetrolley",
+    "pricing": {
+     "price": 399.2,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-24T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "4z111kZJxwmMIhZT2-fOD",
+    "heading": "BT-600B Bluetooth højttaler",
+    "description": "PROSONIC\n60 Watt RMS • 4800 mAh batteri & IPX5 • RGB-lys & TWS • Robust håndtag\nPLUS PRIS 449.- GÆLDER KUN MED BILKA PLUS APPEN",
+    "pricing": {
+     "price": 479,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   }
+  ],
+  "CNVYSkv9": [
+   {
+    "id": "zXs-O108_YIoMMaW1kjYq",
+    "heading": "Danske skrabeæg",
+    "description": "10 stk. M/L. Pr. stk. 1.90",
+    "pricing": {
+     "price": 19,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 10,
+      "to": 10
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "Yfc_8igsao4111WwuCZgI",
+    "heading": "Faxe Kondi eller Pepsi Max sodavand",
+    "description": "24x33 cl. ds. Gælder kun lukkede forpakninger. Ekskl. Embl. Pr. liter 11.24\nPLUS PRIS FRIT VALG\nPr. liter 9.47\nGÆLDER KUN MED BILKA PLUS APPEN\nFRIT VALG",
+    "pricing": {
+     "price": 89,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "cl",
+      "si": {
+       "symbol": "l",
+       "factor": 0.01
+      }
+     },
+     "size": {
+      "from": 33,
+      "to": 33
+     },
+     "pieces": {
+      "from": 24,
+      "to": 24,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "8_jkGYNiR3HaERQg-s011",
+    "heading": "Hakket okse-, grise- eller grise/kalvekød",
+    "description": "900-2500 g. Pr. kg max. 116.67 FRIT VALG 900 g. 8-12% fedt 1,8 kg. 14-18% fedt 2,5 kg. 8-12% fedt PLUS PRIS FRIT VALG 89.- Pr. kg max. 98.89 GÆLDER KUN MED BILKA PLUS APPEN",
+    "pricing": {
+     "price": 105,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 900,
+      "to": 2500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "5WDYIDDvJbGzVv79jSKxo",
+    "heading": "Ribbensteg eller nakkefilet af dansk gris",
+    "description": "1,9-3 kg. Pr. kg max. 57.37 FRIT VALG 2-3 kg 1,9-2,8 kg",
+    "pricing": {
+     "price": 109,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1.9,
+      "to": 3
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "BoAzz2TP73unN7FNGSU9f",
+    "heading": "Merrild eller Lavazza formalet kaffe",
+    "description": "340-500 g. Flere varianter. Pr. kg max. 144.12",
+    "pricing": {
+     "price": 49,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 340,
+      "to": 500
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "5RJh8NSVNMj4lDIDIy11f",
+    "heading": "Libero Touch bleer",
+    "description": "3 pk. Open str. 1. a 22 stk eller 2 pk. Open str. 2 a 32 stk. Pr. stk. max. v/merkøb 1.64 Frit valg",
+    "pricing": {
+     "price": 105,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 2,
+      "to": 3,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "mdpanbYECVZiAYeynS28U",
+    "heading": "Libero bleer",
+    "description": "60-105 stk. Up&Go eller Comfort. Flere størrelser. Pr. stk. max. v/merkøb 2.75\nPR. KASSE TRIPLEKASSE",
+    "pricing": {
+     "price": 165,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "S9xhwS_jGaPhRMd8cUJvI",
+    "heading": "KiMs chips eller Popz popcorn",
+    "description": "a 80-270 g. Flere varianter. Pr. kg max. v/merkøb 166.67",
+    "pricing": {
+     "price": 40,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 80,
+      "to": 270
+     },
+     "pieces": {
+      "from": 3,
+      "to": 3,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "t6UpvgkDbkUkuWLmx94Q8",
+    "heading": "Merrild, Karat eller Lavazza formalet kaffe",
+    "description": "250-400 g Merrild specialristet, Karat Original, Lavazza Oro eller rossa. Pr. kg max. 132.- MAX. 16 PS. TIL DENNE PRIS",
+    "pricing": {
+     "price": 33,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 250,
+      "to": 400
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 16
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "ryxmdXk_X44BOmxFXh3sE",
+    "heading": "Kyllingebrystfilet eller -inderfilet",
+    "description": "2,6 kg. 100% kylling. Pr. kg 68.85",
+    "pricing": {
+     "price": 179,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "kg",
+      "si": {
+       "symbol": "kg",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 2.6,
+      "to": 2.6
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   },
+   {
+    "id": "jQGXMf_YIYVFrweMCbhUt",
+    "heading": "Den Gamle Fabrik marmelade",
+    "description": "270 g. Flere varianter. Pr. kg 66.67\nFrit valg\nPLUS PRIS FRIT VALG\nPr. kg 51.85\nGÆLDER KUN MED BILKA PLUS APPEN",
+    "pricing": {
+     "price": 18,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 270,
+      "to": 270
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-08T21:59:59+0000"
+   }
+  ],
+  "JrDWSadK": [
+   {
+    "id": "TWej2JcajtC8GIOn_rmZg",
+    "heading": "Pizzeria med udbringningsfartøjer",
+    "description": "Model: 60496. Pris LEGO.dk 449,95*",
+    "pricing": {
+     "price": 299,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "ETK2M-xmDvOFYPJJA8wgF",
+    "heading": "Brandbil med slange og brandmand",
+    "description": "Model: 10473.\nPris LEGO.dk 269,95*",
+    "pricing": {
+     "price": 199,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "zLoz6J4FqTYXvntKYH13k",
+    "heading": "Pikachu og Poké Ball",
+    "description": "Model: 72152. Pris LEGO.dk 1599,95*",
+    "pricing": {
+     "price": 1279,
+     "pre_price": 1599.95,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "B6N1xyvC09f1VVVwu61oN",
+    "heading": "Oracle Red Bull Racing RB20 F1-racerbil",
+    "description": "Model: 77243.\nPris LEGO.dk 249,95*",
+    "pricing": {
+     "price": 169,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "6DOeZbYv2DoiWdJMJmtAB",
+    "heading": "Solsikkebuket",
+    "description": "Model: 11502. Pris LEGO.dk 549,95*",
+    "pricing": {
+     "price": 319,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "B_i_sF9I_TBgtlr1W6OE3",
+    "heading": "Tulipanbuket",
+    "description": "Model: 11501. Pris LEGO.dk 549,95*",
+    "pricing": {
+     "price": 399,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "XTz10n9H3wVvdj-e27PPM",
+    "heading": "3-i-1 kreative ramper med køretøjer",
+    "description": "Model: 10478.\nPris LEGO.dk 599,95*",
+    "pricing": {
+     "price": 449,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "g8i-iyG6cSRUoGT_lV3Bc",
+    "heading": "Mclaren MCL39 F1-bil",
+    "description": "Model: 42228.\nPris LEGO.dk 1899,95*",
+    "pricing": {
+     "price": 1439,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "lLjeXB6okl_-60uc52tPY",
+    "heading": "Poké ball",
+    "description": "Model: 72154. Pris LEGO.dk 2099,95*",
+    "pricing": {
+     "price": 1679,
+     "pre_price": 2099.95,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   },
+   {
+    "id": "N_8pIj763F2cyfPm-7aGP",
+    "heading": "Schleich dyr",
+    "description": "TA' 3 FOR 2 PÅ SCHLEICH DYR*. FÅ DEN BILLIGSTE GRATIS.\nFlere varianter. Pris pr. stk. 49,- til 89,-\n*Gælder alle dyr med farvekoderne grøn, rød, gul og grå",
+    "pricing": {
+     "price": 49,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   }
+  ],
+  "cCYceUX7": [
+   {
+    "id": "NSpyFiEzgkH4REf7YOORQ",
+    "heading": "Footies, strømper eller sneakers-strømper til dame eller herre",
+    "description": "35-46. Fredag d. 9/10 - torsdag d. 22/10. Normalpris 99.-\n10-PAK",
+    "pricing": {
+     "price": 59,
+     "pre_price": 99,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-22T21:59:59+0000"
+   },
+   {
+    "id": "yN5sIRZfKKnkDXZUSJ2fT",
+    "heading": "Apple MacBook Neo 13” 256 GB",
+    "description": "MacBook Neo gør dine hverdagsopgaver og apps flyvende og er klar til alt det, din dag går med. Vælg imellem fire fede farver i et stærkt aluminiumsdesign. Du får en strålende 13” Liquid Retina-skærm, A18 Pro-chippen, der er bygget til AI og Apple Intelligence og op til 16 timers batteritid. Det er en Mac, der overrasker. Model: MHFA4DK/A, MHFF4DK/A, MHFD4DK/A, MHFH4DK/A. Max. 1 stk. til denne pris Begrænset antal",
+    "pricing": {
+     "price": 5899,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": 1
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "1bn-1dGIlEpYgN3Tdc3Ln",
+    "heading": "Calluna beauty ladies trio",
+    "description": "13 cm potte. Ekskl. krukke. Normalpris 30.-",
+    "pricing": {
+     "price": 24,
+     "pre_price": 30,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "Gqud-3j-GkwqqcjUazUHA",
+    "heading": "Haribo happy halloween eller Paw Patrol Halloween multi pack slikpose",
+    "description": "240-250 g. Pr. kg max. 166.67",
+    "pricing": {
+     "price": 40,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 240,
+      "to": 250
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "HN162tuXraMaOnHZOt2Zg",
+    "heading": "Nordisk Fjer memoryskum og aloe vera topmadras",
+    "description": "80 mm topmadras med kerne af memoryskum. Flere størrelser. Normalpris 1000.- 80 x 200 cm\nSPAR OP TIL 60% på top-, spring-, skum-, og rullemadrasser*\nFredag d. 9/10 - torsdag d. 22/10\n*Gælder ikke Basis, Salling memoryfoam og Salling Nattero topmadrasser, Spiloppe madrasser, Salling Nattero og Astma Allergi rullemadrasser samt i forvejen nedsatte varer",
+    "pricing": {
+     "price": 450,
+     "pre_price": 1000,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-22T21:59:59+0000"
+   },
+   {
+    "id": "ho7W6U5-rgOYXnItJbNDb",
+    "heading": "Samsung TQ65Q8F",
+    "description": "Tizen Smart TV • QLED med 100% color volume • Samsung Knox Security • Motion Xcelerator • AirSlim Design (ca. 2,6 cm) • Q4 AI Processor • DVB-T2/C/S2 Twin Tuner med PVR. Fredag d. 2/10 - torsdag d. 15/10. Normalpris 11999.-. 65” QLED 4K. SOLAR CELL ONE REMOTE. 4K QLED SMART TV",
+    "pricing": {
+     "price": 4888,
+     "pre_price": 11999,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-01T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   },
+   {
+    "id": "JnSMySM5FvMYt0l9Wk87j",
+    "heading": "Salling strømpegarn",
+    "description": "Normalpris 39.-",
+    "pricing": {
+     "price": 27.3,
+     "pre_price": 39,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-22T21:59:59+0000"
+   },
+   {
+    "id": "yjoNSeCJz82adABvetWX5",
+    "heading": "Oral-B IO tandbørstehoveder",
+    "description": "• Ultimate Clean, Gentle Care og Radiant White.\nFredag d. 9/10 - torsdag d. 22/10.\nPLUS PRIS 139.-\nGÆLDER KUN MED BILKA PLUS APPEN",
+    "pricing": {
+     "price": 199,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-22T21:59:59+0000"
+   },
+   {
+    "id": "4Sc4BLw5CnKD4ViMWy08l",
+    "heading": "Salling bomuldsgarn",
+    "description": "Normalpris 18.-",
+    "pricing": {
+     "price": 12.6,
+     "pre_price": 18,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-22T21:59:59+0000"
+   },
+   {
+    "id": "3iNhTwZMvPu9Qy-M5LDS0",
+    "heading": "Halloween slikpose",
+    "description": "72-150 g. Flere varianter. Pr. kg max. 277.78",
+    "pricing": {
+     "price": 20,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "g",
+      "si": {
+       "symbol": "kg",
+       "factor": 0.001
+      }
+     },
+     "size": {
+      "from": 72,
+      "to": 150
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-10-08T22:00:00+0000",
+    "run_till": "2026-10-15T21:59:59+0000"
+   }
+  ],
+  "oeDzomt1": [
+   {
+    "id": "fApkpoBA2598kONGacfws",
+    "heading": "Universal mobilholder",
+    "description": "• Til bilen med placering på bilens ventilationsanlæg.",
+    "pricing": {
+     "price": 29,
+     "pre_price": null,
+     "currency": "DKK"
+    },
+    "quantity": {
+     "unit": {
+      "symbol": "pcs",
+      "si": {
+       "symbol": "pcs",
+       "factor": 1
+      }
+     },
+     "size": {
+      "from": 1,
+      "to": 1
+     },
+     "pieces": {
+      "from": 1,
+      "to": 1,
+      "min": null,
+      "max": null
+     }
+    },
+    "run_from": "2026-09-24T22:00:00+0000",
+    "run_till": "2026-12-31T22:59:59+0000"
+   }
+  ],
+  "eT3qf58J": []
+ }
+}

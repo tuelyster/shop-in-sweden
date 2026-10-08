@@ -1,10 +1,10 @@
 {
   "retailers": [
-    { "id": "rema1000", "name": "REMA 1000", "country": "DK", "memberOfferPhrases": [] },
-    { "id": "netto", "name": "Netto", "country": "DK", "memberOfferPhrases": [] },
-    { "id": "lidl-dk", "name": "Lidl DK", "country": "DK", "memberOfferPhrases": [] },
-    { "id": "foetex", "name": "Føtex", "country": "DK", "memberOfferPhrases": [] },
-    { "id": "bilka", "name": "Bilka", "country": "DK", "memberOfferPhrases": [] },
+    { "id": "rema1000", "tjekDealerId": "11deC", "name": "REMA 1000", "country": "DK", "memberOfferPhrases": [] },
+    { "id": "netto", "tjekDealerId": "9ba51", "name": "Netto", "country": "DK", "memberOfferPhrases": ["Netto+"] },
+    { "id": "lidl-dk", "tjekDealerId": "71c90", "name": "Lidl DK", "country": "DK", "memberOfferPhrases": ["Lidl Plus"] },
+    { "id": "foetex", "tjekDealerId": "bdf5A", "name": "Føtex", "country": "DK", "memberOfferPhrases": ["føtex plus"] },
+    { "id": "bilka", "tjekDealerId": "93f13", "name": "Bilka", "country": "DK", "memberOfferPhrases": ["Bilka plus"] },
     { "id": "willys", "name": "Willys", "country": "SE", "memberOfferPhrases": ["För dig med WillysPlus", "WillysPlus"] },
     { "id": "city-gross", "name": "City Gross", "country": "SE", "memberOfferPhrases": ["PRIO-medlemmar", "PRIO-medlem"] },
     { "id": "lidl-se", "name": "Lidl", "country": "SE", "memberOfferPhrases": ["Lidl Plus"] },
