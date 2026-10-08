@@ -37,7 +37,14 @@ test('inputs are mirrored into the URL and restored from a shared URL', async ({
   await expect(page).toHaveURL(/dato=2026-12-24/);
 });
 
-test('invalid query values fall back to defaults', async ({ page }) => {
+test('shows how current the prices are', async ({ page }) => {
+  await page.goto('/?dato=2026-11-14');
+  // The e2e database has no imported prices, so it says so instead of counting days.
+  await expect(page.getByTestId('freshness-line')).toHaveText('Priserne er ikke hentet endnu.');
+  await expect(page.getByTestId('stale-warning')).toHaveCount(0);
+});
+
+test('invalid query values fall back to defaults',async ({ page }) => {
   await page.goto('/?dato=i-morgen&ukendt=1');
   await expect(page.getByLabel('Dato for turen')).toHaveValue(/^\d{4}-\d{2}-\d{2}$/);
   await expect(page.getByTestId('shopping-trip')).toHaveCount(2);

@@ -1,8 +1,9 @@
-import { eq } from 'drizzle-orm';
+import { eq, max } from 'drizzle-orm';
 import { Hono } from 'hono';
 import type {
   CrossingFeeKind,
   CrossingId,
+  DataFreshness,
   DiscountAgreement,
   EnergyType,
   MultiTripBracket,
@@ -12,7 +13,7 @@ import type {
 import { readCatalogue } from './catalogue';
 import type { Db } from './db/connection';
 import { measurePriceGaps } from './match/price-gaps';
-import { crossingFees, crossings, destinations, seasons, vehicleDefaults } from './db/schema';
+import { crossingFees, crossings, destinations, priceObservations, seasons, vehicleDefaults } from './db/schema';
 
 const ISO_DATE = /^(\d{4})-(\d{2})-(\d{2})$/;
 
@@ -28,7 +29,7 @@ function isRealIsoDate(raw: string): boolean {
  * Reference data for a Trip Date: only fees already valid on that date are included.
  * Which season and Discount Agreement price applies is left to the calculator.
  */
-function loadReferenceData(db: Db, tripDate: string): ReferenceData {
+function loadReferenceData(db: Db, tripDate: string, today: string): ReferenceData {
   const rows = db
     .select()
     .from(crossings)
@@ -45,6 +46,7 @@ function loadReferenceData(db: Db, tripDate: string): ReferenceData {
     categories: readCatalogue(db).categories,
     priceGaps: priceGaps.destinations,
     exchangeRate: priceGaps.exchangeRate,
+    freshness: measureFreshness(db, today),
     vehicleDefaults: db
       .select()
       .from(vehicleDefaults)
@@ -79,20 +81,46 @@ function loadReferenceData(db: Db, tripDate: string): ReferenceData {
   };
 }
 
-function todayIso(): string {
-  const d = new Date();
+/** More than this many days since the newest Price Observation makes the prices stale. */
+export const STALE_AFTER_DAYS = 14;
+
+function daysBetween(fromIso: string, toIso: string): number {
+  const ms = (iso: string) => Date.parse(`${iso}T00:00:00Z`);
+  return Math.round((ms(toIso) - ms(fromIso)) / 86_400_000);
+}
+
+/**
+ * Freshness is the date of the newest import that stored a Price Observation (its import time,
+ * not the price's valid-from, which can lie in the future for Offers).
+ */
+function measureFreshness(db: Db, today: string): DataFreshness {
+  const newest = db.select({ at: max(priceObservations.importedAt) }).from(priceObservations).get()?.at ?? null;
+  if (!newest) return { newestObservationDate: null, daysOld: null, stale: false };
+  const newestObservationDate = newest.slice(0, 10);
+  const daysOld = Math.max(0, daysBetween(newestObservationDate, today));
+  return { newestObservationDate, daysOld, stale: daysOld > STALE_AFTER_DAYS };
+}
+
+function isoDate(d: Date): string {
   const p = (n: number) => String(n).padStart(2, '0');
   return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}`;
 }
 
-export function createApp(db: Db): Hono {
+export interface AppOptions {
+  /** The current time; injectable so tests control "today". */
+  now?: () => Date;
+}
+
+export function createApp(db: Db, options: AppOptions = {}): Hono {
+  const now = options.now ?? (() => new Date());
   const app = new Hono();
   app.get('/api/reference-data', (c) => {
-    const tripDate = c.req.query('dato') ?? todayIso();
+    const today = isoDate(now());
+    const tripDate = c.req.query('dato') ?? today;
     if (!isRealIsoDate(tripDate)) {
       return c.json({ error: 'dato must be a date in the form YYYY-MM-DD' }, 400);
     }
-    return c.json(loadReferenceData(db, tripDate));
+    return c.json(loadReferenceData(db, tripDate, today));
   });
   return app;
 }

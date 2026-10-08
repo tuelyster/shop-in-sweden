@@ -135,6 +135,16 @@ export interface ExchangeRateInfo {
  * Everything the calculator needs besides the shopper's inputs; served by the
  * reference-data API. Later tickets add Price Gaps, fuel prices, exchange rate etc.
  */
+/** How current the Price Observations are. */
+export interface DataFreshness {
+  /** ISO date of the newest import that stored a Price Observation; null before any import. */
+  newestObservationDate: string | null;
+  /** Whole days from that date to today; null before any import. */
+  daysOld: number | null;
+  /** True when the newest observation is more than 14 days old. False when there is no data at all. */
+  stale: boolean;
+}
+
 export interface ReferenceData {
   /** Default consumption and energy price per energy type. */
   vehicleDefaults: VehicleDefault[];
@@ -147,6 +157,8 @@ export interface ReferenceData {
   priceGaps: DestinationPriceGaps[];
   /** Rate used for the Price Gaps; null while none has been imported. */
   exchangeRate: ExchangeRateInfo | null;
+  /** How current the prices are, for the freshness line and stale warning. */
+  freshness: DataFreshness;
 }
 
 /**

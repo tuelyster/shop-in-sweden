@@ -2,6 +2,7 @@ import { beforeAll, describe, expect, it } from 'vitest';
 import { calculateTrips, type ReferenceData } from '@shop-in-sweden/shared';
 import { createApp } from '../src/app';
 import { openDatabase } from '../src/db/connection';
+import { recordImportRun } from '../src/prices/store';
 import { seedDatabase } from '../src/seed';
 
 describe('GET /api/reference-data', () => {
@@ -103,5 +104,73 @@ describe('GET /api/reference-data', () => {
   it('rejects an invalid Trip Date', async () => {
     const res = await app.request('/api/reference-data?dato=i-morgen');
     expect(res.status).toBe(400);
+  });
+});
+
+describe('data freshness in the reference data', () => {
+  const IMPORTED = new Date('2026-10-01T10:00:00Z');
+
+  function appAt(today: string, imported: Date | null) {
+    const db = openDatabase(':memory:');
+    seedDatabase(db);
+    if (imported) {
+      recordImportRun(db, {
+        source: 'test',
+        startedAt: imported,
+        finishedAt: imported,
+        observations: [
+          {
+            source: 'test',
+            retailerId: 'willys',
+            productId: 'p1',
+            productText: 'Mjölk',
+            foundBy: ['mjölk'],
+            price: 10,
+            currency: 'SEK',
+            quantity: null,
+            kind: 'regular',
+            validFrom: '2026-10-01',
+          },
+        ],
+      });
+    }
+    return createApp(db, { now: () => new Date(`${today}T12:00:00`) });
+  }
+
+  async function freshness(app: ReturnType<typeof createApp>) {
+    const res = await app.request('/api/reference-data?dato=2026-11-14');
+    return ((await res.json()) as ReferenceData).freshness;
+  }
+
+  it('is fresh when the newest observation is a few days old', async () => {
+    expect(await freshness(appAt('2026-10-04', IMPORTED))).toEqual({
+      newestObservationDate: '2026-10-01',
+      daysOld: 3,
+      stale: false,
+    });
+  });
+
+  it('is stale at 15 days', async () => {
+    expect(await freshness(appAt('2026-10-16', IMPORTED))).toEqual({
+      newestObservationDate: '2026-10-01',
+      daysOld: 15,
+      stale: true,
+    });
+  });
+
+  it('is still fresh at exactly 14 days', async () => {
+    expect(await freshness(appAt('2026-10-15', IMPORTED))).toEqual({
+      newestObservationDate: '2026-10-01',
+      daysOld: 14,
+      stale: false,
+    });
+  });
+
+  it('has no date and is not called stale when nothing has been imported', async () => {
+    expect(await freshness(appAt('2026-10-16', null))).toEqual({
+      newestObservationDate: null,
+      daysOld: null,
+      stale: false,
+    });
   });
 });

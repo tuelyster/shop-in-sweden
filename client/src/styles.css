@@ -29,6 +29,7 @@ h1 { font-size: 1.5rem; }
 .agreements select { width: 100%; }
 .fee.loss { color: #b3261e; }
 .trip h3 { font-size: 1rem; margin: 1rem 0 0.25rem; }
+.stale-warning { background: #fdecea; color: #8c1d18; border: 1px solid #b3261e; border-radius: 0.5rem; padding: 0.6rem 0.8rem; font-weight: 600; }
 .gap { margin: 0.25rem 0; }
 .gap summary { cursor: pointer; }
 .items { list-style: none; padding: 0; margin: 0.5rem 0; display: grid; gap: 0.5rem; font-size: 0.9rem; }

@@ -51,6 +51,7 @@ function reference(
     ],
     priceGaps: overrides.priceGaps ?? [],
     exchangeRate: null,
+    freshness: { newestObservationDate: null, daysOld: null, stale: false },
     vehicleDefaults: [
       { energyType: 'petrol', consumptionPer100Km: 6, consumptionSource: 'test', energyPriceDkk: 19.5, priceSource: 'test', priceDate: '2026-10-05' },
       { energyType: 'electric', consumptionPer100Km: 18, consumptionSource: 'test', energyPriceDkk: 2.5, priceSource: 'test', priceDate: '2026-10-08' },

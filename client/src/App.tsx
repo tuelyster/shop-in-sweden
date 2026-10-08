@@ -12,6 +12,7 @@ import {
   type ReferenceData,
 } from '@shop-in-sweden/shared';
 
+import { exchangeRateText, freshnessText, STALE_WARNING } from './freshness';
 import { inputs } from './inputs';
 import { useUrlInputs } from './useUrlInputs';
 
@@ -314,10 +315,18 @@ export function App() {
         </p>
       )}
       {error && <p role="alert">Kunne ikke hente priserne. Prøv igen senere.</p>}
-      {reference?.exchangeRate && (
-        <p className="hint">
-          Svenske priser er omregnet med 1 SEK = {reference.exchangeRate.sekToDkk.toFixed(4)} kr. ({reference.exchangeRate.date}).
-        </p>
+      {reference && (
+        <div data-testid="data-freshness">
+          <p className="hint" data-testid="freshness-line">
+            {freshnessText(reference.freshness)}
+            {reference.exchangeRate && <> · <span data-testid="exchange-rate">{exchangeRateText(reference.exchangeRate)}</span></>}
+          </p>
+          {reference.freshness.stale && (
+            <p role="alert" data-testid="stale-warning" className="stale-warning">
+              {STALE_WARNING}
+            </p>
+          )}
+        </div>
       )}
       {!comparison && !error && <p>Henter priser …</p>}
       {comparison === 'no-prices' && <p role="alert">Vi har ingen priser for den valgte dato.</p>}
