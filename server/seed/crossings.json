@@ -1,0 +1,12 @@
+[
+  {
+    "id": "bridge",
+    "name": "Øresundsbron",
+    "destination": { "id": "hyllie", "name": "Hyllie/Emporia, Malmö" }
+  },
+  {
+    "id": "ferry",
+    "name": "Helsingør–Helsingborg-færgen",
+    "destination": { "id": "vala", "name": "Väla Centrum, Helsingborg" }
+  }
+]

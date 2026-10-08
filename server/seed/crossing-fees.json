@@ -1,0 +1,16 @@
+[
+  {
+    "crossingId": "bridge",
+    "kind": "single",
+    "priceDkk": 420,
+    "validFrom": "2026-09-14",
+    "source": "https://www.oresundsbron.com/da/priser (researched 2026-10-08): online ticket, single trip"
+  },
+  {
+    "crossingId": "ferry",
+    "kind": "round-trip",
+    "priceDkk": 595,
+    "validFrom": "2026-01-01",
+    "source": "https://www.oresundslinjen.dk/priser (researched 2026-10-08): same-day round trip, low season"
+  }
+]
