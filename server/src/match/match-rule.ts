@@ -31,6 +31,8 @@ export interface MatchRule {
   pieces?: Range;
   /** Optional range for the size of one piece in `unit`. */
   itemSize?: Range;
+  /** Swedish soft drinks: true when no Lost Deposit is derived from the pack (cartons). A deposit the source reports still counts. */
+  noDerivedDeposit?: boolean;
 }
 
 export interface Candidate {

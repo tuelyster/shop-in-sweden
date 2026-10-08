@@ -10,6 +10,7 @@ import {
   crossings,
   destinations,
   postcodeDistances,
+  lostDeposits,
   retailers,
   seasons,
   stores,
@@ -53,6 +54,7 @@ export interface SeedData {
     source: string;
   }[];
   seasons: { id: string; startMonthDay: string; endMonthDay: string; source: string }[];
+  lostDeposits: (typeof lostDeposits.$inferInsert)[];
   vehicleDefaults: (typeof vehicleDefaults.$inferInsert)[];
   categories: { id: string; name: string }[];
   retailers: { id: string; name: string; country: 'DK' | 'SE'; memberOfferPhrases: string[]; tjekDealerId?: string }[];
@@ -71,6 +73,7 @@ export function loadSeedData(): SeedData {
     crossingFees: readSeed('crossing-fees.json'),
     seasons: readSeed('seasons.json'),
     vehicleDefaults: readSeed('vehicle-defaults.json'),
+    lostDeposits: readSeed('lost-deposits.json'),
     categories: basket.categories,
     basketItems: basket.basketItems,
     retailers: retailerSeed.retailers,
@@ -137,6 +140,7 @@ export function seedDatabase(db: Db, seed: SeedData = loadSeedData()): void {
       tx.insert(crossings).values({ id: c.id, name: c.name }).run();
       tx.insert(destinations).values({ ...c.destination, crossingId: c.id }).run();
     }
+    for (const d of seed.lostDeposits) tx.insert(lostDeposits).values(d).run();
     for (const s of seed.seasons) tx.insert(seasons).values(s).run();
     for (const fee of seed.crossingFees) tx.insert(crossingFees).values(fee).run();
     for (const p of seed.postcodeDistances) {

@@ -1,0 +1,18 @@
+[
+  {
+    "id": "small",
+    "description": "Cans and plastic bottles up to and including 1 L; refillable glass bottles are not told apart and fall under the same size rule",
+    "maxLitres": 1,
+    "amountSek": 2,
+    "validFrom": "2025-01-01",
+    "source": "Pantamera panthojning 2025: https://pantamera.nu/om-oss/panthojning-2025 (researched 2026-10-08)"
+  },
+  {
+    "id": "large",
+    "description": "Plastic bottles over 1 L",
+    "maxLitres": null,
+    "amountSek": 3,
+    "validFrom": "2025-01-01",
+    "source": "Pantamera panthojning 2025: https://pantamera.nu/om-oss/panthojning-2025 (researched 2026-10-08)"
+  }
+]

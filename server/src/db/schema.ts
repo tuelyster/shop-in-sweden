@@ -54,6 +54,17 @@ export const crossingFees = sqliteTable('crossing_fees', {
   source: text('source').notNull(),
 });
 
+/** Lost Deposit (Swedish pant) per container, with its source. A container up to `maxLitres` (null: any larger) costs `amountSek`. */
+export const lostDeposits = sqliteTable('lost_deposits', {
+  id: text('id').primaryKey(),
+  description: text('description').notNull(),
+  maxLitres: real('max_litres'),
+  amountSek: real('amount_sek').notNull(),
+  /** ISO date, YYYY-MM-DD. */
+  validFrom: text('valid_from').notNull(),
+  source: text('source').notNull(),
+});
+
 export const categories = sqliteTable('categories', {
   id: text('id').primaryKey(),
   name: text('name').notNull(),

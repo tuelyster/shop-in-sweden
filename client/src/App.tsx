@@ -56,7 +56,8 @@ function pickText(pick: PricePick | null): string {
   const own = `${price.format(pick.unitPrice)} ${pick.currency === 'SEK' ? 'SEK' : 'kr.'}/${pick.per}`;
   const converted = pick.currency === 'SEK' ? ` = ${price.format(pick.unitPriceDkk)} kr./${pick.per}` : '';
   const offer = pick.kind === 'offer' ? ` (tilbud${pick.validTo ? ` til ${pick.validTo}` : ''})` : ' (normalpris)';
-  return `${pick.productName}, ${pick.seller}: ${own}${converted}${offer}`;
+  const deposit = pick.lostDeposit > 0 ? `, inkl. ${price.format(pick.lostDeposit)} SEK pant` : '';
+  return `${pick.productName}, ${pick.seller}: ${own}${converted}${offer}${deposit}`;
 }
 
 function ItemRow({ item }: { item: BasketItemGap }) {

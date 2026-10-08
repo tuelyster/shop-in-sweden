@@ -9,6 +9,7 @@ import { readCatalogue } from '../catalogue';
 import type { Db } from '../db/connection';
 import { stores as storesTable } from '../db/schema';
 import { latestExchangeRate, listPriceObservations } from '../prices/store';
+import { readLostDepositRates } from './lost-deposit';
 import { candidateObservations, matchItem, type Picked } from './match-report';
 
 export interface PriceGaps {
@@ -27,6 +28,7 @@ function toPick(picked: Picked, seller: string): PricePick | null {
     per: picked.unitPrice.per,
     kind: picked.kind,
     validTo: picked.validTo,
+    lostDeposit: picked.lostDeposit,
   };
 }
 
@@ -42,6 +44,7 @@ export function measurePriceGaps(db: Db, tripDate: string): PriceGaps {
   const rate = latestExchangeRate(db);
   const retailers = new Map(catalogue.retailers.map((r) => [r.id, r]));
   const observations = candidateObservations(listPriceObservations(db), tripDate);
+  const depositRates = readLostDepositRates(db);
   const allStores = db.select().from(storesTable).all();
   const destinationIds = [...new Set(allStores.map((s) => s.destinationId))];
 
@@ -58,8 +61,8 @@ export function measurePriceGaps(db: Db, tripDate: string): PriceGaps {
       const items = catalogue.basketItems
         .filter((b) => b.categoryId === category.id)
         .map((item): BasketItemGap => {
-          const dk = matchItem(item, 'DK', observations, retailers, rate).picked;
-          const se = matchItem(item, 'SE', observations, retailers, rate, atDestination).picked;
+          const dk = matchItem(item, 'DK', observations, retailers, rate, undefined, [], depositRates).picked;
+          const se = matchItem(item, 'SE', observations, retailers, rate, atDestination, [], depositRates).picked;
           const storeName = (p: Picked) =>
             stores.find((s) => s.id === p.storeId)?.name ??
             stores.find((s) => s.retailerId === p.retailerId)?.name ??

@@ -209,7 +209,8 @@
         "searchWords": {"DK":["appelsinjuice"],"SE":["apelsinjuice"]},
         "excludedWords": {"DK":["øko","koncentrat","mix","marmelade","smoothie","shot","nektar"],"SE":["eko","koncentrat","mix","marmelad","smoothie","shot","nektar"]},
         "unit": "l",
-        "packSize": {"min":0.9,"max":2.1}
+        "packSize": {"min":0.9,"max":2.1},
+        "noDerivedDeposit": true
       }
     },
     {

@@ -108,7 +108,7 @@ describe('import command', () => {
   it('normalises multipacks, weights and counts to a Unit Price', async () => {
     const { output } = await importAll(db);
     // 15 x 33 cl for 99.90 SEK
-    expect(itemSection(output, 'Cola cans')).toContain('99.90 SEK for 15 x 33 cl = 20.18 SEK/l');
+    expect(itemSection(output, 'Cola cans')).toContain('99.90 SEK + 30.00 SEK Lost Deposit = 129.90 SEK for 15 x 33 cl = 26.24 SEK/l');
     // 250 g for 7.96 DKK ... 200 g for 7.96 DKK = 39.80 per kg
     expect(itemSection(output, 'Butter')).toContain('7.96 DKK for 200 g = 39.80 DKK/kg');
     // 15 eggs for 45.25 DKK; 24 eggs for 59.90 SEK

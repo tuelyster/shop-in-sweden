@@ -92,6 +92,11 @@ export interface PricePick {
   kind: 'regular' | 'offer';
   /** ISO date an Offer is valid to; null for a regular price. */
   validTo: string | null;
+  /**
+   * Lost Deposit in the price's currency that the Unit Price includes, for the whole pack (Swedish
+   * soft drinks only); 0 when none.
+   */
+  lostDeposit: number;
 }
 
 /** One Basket Item compared at a Destination. */

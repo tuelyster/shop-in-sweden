@@ -3,6 +3,7 @@ import { readCatalogue, type BasketItem, type Category, type Retailer } from '..
 import type { Db } from '../db/connection';
 import { latestExchangeRate, listPriceObservations, type ExchangeRate, type PriceObservation } from '../prices/store';
 import { nextSaturday } from '../dates';
+import { LOST_DEPOSIT_CATEGORY_ID, lostDepositFor, readLostDepositRates, type LostDepositRate } from './lost-deposit';
 import { evaluateCandidate, textMatchesPhrase, type Country } from './match-rule';
 
 export interface Product {
@@ -17,6 +18,8 @@ export interface Picked extends Product {
   unitPrice: { value: number; per: BaseUnit };
   /** The Unit Price in DKK; null for a Swedish product when no exchange rate has been imported. */
   unitPriceDkk: number | null;
+  /** Lost Deposit in SEK inside `price`'s Unit Price, for the whole pack; 0 when none applies (Danish prices, other Categories). */
+  lostDeposit: number;
   retailerId: string;
   /** Set for observations tied to one Store (Swedish Offers); null for national regular prices. */
   storeId: string | null | undefined;
@@ -121,6 +124,7 @@ export function matchItem(
   rate: ExchangeRate | null,
   include: (o: PriceObservation) => boolean = () => true,
   excludedOffers: ExcludedOffer[] = [],
+  depositRates: LostDepositRate[] = [],
 ): CountryMatch {
   const result: CountryMatch = { country, picked: null, accepted: 0, rejected: [], unrelated: 0 };
   for (const o of observations) {
@@ -144,7 +148,12 @@ export function matchItem(
       continue;
     }
     result.accepted++;
-    const value = verdict.unitPrice(o.price);
+    // Swedish soft drinks: the deposit a Danish shopper cannot reclaim is part of what the pack costs.
+    const lostDeposit =
+      country === 'SE' && item.categoryId === LOST_DEPOSIT_CATEGORY_ID
+        ? lostDepositFor(o, depositRates, !item.matchRule.noDerivedDeposit)
+        : 0;
+    const value = verdict.unitPrice(o.price + lostDeposit);
     if (!result.picked || value < result.picked.unitPrice.value) {
       const per = item.matchRule.unit;
       const unitPriceDkk = o.currency === 'DKK' ? value : rate ? value * rate.sekToDkk : null;
@@ -152,6 +161,7 @@ export function matchItem(
         ...product,
         unitPrice: { value, per },
         unitPriceDkk,
+        lostDeposit,
         retailerId: o.retailerId,
         storeId: o.storeId,
         kind: o.kind,
@@ -186,12 +196,13 @@ export function buildMatchReport(db: Db, tripDate: string = nextSaturday(new Dat
   const rate = latestExchangeRate(db);
   const retailers = new Map(catalogue.retailers.map((r) => [r.id, r]));
   const { candidates: observations, excludedOffers } = selectCandidates(listPriceObservations(db), tripDate);
+  const depositRates = readLostDepositRates(db);
 
   const items: ItemMatch[] = catalogue.basketItems.map((item) => ({
     category: catalogue.categories.find((c) => c.id === item.categoryId)!,
     item,
-    DK: matchItem(item, 'DK', observations, retailers, rate, undefined, excludedOffers),
-    SE: matchItem(item, 'SE', observations, retailers, rate, undefined, excludedOffers),
+    DK: matchItem(item, 'DK', observations, retailers, rate, undefined, excludedOffers, depositRates),
+    SE: matchItem(item, 'SE', observations, retailers, rate, undefined, excludedOffers, depositRates),
   }));
 
   return { tripDate, exchangeRate: rate, items };
@@ -218,7 +229,8 @@ function formatCountry(match: CountryMatch): string[] {
     const dkk = p.currency === 'SEK' ? (p.unitPriceDkk !== null ? ` = ${money(p.unitPriceDkk)} DKK/${p.unitPrice.per}` : ' (no exchange rate)') : '';
     const offer = p.kind === 'offer' ? ` [Offer, valid until ${p.validTo ?? 'further notice'}]` : '';
     lines.push(`    ${label}: PICKED ${p.retailer}: ${p.text}${offer}`);
-    lines.push(`      ${money(p.price)} ${p.currency} for ${describeQuantity(p.quantity)} = ${unit}${dkk}  (cheapest of ${match.accepted} accepted)`);
+    const deposit = p.lostDeposit > 0 ? ` + ${money(p.lostDeposit)} ${p.currency} Lost Deposit = ${money(p.price + p.lostDeposit)} ${p.currency}` : '';
+    lines.push(`      ${money(p.price)} ${p.currency}${deposit} for ${describeQuantity(p.quantity)} = ${unit}${dkk}  (cheapest of ${match.accepted} accepted)`);
   } else {
     lines.push(`    ${label}: NO PRICE (${match.rejected.length} rejected, ${match.unrelated} unrelated products)`);
   }
