@@ -6,6 +6,7 @@
     "dev": "tsx watch src/main.ts",
     "start": "tsx src/main.ts",
     "seed": "tsx src/seed-cli.ts",
+    "import": "tsx src/import-cli.ts",
     "db:generate": "drizzle-kit generate"
   },
   "dependencies": {

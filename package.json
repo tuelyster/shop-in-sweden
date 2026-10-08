@@ -10,6 +10,8 @@
   "scripts": {
     "dev": "concurrently -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
     "seed": "npm run seed -w server",
+    "import": "npm run import -w server --",
+    "report": "npm run import -w server -- report",
     "test": "npm run test:unit && npm run test:e2e",
     "test:unit": "vitest run",
     "test:e2e": "playwright test",

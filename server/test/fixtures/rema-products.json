@@ -1,0 +1,748 @@
+{
+ "data": [
+  {
+   "id": 20100,
+   "name": "SØDMÆLK 3,5%",
+   "underline": "1 LTR. / ARLA",
+   "labels": [
+    {
+     "id": 202,
+     "name": "Bedre dyrevelfærd 2"
+    },
+    {
+     "id": 70,
+     "name": "Dansk"
+    }
+   ],
+   "prices": [
+    {
+     "price": 13.5,
+     "is_campaign": false,
+     "starting_at": "2026-01-29T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 13.5,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 20129,
+   "name": "SØDMÆLK 3,5%",
+   "underline": "1 LTR. / GRAM SLOT, ØKOLOGISK",
+   "labels": [
+    {
+     "id": 5,
+     "name": "Økologi"
+    },
+    {
+     "id": 203,
+     "name": "Bedre dyrevelfærd 3"
+    },
+    {
+     "id": 190,
+     "name": "Anbefalet af Dyrenes Beskyttelse"
+    },
+    {
+     "id": 39,
+     "name": "Gram slot"
+    },
+    {
+     "id": 6,
+     "name": "Økologi"
+    }
+   ],
+   "prices": [
+    {
+     "price": 15.95,
+     "is_campaign": false,
+     "starting_at": "2026-03-05T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 15.95,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 20302,
+   "name": "SØDMÆLK 3,5%",
+   "underline": "0.5 LTR. / ARLA",
+   "labels": [
+    {
+     "id": 70,
+     "name": "Dansk"
+    }
+   ],
+   "prices": [
+    {
+     "price": 7.95,
+     "is_campaign": false,
+     "starting_at": "2026-01-29T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 15.9,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 21479,
+   "name": "SØDMÆLK 3,5%",
+   "underline": "1 LTR. / ARLA, LACTOFREE",
+   "labels": [
+    {
+     "id": 37,
+     "name": "Laktose fri"
+    },
+    {
+     "id": 70,
+     "name": "Dansk"
+    }
+   ],
+   "prices": [
+    {
+     "price": 17.95,
+     "is_campaign": false,
+     "starting_at": "2026-01-29T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 17.95,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 21649,
+   "name": "SMØR",
+   "underline": "200 GR. / ARLA, ØKOLOGISK",
+   "labels": [
+    {
+     "id": 6,
+     "name": "Økologi"
+    },
+    {
+     "id": 203,
+     "name": "Bedre dyrevelfærd 3"
+    }
+   ],
+   "prices": [
+    {
+     "price": 14.95,
+     "is_campaign": false,
+     "starting_at": "2026-05-07T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 74.75,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 25751,
+   "name": "SMØR",
+   "underline": "200 GR. / REMA 1000",
+   "labels": [
+    {
+     "id": 70,
+     "name": "Dansk"
+    },
+    {
+     "id": 2,
+     "name": "REMA1000"
+    }
+   ],
+   "prices": [
+    {
+     "price": 7.96,
+     "is_campaign": false,
+     "starting_at": "2026-05-07T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 39.8,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 220032,
+   "name": "SKRABEÆG",
+   "underline": "15 STK. / STR. S/M",
+   "labels": [],
+   "prices": [
+    {
+     "price": 45.25,
+     "is_campaign": false,
+     "starting_at": "2026-05-28T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "stk",
+     "compare_unit_price": 3.02,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 224233,
+   "name": "SKRABEÆG",
+   "underline": "10 STK. / STR. M/L",
+   "labels": [],
+   "prices": [
+    {
+     "price": 31.95,
+     "is_campaign": false,
+     "starting_at": "2026-05-28T00:00:00+00:00",
+     "ending_at": "2026-10-10T00:00:00+00:00",
+     "compare_unit": "stk",
+     "compare_unit_price": 3.2,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 213309,
+   "name": "COLA",
+   "underline": "50 CL. / HARBOE",
+   "labels": [],
+   "prices": [
+    {
+     "price": 4.08,
+     "is_campaign": false,
+     "starting_at": "2026-02-06T00:00:00+00:00",
+     "ending_at": "2026-10-10T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 8.16,
+     "deposit": 1.5
+    }
+   ]
+  },
+  {
+   "id": 213355,
+   "name": "COLA",
+   "underline": "3 LTR. / HARBOE, 6 PAK",
+   "labels": [],
+   "prices": [
+    {
+     "price": 24.48,
+     "is_campaign": false,
+     "starting_at": "2026-05-21T00:00:00+00:00",
+     "ending_at": "2026-10-10T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 8.16,
+     "deposit": 9
+    }
+   ]
+  },
+  {
+   "id": 215642,
+   "name": "COLA",
+   "underline": "33 CL. / HARBOE",
+   "labels": [],
+   "prices": [
+    {
+     "price": 3.42,
+     "is_campaign": false,
+     "starting_at": "2025-10-09T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 10.36,
+     "deposit": 1
+    }
+   ]
+  },
+  {
+   "id": 215662,
+   "name": "COLA",
+   "underline": "1.5 LTR. / HARBOE",
+   "labels": [],
+   "prices": [
+    {
+     "price": 6.42,
+     "is_campaign": false,
+     "starting_at": "2026-01-01T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 4.28,
+     "deposit": 3
+    }
+   ]
+  },
+  {
+   "id": 170035,
+   "name": "TOILETPAPIR",
+   "underline": "768 GR. / REMA 1000 ULTRASOFT 4-LAGS",
+   "labels": [
+    {
+     "id": 2,
+     "name": "REMA1000"
+    },
+    {
+     "id": 42,
+     "name": "Svanemærket"
+    }
+   ],
+   "prices": [
+    {
+     "price": 21.45,
+     "is_campaign": false,
+     "starting_at": "2026-05-07T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 27.93,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 170187,
+   "name": "TOILETPAPIR",
+   "underline": "705 GR. / LAMBI HVID 8 RULLER",
+   "labels": [
+    {
+     "id": 42,
+     "name": "Svanemærket"
+    }
+   ],
+   "prices": [
+    {
+     "price": 30.95,
+     "is_campaign": false,
+     "starting_at": "2026-08-06T00:00:00+00:00",
+     "ending_at": "2026-10-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 43.9,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 170209,
+   "name": "TOILETPAPIR",
+   "underline": "684 GR. / REMA 1000 SOFT 3-LAGS",
+   "labels": [
+    {
+     "id": 9001,
+     "name": "Avisvare"
+    },
+    {
+     "id": 2,
+     "name": "REMA1000"
+    },
+    {
+     "id": 42,
+     "name": "Svanemærket"
+    }
+   ],
+   "prices": [
+    {
+     "price": 12,
+     "is_campaign": true,
+     "starting_at": "2026-10-04T00:00:00+00:00",
+     "ending_at": "2026-10-10T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 17.54,
+     "deposit": null
+    },
+    {
+     "price": 14.2,
+     "is_campaign": false,
+     "starting_at": "2026-10-11T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 20.76,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 170239,
+   "name": "TOILETPAPIR",
+   "underline": "42 STK. / LOTUS FUGTIGT SENSITIVE",
+   "labels": [],
+   "prices": [
+    {
+     "price": 16.95,
+     "is_campaign": false,
+     "starting_at": "2026-09-17T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "stk",
+     "compare_unit_price": 0.4,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 50212,
+   "name": "FORMALET KAFFE",
+   "underline": "400 GR. / REMA 1000",
+   "labels": [
+    {
+     "id": 2,
+     "name": "REMA1000"
+    },
+    {
+     "id": 95,
+     "name": "Rainforest Alliance"
+    }
+   ],
+   "prices": [
+    {
+     "price": 35.95,
+     "is_campaign": false,
+     "starting_at": "2026-09-17T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 89.88,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 50220,
+   "name": "FORMALET KAFFE",
+   "underline": "400 GR. / REMA 1000",
+   "labels": [
+    {
+     "id": 2,
+     "name": "REMA1000"
+    },
+    {
+     "id": 5,
+     "name": "Økologi"
+    },
+    {
+     "id": 95,
+     "name": "Rainforest Alliance"
+    }
+   ],
+   "prices": [
+    {
+     "price": 49.95,
+     "is_campaign": false,
+     "starting_at": "2026-09-17T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 124.88,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 11240,
+   "name": "KAKAOMÆLK",
+   "underline": "20 CL. / REMA 1000",
+   "labels": [
+    {
+     "id": 95,
+     "name": "Rainforest Alliance"
+    },
+    {
+     "id": 2,
+     "name": "REMA1000"
+    }
+   ],
+   "prices": [
+    {
+     "price": 3.33,
+     "is_campaign": false,
+     "starting_at": "2025-10-16T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 16.65,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 11391,
+   "name": "KAKAOMÆLK",
+   "underline": "250 ML. / MATILDE",
+   "labels": [],
+   "prices": [
+    {
+     "price": 10.09,
+     "is_campaign": false,
+     "starting_at": "2025-10-09T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 40.36,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 11500,
+   "name": "KAKAOMÆLK",
+   "underline": "50 CL. / REMA 1000",
+   "labels": [
+    {
+     "id": 2,
+     "name": "REMA1000"
+    }
+   ],
+   "prices": [
+    {
+     "price": 14,
+     "is_campaign": false,
+     "starting_at": "2026-05-28T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 28,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 20381,
+   "name": "KAKAOMÆLK",
+   "underline": "330 ML. / GRAM SLOT, ØKOLOGISK",
+   "labels": [
+    {
+     "id": 9001,
+     "name": "Avisvare"
+    },
+    {
+     "id": 203,
+     "name": "Bedre dyrevelfærd 3"
+    },
+    {
+     "id": 95,
+     "name": "Rainforest Alliance"
+    },
+    {
+     "id": 39,
+     "name": "Gram slot"
+    },
+    {
+     "id": 6,
+     "name": "Økologi"
+    },
+    {
+     "id": 5,
+     "name": "Økologi"
+    }
+   ],
+   "prices": [
+    {
+     "price": 12,
+     "is_campaign": true,
+     "starting_at": "2026-10-04T00:00:00+00:00",
+     "ending_at": "2026-10-10T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 36.36,
+     "deposit": null
+    },
+    {
+     "price": 12.14,
+     "is_campaign": false,
+     "starting_at": "2026-10-11T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 36.79,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 71035,
+   "name": "MARIE KIKS",
+   "underline": "200 GR. / REMA 1000",
+   "labels": [
+    {
+     "id": 2,
+     "name": "REMA1000"
+    }
+   ],
+   "prices": [
+    {
+     "price": 4.32,
+     "is_campaign": false,
+     "starting_at": "2025-10-02T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 21.6,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 100996,
+   "name": "SPAGHETTI CARBONARA",
+   "underline": "180 GR. / REMA 1000",
+   "labels": [
+    {
+     "id": 2,
+     "name": "REMA1000"
+    }
+   ],
+   "prices": [
+    {
+     "price": 15.2,
+     "is_campaign": false,
+     "starting_at": "2025-10-09T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 84.44,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 90335,
+   "name": "SPAGHETTI FULDKORN",
+   "underline": "500 GR. / REMA 1000",
+   "labels": [
+    {
+     "id": 2,
+     "name": "REMA1000"
+    },
+    {
+     "id": 5,
+     "name": "Økologi"
+    },
+    {
+     "id": 40,
+     "name": "Nøglehul"
+    },
+    {
+     "id": 43,
+     "name": "Fuldkorn"
+    }
+   ],
+   "prices": [
+    {
+     "price": 9.08,
+     "is_campaign": false,
+     "starting_at": "2025-10-02T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 18.16,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 90352,
+   "name": "SPAGHETTI",
+   "underline": "1 KG. / REMA 1000",
+   "labels": [
+    {
+     "id": 2,
+     "name": "REMA1000"
+    }
+   ],
+   "prices": [
+    {
+     "price": 8.95,
+     "is_campaign": false,
+     "starting_at": "2026-05-07T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 8.95,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 90377,
+   "name": "SPAGHETTI ØKOLOGISK",
+   "underline": "500 GR. / REMA 1000",
+   "labels": [
+    {
+     "id": 2,
+     "name": "REMA1000"
+    },
+    {
+     "id": 5,
+     "name": "Økologi"
+    }
+   ],
+   "prices": [
+    {
+     "price": 7.95,
+     "is_campaign": false,
+     "starting_at": "2026-02-26T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "kg",
+     "compare_unit_price": 15.9,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 130387,
+   "name": "DEO ROLL-ON",
+   "underline": "50 ML. / REXONA BIORYTHM",
+   "labels": [],
+   "prices": [
+    {
+     "price": 19.95,
+     "is_campaign": false,
+     "starting_at": "2026-08-06T00:00:00+00:00",
+     "ending_at": "2026-10-17T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 399,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 130389,
+   "name": "DEO ROLL-ON",
+   "underline": "50 ML. / REXONA MEN COBALT",
+   "labels": [],
+   "prices": [
+    {
+     "price": 19.95,
+     "is_campaign": false,
+     "starting_at": "2026-08-06T00:00:00+00:00",
+     "ending_at": "2026-10-17T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 399,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 130500,
+   "name": "DEO ROLL-ON",
+   "underline": "50 ML. / SANEX MEN ACTIVE CONTROL",
+   "labels": [],
+   "prices": [
+    {
+     "price": 17.95,
+     "is_campaign": false,
+     "starting_at": "2026-02-05T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 359,
+     "deposit": null
+    }
+   ]
+  },
+  {
+   "id": 130860,
+   "name": "DEO ROLL-ON",
+   "underline": "53 ML. / SANEX PROTECTOR HYPOALLERGENI",
+   "labels": [],
+   "prices": [
+    {
+     "price": 17.95,
+     "is_campaign": false,
+     "starting_at": "2026-02-05T00:00:00+00:00",
+     "ending_at": "2099-12-31T00:00:00+00:00",
+     "compare_unit": "ltr",
+     "compare_unit_price": 338.68,
+     "deposit": null
+    }
+   ]
+  }
+ ],
+ "meta": {
+  "pagination": {
+   "current_page": 1,
+   "last_page": 1,
+   "per_page": 100,
+   "total": 31
+  }
+ }
+}

@@ -1,0 +1,288 @@
+{
+ "standardmjölk": {
+  "results": [
+   {
+    "code": "101233931_ST",
+    "name": "Mjölk Längre Hållbarhet 3%",
+    "manufacturer": "Garant",
+    "productLine2": "GARANT, 1,5l",
+    "displayVolume": "1,5l",
+    "price": "16,90 kr",
+    "priceValue": 16.9,
+    "comparePrice": "11,27 kr",
+    "comparePriceUnit": "l",
+    "depositPrice": "",
+    "labels": [
+     "swedish_flag",
+     "from_sweden"
+    ]
+   },
+   {
+    "code": "101205891_ST",
+    "name": "Mjölk 3%",
+    "manufacturer": "Garant",
+    "productLine2": "GARANT, 1l",
+    "displayVolume": "1l",
+    "price": "11,50 kr",
+    "priceValue": 11.5,
+    "comparePrice": "11,50 kr",
+    "comparePriceUnit": "l",
+    "depositPrice": "",
+    "labels": [
+     "swedish_flag",
+     "from_sweden"
+    ]
+   },
+   {
+    "code": "101125998_ST",
+    "name": "Mjölk Färsk 3%",
+    "manufacturer": "Falköpings",
+    "productLine2": "FALKÖPINGS, 1l",
+    "displayVolume": "1l",
+    "price": "12,90 kr",
+    "priceValue": 12.9,
+    "comparePrice": "12,90 kr",
+    "comparePriceUnit": "l",
+    "depositPrice": "",
+    "labels": [
+     "swedish_flag",
+     "from_sweden"
+    ]
+   },
+   {
+    "code": "100848674_ST",
+    "name": "Standardmjölk Gårds 3%",
+    "manufacturer": "Wapnö",
+    "productLine2": "WAPNÖ, 1,5l",
+    "displayVolume": "1,5l",
+    "price": "19,90 kr",
+    "priceValue": 19.9,
+    "comparePrice": "13,27 kr",
+    "comparePriceUnit": "l",
+    "depositPrice": "",
+    "labels": []
+   },
+   {
+    "code": "100814852_ST",
+    "name": "Mjölk Eko 3%",
+    "manufacturer": "Arla Ko",
+    "productLine2": "ARLA KO, 3dl",
+    "displayVolume": "3dl",
+    "price": "6,90 kr",
+    "priceValue": 6.9,
+    "comparePrice": "23,00 kr",
+    "comparePriceUnit": "l",
+    "depositPrice": "",
+    "labels": [
+     "ecological",
+     "krav",
+     "eu_ecological"
+    ]
+   }
+  ],
+  "pagination": {
+   "pageSize": 100,
+   "currentPage": 0,
+   "numberOfPages": 1,
+   "totalNumberOfResults": 5
+  }
+ },
+ "ägg": {
+  "results": [
+   {
+    "code": "101718037_ST",
+    "name": "Ägg 24p Frigående Inomhus Medium",
+    "manufacturer": "Garant",
+    "productLine2": "GARANT, 24p",
+    "displayVolume": "24p",
+    "price": "59,90 kr",
+    "priceValue": 59.9,
+    "comparePrice": "2,50 kr",
+    "comparePriceUnit": "st",
+    "depositPrice": "",
+    "labels": [
+     "swedish_flag",
+     "from_sweden"
+    ]
+   },
+   {
+    "code": "101218667_ST",
+    "name": "Ägg 10p Frigående Utomhus Medium/large",
+    "manufacturer": "Garant",
+    "productLine2": "GARANT, 10p",
+    "displayVolume": "10p",
+    "price": "37,90 kr",
+    "priceValue": 37.9,
+    "comparePrice": "3,79 kr",
+    "comparePriceUnit": "st",
+    "depositPrice": "",
+    "labels": [
+     "swedish_flag",
+     "from_sweden"
+    ]
+   },
+   {
+    "code": "101254438_KG",
+    "name": "Lammlägg Fryst Nya Zeeland",
+    "manufacturer": "Affco",
+    "productLine2": "AFFCO, ca: 1.2kg",
+    "displayVolume": "ca: 1.2kg",
+    "price": "159,00 kr",
+    "priceValue": 159,
+    "comparePrice": "159,00 kr",
+    "comparePriceUnit": "kg",
+    "depositPrice": "",
+    "labels": []
+   }
+  ],
+  "pagination": {
+   "pageSize": 100,
+   "currentPage": 0,
+   "numberOfPages": 1,
+   "totalNumberOfResults": 3
+  }
+ },
+ "cola burk": {
+  "results": [
+   {
+    "code": "101904519_ST",
+    "name": "Coca-cola Zero Läsk Burk",
+    "manufacturer": "Coca-cola Zero",
+    "productLine2": "COCA-COLA ZERO, 15p/33cl",
+    "displayVolume": "15p/33cl",
+    "price": "99,90 kr",
+    "priceValue": 99.9,
+    "comparePrice": "20,18 kr",
+    "comparePriceUnit": "l",
+    "depositPrice": "30,00 kr",
+    "labels": []
+   },
+   {
+    "code": "101889410_ST",
+    "name": "Coca-cola Läsk Burk",
+    "manufacturer": "Coca-cola",
+    "productLine2": "COCA-COLA, 33cl",
+    "displayVolume": "33cl",
+    "price": "9,50 kr",
+    "priceValue": 9.5,
+    "comparePrice": "28,79 kr",
+    "comparePriceUnit": "l",
+    "depositPrice": "2,00 kr",
+    "labels": []
+   },
+   {
+    "code": "101832237_ST",
+    "name": "Coca-cola Läsk Burk",
+    "manufacturer": "Coca-cola",
+    "productLine2": "COCA-COLA, 6p 20cl",
+    "displayVolume": "6p 20cl",
+    "price": "39,90 kr",
+    "priceValue": 39.9,
+    "comparePrice": "33,25 kr",
+    "comparePriceUnit": "l",
+    "depositPrice": "12,00 kr",
+    "labels": []
+   }
+  ],
+  "pagination": {
+   "pageSize": 100,
+   "currentPage": 0,
+   "numberOfPages": 1,
+   "totalNumberOfResults": 3
+  }
+ },
+ "hushållsost": {
+  "results": [
+   {
+    "code": "101197478_KG",
+    "name": "Hushållsost 26%",
+    "manufacturer": "Arla",
+    "productLine2": "ARLA, ca: 2.2kg",
+    "displayVolume": "ca: 2.2kg",
+    "price": "108,90 kr",
+    "priceValue": 108.9,
+    "comparePrice": "108,90 kr",
+    "comparePriceUnit": "kg",
+    "depositPrice": "",
+    "labels": []
+   },
+   {
+    "code": "101829794_ST",
+    "name": "Hushållsost Götene 26%",
+    "manufacturer": "Arla",
+    "productLine2": "ARLA, 500g",
+    "displayVolume": "500g",
+    "price": "64,90 kr",
+    "priceValue": 64.9,
+    "comparePrice": "129,80 kr",
+    "comparePriceUnit": "kg",
+    "depositPrice": "",
+    "labels": []
+   },
+   {
+    "code": "101241333_KG",
+    "name": "Hushållsost Mild 26%",
+    "manufacturer": "Garant",
+    "productLine2": "GARANT, ca: 1kg",
+    "displayVolume": "ca: 1kg",
+    "price": "94,90 kr",
+    "priceValue": 94.9,
+    "comparePrice": "94,90 kr",
+    "comparePriceUnit": "kg",
+    "depositPrice": "",
+    "labels": [
+     "swedish_flag",
+     "from_sweden"
+    ]
+   }
+  ],
+  "pagination": {
+   "pageSize": 100,
+   "currentPage": 0,
+   "numberOfPages": 1,
+   "totalNumberOfResults": 3
+  }
+ },
+ "toalettpapper": {
+  "results": [
+   {
+    "code": "101842099_ST",
+    "name": "Toalettpapper Mjukt Original 3 Lager",
+    "manufacturer": "Fixa",
+    "productLine2": "FIXA, 18p",
+    "displayVolume": "18p",
+    "price": "99,90 kr",
+    "priceValue": 99.9,
+    "comparePrice": "51,18 kr",
+    "comparePriceUnit": "kg",
+    "depositPrice": "",
+    "labels": [
+     "swan",
+     "environmental_facet"
+    ]
+   },
+   {
+    "code": "101309671_ST",
+    "name": "Toalettpapper Classic",
+    "manufacturer": "Lambi",
+    "productLine2": "LAMBI, 16p",
+    "displayVolume": "16p",
+    "price": "93,90 kr",
+    "priceValue": 93.9,
+    "comparePrice": "60,50 kr",
+    "comparePriceUnit": "kg",
+    "depositPrice": "",
+    "labels": [
+     "swan",
+     "environmental_facet"
+    ]
+   }
+  ],
+  "pagination": {
+   "pageSize": 100,
+   "currentPage": 0,
+   "numberOfPages": 1,
+   "totalNumberOfResults": 2
+  }
+ }
+}

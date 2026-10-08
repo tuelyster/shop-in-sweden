@@ -1,0 +1,273 @@
+{
+  "categories": [
+    { "id": "groceries", "name": "Groceries" },
+    { "id": "candy-snacks", "name": "Candy and snacks" },
+    { "id": "soft-drinks", "name": "Soft drinks" },
+    { "id": "personal-care-household", "name": "Personal care and household" }
+  ],
+  "basketItems": [
+    {
+      "id": "whole-milk", "categoryId": "groceries", "name": "Whole milk",
+      "matchRule": {
+        "searchWords": {"DK":["sødmælk"],"SE":["standardmjölk"]},
+        "nameWords": {"DK":["sødmælk"]},
+        "excludedWords": {"DK":["øko","laktose","lactofree","kakao"],"SE":["eko","laktosfri","lätt","mellan","mini","fil","choklad","havre","soja","mandel","kokos","kondens","pulver","gröt","kaffe","1,5%","0,5%","0,1%","1%","2%","4%"]},
+        "unit": "l",
+        "packSize": {"min":0.9,"max":2.1}
+      }
+    },
+    {
+      "id": "butter", "categoryId": "groceries", "name": "Butter",
+      "matchRule": {
+        "searchWords": {"DK":["smør"],"SE":["smör"]},
+        "nameWords": {"SE":["smör"]},
+        "excludedWords": {"DK":["øko","laktose","smørbar","smørbrød","smørcroissant","smøreost","m/smør","pisket","becel","lactofree","margarine","70%","60%","40%","popcorn","mikro","kiks","croissant","rapsolie","oliven","peanut","jordnød","mandel","chips","is ","sauce"],"SE":["eko","laktosfri","bregott","flytande","stekt","kaviar","bredbart","smörgås","messmör","smörgåsgurka","smördeg","smörkaka","kryddsmör","smörkräm","flora","lätta","margarin","70%","75%","60%","40%","35%","popcorn","mikro","kex","kaka","bakelse","croissant","raps","oliv","57%","50%","55%","65%","bakning","jordnöt","peanut","mandel","nötsmör","chips","glass","dryck","sås","pasta","ris "]},
+        "unit": "kg",
+        "packSize": {"min":0.2,"max":0.51}
+      }
+    },
+    {
+      "id": "eggs", "categoryId": "groceries", "name": "Eggs (each)",
+      "matchRule": {
+        "searchWords": {"DK":["æg"],"SE":["ägg"]},
+        "nameWords": {"SE":["ägg"]},
+        "excludedWords": {"DK":["øko","indlæg","pålæg","salat","hvide","blomme","sandwich","chokolade","mayonnaise","nudler"],"SE":["eko","kokta","skalade","äggröra","pastej","chokladägg","påskägg","salad","pasta","nudlar","äggkopp","äggklocka","lägg","lamm"]},
+        "unit": "pcs",
+        "packSize": {"min":4,"max":30}
+      }
+    },
+    {
+      "id": "sliced-cheese", "categoryId": "groceries", "name": "Sliced cheese",
+      "matchRule": {
+        "searchWords": {"DK":["skæreost"],"SE":["hushållsost"]},
+        "nameWords": {"DK":["skiveost","smalle skiver","skæreost"]},
+        "excludedWords": {"DK":["øko","laktose","lactofree","revet","smelte","smøre","flødeost","friskost","fetaost","tortilla","chips","mozzarella","gedeost","ostehaps","ostepops","osteskærer","ostestrenge","frokost","krydder","rejeost","skinkeost","hvidløgs","røge","salatost","grillost","burger","nudler","hytteost"],"SE":["eko","laktosfri","riven","smält","färskost","kräm","tub","mozzarella","chips","ostkrokar","ostbågar","pasta","sås","ostkaka","kex","fetaost","grill"]},
+        "unit": "kg",
+        "packSize": {"min":0.2,"max":1.3}
+      }
+    },
+    {
+      "id": "toast-bread", "categoryId": "groceries", "name": "Toast bread",
+      "matchRule": {
+        "searchWords": {"DK":["toastbrød"],"SE":["rostbröd"]},
+        "nameWords": {"DK":["toast","toastbrød"]},
+        "excludedWords": {"DK":["øko","glutenfri","pariser","country cow"],"SE":["eko","glutenfri","pizza","hamburgerbröd"]},
+        "unit": "kg",
+        "packSize": {"min":0.3,"max":1.2}
+      }
+    },
+    {
+      "id": "spaghetti", "categoryId": "groceries", "name": "Spaghetti",
+      "matchRule": {
+        "searchWords": {"DK":["spaghetti"],"SE":["spaghetti"]},
+        "excludedWords": {"DK":["øko","glutenfri","carbonara","bolognese","sauce","squash","fuldkorn"],"SE":["eko","glutenfri","carbonara","bolognese","sås","squash","fullkorn","konserv","burk","färdig","buljong"]},
+        "unit": "kg",
+        "packSize": {"min":0.4,"max":2.1}
+      }
+    },
+    {
+      "id": "rice", "categoryId": "groceries", "name": "Rice",
+      "matchRule": {
+        "searchWords": {"DK":["ris"],"SE":["ris"]},
+        "nameWords": {"SE":["ris"]},
+        "excludedWords": {"DK":["øko","ristede","rispapir","risengrød","riskiks","risotto","cuisine","risdrik","risret","risalamande","rismel","nudler","drik","mælk","kiks","wafer","puffed","snack","mikro","kogepose"],"SE":["eko","risgryn","riskakor","risnudlar","rispapper","risdryck","ris dryck","risvatten","risolja","rismjöl","risotto","kokt","mikro","microris","pudding","grynost","puffat","cake","snack","chips","gröt","sushi"]},
+        "unit": "kg",
+        "packSize": {"min":0.4,"max":5.1}
+      }
+    },
+    {
+      "id": "ground-coffee", "categoryId": "groceries", "name": "Ground coffee",
+      "matchRule": {
+        "searchWords": {"DK":["formalet kaffe"],"SE":["bryggkaffe"]},
+        "excludedWords": {"DK":["øko","instant","kapsel","bønner","koffeinfri","filtre","fløde","iskaffe","pude"],"SE":["eko","snabbkaffe","kapsel","bönor","koffeinfri","hela bönor","kallbryggt","pad","iskaffe"]},
+        "unit": "kg",
+        "packSize": {"min":0.2,"max":1.05}
+      }
+    },
+    {
+      "id": "minced-beef", "categoryId": "groceries", "name": "Minced beef",
+      "matchRule": {
+        "searchWords": {"DK":["hakket oksekød"],"SE":["nötfärs"]},
+        "nameWords": {"DK":["hk. oksekød","hakket oksekød"],"SE":["nötfärs"]},
+        "excludedWords": {"DK":["øko","gris","grønt","suppe","hund","kat"],"SE":["eko","fläsk","gris","svin","blandfärs","kalv","lamm","katt","hund","mjau","gelé","fryst","burek","färdig"]},
+        "unit": "kg",
+        "packSize": {"min":0.35,"max":1.1}
+      }
+    },
+    {
+      "id": "chicken-breast", "categoryId": "groceries", "name": "Chicken breast",
+      "matchRule": {
+        "searchWords": {"DK":["kyllingebryst"],"SE":["kycklingfilé"]},
+        "nameWords": {"DK":["kyllingebryst","kyllingefilet","kyllingebrystfilet"],"SE":["kycklingfilé","kycklingbröst","kyckling filé"]},
+        "excludedWords": {"DK":["øko","pålæg","nuggets","paneret","marineret","strimler","spyd","kat","hund","fritgående"],"SE":["eko","pålägg","nuggets","panerad","marinerad","strimlad","spett","fryst","frysta","kryddad","grillad","kokt","rökt","tärnad"]},
+        "unit": "kg",
+        "packSize": {"min":0.3,"max":2.1}
+      }
+    },
+    {
+      "id": "milk-chocolate-bar", "categoryId": "candy-snacks", "name": "Milk chocolate bar",
+      "matchRule": {
+        "searchWords": {"DK":["mælkechokolade"],"SE":["mjölkchoklad"]},
+        "excludedWords": {"DK":["øko","sukkerfri","laktose","pålæg","kiks","kakao"],"SE":["eko","sockerfri","pålägg","kex","kakao","dryck","bakning","kaka"]},
+        "unit": "kg",
+        "packSize": {"min":0.04,"max":0.26}
+      }
+    },
+    {
+      "id": "pick-and-mix-candy", "categoryId": "candy-snacks", "name": "Pick-and-mix candy",
+      "matchRule": {
+        "searchWords": {"DK":["bland selv slik"],"SE":["lösgodis"]},
+        "excludedWords": {"DK":["øko"],"SE":["eko","godishink","skål","påse"]},
+        "unit": "kg",
+        "packSize": {"min":0.2,"max":3}
+      }
+    },
+    {
+      "id": "bagged-candy", "categoryId": "candy-snacks", "name": "Bagged candy",
+      "matchRule": {
+        "searchWords": {"DK":["slik pose","vingummi"],"SE":["godispåse"]},
+        "nameWords": {"DK":["vingummi","slik"],"SE":[]},
+        "excludedWords": {"DK":["øko","sukkerfri","tyggegummi","hund","kat"],"SE":["eko","sockerfri","tuggummi","choklad","hund","katt","lakrits"]},
+        "unit": "kg",
+        "packSize": {"min":0.05,"max":0.7}
+      }
+    },
+    {
+      "id": "potato-crisps", "categoryId": "candy-snacks", "name": "Potato crisps",
+      "matchRule": {
+        "searchWords": {"DK":["chips"],"SE":["chips"]},
+        "excludedWords": {"DK":["øko","banan","tortilla","grønt","pitabrød","linse","kikærte","frugt","æble","sukkerfri","rodfrugt","popcorn","majs","ris","bagel","nacho"],"SE":["eko","banan","tortilla","linser","kikärt","frukt","äpple","rotfrukt","popcorn","majs","ris","bagel","grönsak","sötpotatis","pitabröd","bön","ost","dipp","kryddmix","nacho"]},
+        "unit": "kg",
+        "packSize": {"min":0.1,"max":0.6}
+      }
+    },
+    {
+      "id": "salted-peanuts", "categoryId": "candy-snacks", "name": "Salted peanuts",
+      "matchRule": {
+        "searchWords": {"DK":["saltede peanuts"],"SE":["jordnötter"]},
+        "nameWords": {"DK":["peanuts"],"SE":["jordnötter","peanuts"]},
+        "excludedWords": {"DK":["øko","usaltede","ristede løg","chokolade","yoghurt","dragé","daddel","bar","smør","mix","frugt"],"SE":["eko","osaltade","osaltad","choklad","yoghurt","dragé","dadel","bar","smör","mix","frukt","chili","honung","tryffel"]},
+        "unit": "kg",
+        "packSize": {"min":0.1,"max":1.1}
+      }
+    },
+    {
+      "id": "biscuits", "categoryId": "candy-snacks", "name": "Biscuits",
+      "matchRule": {
+        "searchWords": {"DK":["kiks"],"SE":["kex"]},
+        "nameWords": {"DK":["kiks"],"SE":["kex"]},
+        "excludedWords": {"DK":["øko","glutenfri","hund","kat","chokolade","ris","sukkerfri"],"SE":["eko","glutenfri","hund","katt","choklad","ris","sockerfri","hårt","nöt","knäcke"]},
+        "unit": "kg",
+        "packSize": {"min":0.1,"max":1.1}
+      }
+    },
+    {
+      "id": "cola-1-5-l", "categoryId": "soft-drinks", "name": "Cola 1.5 L",
+      "matchRule": {
+        "searchWords": {"DK":["cola 1,5 l"],"SE":["cola 1,5 l"]},
+        "nameWords": {"DK":["cola"],"SE":["cola"]},
+        "excludedWords": {"DK":["øko","slik","vingummi","lakrids","dåse","sauce","gele","iskaffe","cola-"],"SE":["eko","godis","nappar","dummies","candy","lakrits","burk","gelé","flaskor"]},
+        "unit": "l",
+        "packSize": {"min":1.4,"max":1.6},
+        "pieces": {"max":1}
+      }
+    },
+    {
+      "id": "cola-cans", "categoryId": "soft-drinks", "name": "Cola cans",
+      "matchRule": {
+        "searchWords": {"DK":["cola dåse"],"SE":["cola burk"]},
+        "nameWords": {"DK":["cola"],"SE":["cola"]},
+        "excludedWords": {"DK":["øko","slik","vingummi","lakrids","sauce","gele","iskaffe","pet"],"SE":["eko","godis","nappar","dummies","candy","lakrits","gelé","pet","flaska"]},
+        "unit": "l",
+        "packSize": {"min":0.25,"max":12},
+        "itemSize": {"min":0.25,"max":0.5}
+      }
+    },
+    {
+      "id": "sparkling-water", "categoryId": "soft-drinks", "name": "Sparkling water",
+      "matchRule": {
+        "searchWords": {"DK":["danskvand"],"SE":["kolsyrat vatten"]},
+        "nameWords": {"DK":["danskvand","kildevand","mineralvand"]},
+        "excludedWords": {"DK":["øko","saftevand","juice","energi"],"SE":["eko","juice","energi","sirap","smak"]},
+        "unit": "l",
+        "packSize": {"min":0.9,"max":12}
+      }
+    },
+    {
+      "id": "energy-drink", "categoryId": "soft-drinks", "name": "Energy drink",
+      "matchRule": {
+        "searchWords": {"DK":["energidrik"],"SE":["energidryck"]},
+        "nameWords": {"DK":["energidrik","energy"],"SE":["energidryck","energy"]},
+        "excludedWords": {"DK":["øko","bar","gel","tyggegummi","protein","vodka","alkohol","drink 5%"],"SE":["eko","bar","gel","tuggummi","protein","shot","vodka","alkohol"]},
+        "unit": "l",
+        "packSize": {"min":0.2,"max":12}
+      }
+    },
+    {
+      "id": "orange-juice", "categoryId": "soft-drinks", "name": "Orange juice",
+      "matchRule": {
+        "searchWords": {"DK":["appelsinjuice"],"SE":["apelsinjuice"]},
+        "excludedWords": {"DK":["øko","koncentrat","mix","marmelade","smoothie","shot","nektar"],"SE":["eko","koncentrat","mix","marmelad","smoothie","shot","nektar"]},
+        "unit": "l",
+        "packSize": {"min":0.9,"max":2.1}
+      }
+    },
+    {
+      "id": "shampoo", "categoryId": "personal-care-household", "name": "Shampoo",
+      "matchRule": {
+        "searchWords": {"DK":["shampoo"],"SE":["schampo"]},
+        "excludedWords": {"DK":["øko","kids","hund","tørshampoo","bil"],"SE":["eko","barn","hund","torrschampo","bil","balsam"]},
+        "unit": "l",
+        "packSize": {"min":0.15,"max":1.1}
+      }
+    },
+    {
+      "id": "toothpaste", "categoryId": "personal-care-household", "name": "Toothpaste",
+      "matchRule": {
+        "searchWords": {"DK":["tandpasta"],"SE":["tandkräm"]},
+        "excludedWords": {"DK":["øko","børn","hund","tandbørste"],"SE":["eko","barn","hund","tandborste"]},
+        "unit": "l",
+        "packSize": {"min":0.05,"max":0.2}
+      }
+    },
+    {
+      "id": "deodorant", "categoryId": "personal-care-household", "name": "Deodorant",
+      "matchRule": {
+        "searchWords": {"DK":["deodorant"],"SE":["deodorant"]},
+        "nameWords": {"DK":["deo","deodorant"]},
+        "excludedWords": {"DK":["øko","sæt","gaveæske"],"SE":["eko","set","presentask"]},
+        "unit": "l",
+        "packSize": {"min":0.03,"max":0.3}
+      }
+    },
+    {
+      "id": "diapers", "categoryId": "personal-care-household", "name": "Diapers",
+      "matchRule": {
+        "searchWords": {"DK":["bleer"],"SE":["blöjor"]},
+        "excludedWords": {"DK":["øko","våd","svøm","badebleer","natbleer","pose"],"SE":["eko","våt","simblöj","badblöj","nattblöj","blöjpåse","waste","påsar","bags"]},
+        "unit": "pcs",
+        "packSize": {"min":15,"max":200}
+      }
+    },
+    {
+      "id": "laundry-detergent", "categoryId": "personal-care-household", "name": "Laundry detergent",
+      "matchRule": {
+        "searchWords": {"DK":["vaskemiddel"],"SE":["tvättmedel"]},
+        "nameWords": {"DK":["vaskemiddel","flydende vask"],"SE":["tvättmedel"]},
+        "excludedWords": {"DK":["øko","opvask","gulv","maskin","kapsler","skyllemiddel"],"SE":["eko","disk","golv","maskin","kapslar","sköljmedel","fläck"]},
+        "unit": "l",
+        "packSize": {"min":0.7,"max":4}
+      }
+    },
+    {
+      "id": "toilet-paper", "categoryId": "personal-care-household", "name": "Toilet paper",
+      "matchRule": {
+        "searchWords": {"DK":["toiletpapir"],"SE":["toalettpapper"]},
+        "nameWords": {"DK":["toiletpapir"]},
+        "excludedWords": {"DK":["øko","toiletblok","toiletrens","vådt","fugtigt"],"SE":["eko","toalettblock","toalettrengöring","fuktigt","våt"]},
+        "unit": "pcs",
+        "packSize": {"min":6,"max":80}
+      }
+    }
+  ]
+}

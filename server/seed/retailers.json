@@ -1,0 +1,65 @@
+{
+  "retailers": [
+    { "id": "rema1000", "name": "REMA 1000", "country": "DK", "memberOfferPhrases": [] },
+    { "id": "netto", "name": "Netto", "country": "DK", "memberOfferPhrases": [] },
+    { "id": "lidl-dk", "name": "Lidl DK", "country": "DK", "memberOfferPhrases": [] },
+    { "id": "foetex", "name": "Føtex", "country": "DK", "memberOfferPhrases": [] },
+    { "id": "bilka", "name": "Bilka", "country": "DK", "memberOfferPhrases": [] },
+    { "id": "willys", "name": "Willys", "country": "SE", "memberOfferPhrases": ["För dig med WillysPlus", "WillysPlus"] },
+    { "id": "city-gross", "name": "City Gross", "country": "SE", "memberOfferPhrases": ["PRIO-medlemmar", "PRIO-medlem"] },
+    { "id": "lidl-se", "name": "Lidl", "country": "SE", "memberOfferPhrases": ["Lidl Plus"] },
+    { "id": "coop", "name": "Stora Coop", "country": "SE", "memberOfferPhrases": ["Medlemspris"] }
+  ],
+  "stores": [
+    {
+      "id": "willys-emporia",
+      "retailerId": "willys",
+      "destinationId": "hyllie",
+      "name": "Willys Emporia",
+      "tjekDealerId": "c371GA",
+      "tjekStoreId": "7a65rAb",
+      "willysStoreId": "2244"
+    },
+    {
+      "id": "city-gross-hyllie",
+      "retailerId": "city-gross",
+      "destinationId": "hyllie",
+      "name": "City Gross Hyllie",
+      "tjekDealerId": "bfe5hA",
+      "tjekStoreId": "YzJ69npj3PcAYqG1bj1DX"
+    },
+    {
+      "id": "lidl-delsjogatan",
+      "retailerId": "lidl-se",
+      "destinationId": "hyllie",
+      "name": "Lidl Delsjögatan",
+      "tjekDealerId": "03a7b3",
+      "tjekStoreId": "h_z9FjxOgZH9KymAuCzjV"
+    },
+    {
+      "id": "willys-vala",
+      "retailerId": "willys",
+      "destinationId": "vala",
+      "name": "Willys Väla",
+      "tjekDealerId": "c371GA",
+      "tjekStoreId": "c275u3b",
+      "willysStoreId": "2271"
+    },
+    {
+      "id": "stora-coop-vala",
+      "retailerId": "coop",
+      "destinationId": "vala",
+      "name": "Stora Coop Väla",
+      "tjekDealerId": "6c28SD",
+      "tjekStoreId": "tUi5HC-DoNpB8sk5QW527"
+    },
+    {
+      "id": "lidl-drottninghogsvagen",
+      "retailerId": "lidl-se",
+      "destinationId": "vala",
+      "name": "Lidl Drottninghögsvägen",
+      "tjekDealerId": "03a7b3",
+      "tjekStoreId": "H-mApR-J3kKBcw8_cFeMY"
+    }
+  ]
+}
