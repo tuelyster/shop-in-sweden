@@ -9,7 +9,9 @@ import type {
   ReferenceData,
   SeasonId,
 } from '@shop-in-sweden/shared';
+import { readCatalogue } from './catalogue';
 import type { Db } from './db/connection';
+import { measurePriceGaps } from './match/price-gaps';
 import { crossingFees, crossings, destinations, seasons, vehicleDefaults } from './db/schema';
 
 const ISO_DATE = /^(\d{4})-(\d{2})-(\d{2})$/;
@@ -37,7 +39,12 @@ function loadReferenceData(db: Db, tripDate: string): ReferenceData {
     .from(crossingFees)
     .all()
     .filter((f) => f.validFrom <= tripDate);
+  // Regular prices only; Offers valid on the Trip Date join the Price Gaps in ticket 09.
+  const priceGaps = measurePriceGaps(db);
   return {
+    categories: readCatalogue(db).categories,
+    priceGaps: priceGaps.destinations,
+    exchangeRate: priceGaps.exchangeRate,
     vehicleDefaults: db
       .select()
       .from(vehicleDefaults)

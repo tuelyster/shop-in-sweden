@@ -89,6 +89,25 @@ export const energyPrice = optionalNumberInput('energipris');
 export const distanceBridge = optionalNumberInput('km-bro');
 export const distanceFerry = optionalNumberInput('km-faerge');
 
+/** A Planned Spend in DKK at Danish prices; 0 when nothing is planned in the Category. */
+function plannedSpendInput(name: string) {
+  return defineInput<number>({
+    name,
+    defaultValue: () => 0,
+    parse: (raw) => {
+      const n = Number(raw);
+      return raw.trim() !== '' && Number.isFinite(n) && n >= 0 ? n : undefined;
+    },
+    serialise: (v) => String(v),
+  });
+}
+
+/** Planned Spend per Category (ids as in the Sample Basket). */
+export const spendGroceries = plannedSpendInput('kr-dagligvarer');
+export const spendCandySnacks = plannedSpendInput('kr-slik');
+export const spendSoftDrinks = plannedSpendInput('kr-sodavand');
+export const spendPersonalCare = plannedSpendInput('kr-pleje');
+
 /** Registry of every shareable input. Later tickets add theirs here. */
 export const inputs = {
   tripDate,
@@ -100,4 +119,8 @@ export const inputs = {
   energyPrice,
   distanceBridge,
   distanceFerry,
+  spendGroceries,
+  spendCandySnacks,
+  spendSoftDrinks,
+  spendPersonalCare,
 };

@@ -1,5 +1,5 @@
 import type { BaseUnit, Quantity } from '@shop-in-sweden/shared';
-import { readCatalogue, type BasketItem, type Category } from '../catalogue';
+import { readCatalogue, type BasketItem, type Category, type Retailer } from '../catalogue';
 import type { Db } from '../db/connection';
 import { latestExchangeRate, listPriceObservations, type ExchangeRate, type PriceObservation } from '../prices/store';
 import { evaluateCandidate, type Country } from './match-rule';
@@ -16,6 +16,11 @@ export interface Picked extends Product {
   unitPrice: { value: number; per: BaseUnit };
   /** The Unit Price in DKK; null for a Swedish product when no exchange rate has been imported. */
   unitPriceDkk: number | null;
+  retailerId: string;
+  /** Set for observations tied to one Store (Swedish Offers); null for national regular prices. */
+  storeId: string | null | undefined;
+  kind: 'regular' | 'offer';
+  validTo: string | null;
 }
 
 export interface Rejected extends Product {
@@ -46,14 +51,69 @@ export interface MatchReport {
   items: ItemMatch[];
 }
 
-/** The newest regular-price observation of every product. */
-function latestRegularObservations(observations: PriceObservation[]): PriceObservation[] {
+/**
+ * The Price Observations that can set a price: the newest regular price of every product. Ticket 09
+ * adds the Offers valid on the Trip Date here, so Price Gaps and the report both pick them up.
+ */
+export function candidateObservations(observations: PriceObservation[]): PriceObservation[] {
   const latest = new Map<string, PriceObservation>();
   for (const o of observations) {
     if (o.kind !== 'regular') continue;
     latest.set(`${o.retailerId}|${o.storeId ?? ''}|${o.productId}`, o);
   }
   return [...latest.values()];
+}
+
+/**
+ * Evaluates the Match Rule of one Basket Item on the candidate observations of one country and picks the
+ * cheapest accepted product by Unit Price. `include` narrows the observations, e.g. to one Destination's Stores.
+ */
+export function matchItem(
+  item: BasketItem,
+  country: Country,
+  observations: PriceObservation[],
+  retailers: Map<string, Retailer>,
+  rate: ExchangeRate | null,
+  include: (o: PriceObservation) => boolean = () => true,
+): CountryMatch {
+  const result: CountryMatch = { country, picked: null, accepted: 0, rejected: [], unrelated: 0 };
+  for (const o of observations) {
+    const retailer = retailers.get(o.retailerId);
+    if (!retailer || retailer.country !== country || !include(o)) continue;
+    const product: Product = {
+      retailer: retailer.name,
+      text: o.productText,
+      price: o.price,
+      currency: o.currency,
+      quantity: o.quantity,
+    };
+    const verdict = evaluateCandidate(item.matchRule, country, {
+      text: o.productText,
+      foundBy: o.foundBy,
+      quantity: o.quantity,
+    });
+    if (!verdict.accepted) {
+      if (verdict.nameMatched) result.rejected.push({ ...product, reason: verdict.reason });
+      else result.unrelated++;
+      continue;
+    }
+    result.accepted++;
+    const value = verdict.unitPrice(o.price);
+    if (!result.picked || value < result.picked.unitPrice.value) {
+      const per = item.matchRule.unit;
+      const unitPriceDkk = o.currency === 'DKK' ? value : rate ? value * rate.sekToDkk : null;
+      result.picked = {
+        ...product,
+        unitPrice: { value, per },
+        unitPriceDkk,
+        retailerId: o.retailerId,
+        storeId: o.storeId,
+        kind: o.kind,
+        validTo: o.validTo ?? null,
+      };
+    }
+  }
+  return result;
 }
 
 /**
@@ -64,44 +124,14 @@ export function buildMatchReport(db: Db): MatchReport {
   const catalogue = readCatalogue(db);
   const rate = latestExchangeRate(db);
   const retailers = new Map(catalogue.retailers.map((r) => [r.id, r]));
-  const observations = latestRegularObservations(listPriceObservations(db));
+  const observations = candidateObservations(listPriceObservations(db));
 
-  const items: ItemMatch[] = catalogue.basketItems.map((item) => {
-    const category = catalogue.categories.find((c) => c.id === item.categoryId)!;
-    const matchFor = (country: Country): CountryMatch => {
-      const result: CountryMatch = { country, picked: null, accepted: 0, rejected: [], unrelated: 0 };
-      for (const o of observations) {
-        const retailer = retailers.get(o.retailerId);
-        if (!retailer || retailer.country !== country) continue;
-        const product: Product = {
-          retailer: retailer.name,
-          text: o.productText,
-          price: o.price,
-          currency: o.currency,
-          quantity: o.quantity,
-        };
-        const verdict = evaluateCandidate(item.matchRule, country, {
-          text: o.productText,
-          foundBy: o.foundBy,
-          quantity: o.quantity,
-        });
-        if (!verdict.accepted) {
-          if (verdict.nameMatched) result.rejected.push({ ...product, reason: verdict.reason });
-          else result.unrelated++;
-          continue;
-        }
-        result.accepted++;
-        const value = verdict.unitPrice(o.price);
-        if (!result.picked || value < result.picked.unitPrice.value) {
-          const per = item.matchRule.unit;
-          const unitPriceDkk = o.currency === 'DKK' ? value : rate ? value * rate.sekToDkk : null;
-          result.picked = { ...product, unitPrice: { value, per }, unitPriceDkk };
-        }
-      }
-      return result;
-    };
-    return { category, item, DK: matchFor('DK'), SE: matchFor('SE') };
-  });
+  const items: ItemMatch[] = catalogue.basketItems.map((item) => ({
+    category: catalogue.categories.find((c) => c.id === item.categoryId)!,
+    item,
+    DK: matchItem(item, 'DK', observations, retailers, rate),
+    SE: matchItem(item, 'SE', observations, retailers, rate),
+  }));
 
   return { exchangeRate: rate, items };
 }

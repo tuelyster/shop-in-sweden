@@ -71,6 +71,66 @@ export interface VehicleDefault {
   priceDate: string;
 }
 
+/** Identifies a Category (groceries, candy-snacks, soft-drinks, personal-care-household). */
+export type CategoryId = string;
+
+export interface CategoryReference {
+  id: CategoryId;
+  name: string;
+}
+
+/** The cheapest Unit Price found for a Basket Item in one country, and where it came from. */
+export interface PricePick {
+  productName: string;
+  /** The Retailer (Denmark) or the Store at the Destination (Sweden). */
+  seller: string;
+  /** Unit Price in the price's own currency, per `per`. */
+  unitPrice: number;
+  currency: 'DKK' | 'SEK';
+  unitPriceDkk: number;
+  per: 'kg' | 'l' | 'pcs';
+  kind: 'regular' | 'offer';
+  /** ISO date an Offer is valid to; null for a regular price. */
+  validTo: string | null;
+}
+
+/** One Basket Item compared at a Destination. */
+export interface BasketItemGap {
+  basketItemId: string;
+  name: string;
+  denmark: PricePick | null;
+  sweden: PricePick | null;
+  /** 1 - (Swedish DKK Unit Price / Danish Unit Price); null unless priced in both countries. */
+  gap: number | null;
+}
+
+/** The Price Gap of one Category at one Destination, with the Basket Items behind it. */
+export interface CategoryPriceGap {
+  categoryId: CategoryId;
+  /**
+   * Unweighted mean of the item gaps over Basket Items priced in both countries (0.1 = 10 %
+   * cheaper in Sweden, negative = dearer). Null when no Basket Item is priced in both: unknown, not 0.
+   */
+  priceGap: number | null;
+  items: BasketItemGap[];
+  /** Names of Basket Items left out because they are not priced in both countries. */
+  missingItems: string[];
+}
+
+export interface DestinationPriceGaps {
+  destinationId: string;
+  categories: CategoryPriceGap[];
+}
+
+/** The SEK to DKK rate the Price Gaps were converted at. */
+export interface ExchangeRateInfo {
+  /** DKK per 1 SEK. */
+  sekToDkk: number;
+  /** ISO date the rate applies to. */
+  date: string;
+  source: string;
+}
+
 /**
  * Everything the calculator needs besides the shopper's inputs; served by the
  * reference-data API. Later tickets add Price Gaps, fuel prices, exchange rate etc.
@@ -81,6 +141,12 @@ export interface ReferenceData {
   /** Ferry seasons; any date outside all of them is low season. */
   seasons: Season[];
   crossings: CrossingReference[];
+  /** The four Categories, in display order. */
+  categories: CategoryReference[];
+  /** Price Gaps per Destination (regular prices only until Offers arrive). */
+  priceGaps: DestinationPriceGaps[];
+  /** Rate used for the Price Gaps; null while none has been imported. */
+  exchangeRate: ExchangeRateInfo | null;
 }
 
 /**
@@ -107,6 +173,8 @@ export interface TripInputs {
    * the ferry leg); null while unknown, which gives a Driving Cost of 0.
    */
   distanceKm: Record<CrossingId, number | null>;
+  /** Planned Spend in DKK at Danish prices, per Category; a missing Category counts as 0. */
+  plannedSpend: Record<CategoryId, number>;
 }
 
 export interface ShoppingTripResult {
@@ -119,7 +187,16 @@ export interface ShoppingTripResult {
   drivingCostDkk: number;
   /** Crossing Fee plus Driving Cost in DKK, unrounded. */
   tripCostDkk: number;
-  /** True for exactly one trip: the one with the lowest Trip Cost. */
+  /**
+   * Gross Saving in DKK, unrounded: sum of Planned Spend x Price Gap over the Categories with a
+   * known Price Gap here. Can be negative.
+   */
+  grossSavingDkk: number;
+  /** Categories with Planned Spend but no known Price Gap here; they add nothing to the Gross Saving. */
+  unknownGapCategoryIds: CategoryId[];
+  /** Gross Saving minus Trip Cost, unrounded; negative is a loss. */
+  netSavingDkk: number;
+  /** True for exactly one trip: the one with the highest Net Saving. */
   isCheaper: boolean;
 }
 

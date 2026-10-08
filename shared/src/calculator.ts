@@ -60,7 +60,8 @@ function crossingFee(crossing: CrossingReference, inputs: TripInputs, reference:
 }
 
 /**
- * Computes one Shopping Trip per Crossing and marks the cheaper one.
+ * Computes one Shopping Trip per Crossing and marks the cheaper one: the one with the
+ * highest Net Saving (with no Planned Spend that is the lowest Trip Cost).
  * Pure: no rounding is applied; round only for display. On a tie the first
  * Crossing in the reference data is marked cheaper, so exactly one is.
  */
@@ -77,19 +78,34 @@ export function calculateTrips(inputs: TripInputs, reference: ReferenceData): Tr
     const crossingFeeDkk = crossingFee(crossing, inputs, reference);
     const distance = inputs.distanceKm[crossing.id];
     const drivingCostDkk = distance === null ? 0 : ((2 * distance * consumption) / 100) * energyPrice;
+    const gaps = reference.priceGaps.find((g) => g.destinationId === crossing.destination.id);
+    let grossSavingDkk = 0;
+    const unknownGapCategoryIds: string[] = [];
+    for (const category of reference.categories) {
+      const spend = inputs.plannedSpend[category.id] ?? 0;
+      if (spend === 0) continue;
+      const gap = gaps?.categories.find((c) => c.categoryId === category.id)?.priceGap ?? null;
+      if (gap === null) unknownGapCategoryIds.push(category.id);
+      else grossSavingDkk += spend * gap;
+    }
+    const tripCostDkk = crossingFeeDkk + drivingCostDkk;
     return {
       crossingId: crossing.id,
       crossingName: crossing.name,
       destination: crossing.destination,
       crossingFeeDkk,
       drivingCostDkk,
-      tripCostDkk: crossingFeeDkk + drivingCostDkk,
+      tripCostDkk,
+      grossSavingDkk,
+      unknownGapCategoryIds,
+      // Ticket 11 adds the Fill-up Saving to the Gross Saving here.
+      netSavingDkk: grossSavingDkk - tripCostDkk,
       isCheaper: false,
     };
   });
   let cheapest = trips[0]!;
   for (const trip of trips) {
-    if (trip.tripCostDkk < cheapest.tripCostDkk) cheapest = trip;
+    if (trip.netSavingDkk > cheapest.netSavingDkk) cheapest = trip;
   }
   cheapest.isCheaper = true;
   return { trips, cheaperCrossingId: cheapest.crossingId };

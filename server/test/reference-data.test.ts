@@ -76,6 +76,7 @@ describe('GET /api/reference-data', () => {
       consumptionPer100Km: null,
       energyPriceDkk: null,
       distanceKm: { bridge: null, ferry: null },
+      plannedSpend: {},
     };
     const feeOn = async (tripDate: string) =>
       calculateTrips({ ...inputs, tripDate }, await fetchFor(tripDate)).trips.find(

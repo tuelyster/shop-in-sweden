@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   calculateTrips,
   type CrossingFeeEntry,
+  type DestinationPriceGaps,
   type ReferenceData,
   type TripInputs,
 } from './index';
@@ -28,8 +29,28 @@ const ferryFees = [
   fee({ kind: 'single', priceDkk: 159, agreement: 'multi-trip', bracket: '35+' }),
 ];
 
-function reference(overrides: { bridge?: CrossingFeeEntry[]; ferry?: CrossingFeeEntry[] } = {}): ReferenceData {
+function gaps(destinationId: string, byCategory: Record<string, number | null>): DestinationPriceGaps {
   return {
+    destinationId,
+    categories: Object.entries(byCategory).map(([categoryId, priceGap]) => ({
+      categoryId,
+      priceGap,
+      items: [],
+      missingItems: [],
+    })),
+  };
+}
+
+function reference(
+  overrides: { bridge?: CrossingFeeEntry[]; ferry?: CrossingFeeEntry[]; priceGaps?: DestinationPriceGaps[] } = {},
+): ReferenceData {
+  return {
+    categories: [
+      { id: 'groceries', name: 'Groceries' },
+      { id: 'soft-drinks', name: 'Soft drinks' },
+    ],
+    priceGaps: overrides.priceGaps ?? [],
+    exchangeRate: null,
     vehicleDefaults: [
       { energyType: 'petrol', consumptionPer100Km: 6, consumptionSource: 'test', energyPriceDkk: 19.5, priceSource: 'test', priceDate: '2026-10-05' },
       { energyType: 'electric', consumptionPer100Km: 18, consumptionSource: 'test', energyPriceDkk: 2.5, priceSource: 'test', priceDate: '2026-10-08' },
@@ -65,6 +86,7 @@ function inputs(overrides: Partial<TripInputs> = {}): TripInputs {
     consumptionPer100Km: null,
     energyPriceDkk: null,
     distanceKm: { bridge: null, ferry: null },
+    plannedSpend: {},
     ...overrides,
   };
 }
@@ -235,5 +257,62 @@ describe('Driving Cost and Trip Cost', () => {
   it('throws when the energy type has no defaults', () => {
     const ref = { ...reference(), vehicleDefaults: [] };
     expect(() => calculateTrips(inputs(), ref)).toThrow(/petrol/);
+  });
+});
+
+describe('Gross Saving and Net Saving', () => {
+  const trip = (i: TripInputs, ref: ReferenceData, id: 'bridge' | 'ferry') =>
+    calculateTrips(i, ref).trips.find((t) => t.crossingId === id)!;
+  const spend = { groceries: 1000, 'soft-drinks': 200 };
+
+  it('Gross Saving is the sum of Planned Spend times Price Gap at that Destination', () => {
+    const ref = reference({
+      priceGaps: [gaps('hyllie', { groceries: 0.2, 'soft-drinks': 0.5 }), gaps('vala', { groceries: 0.1, 'soft-drinks': 0.4 })],
+    });
+    expect(trip(inputs({ plannedSpend: spend }), ref, 'bridge').grossSavingDkk).toBeCloseTo(300, 10);
+    expect(trip(inputs({ plannedSpend: spend }), ref, 'ferry').grossSavingDkk).toBeCloseTo(180, 10);
+  });
+
+  it('Net Saving is Gross Saving minus Trip Cost', () => {
+    const ref = reference({ priceGaps: [gaps('hyllie', { groceries: 0.5 }), gaps('vala', { groceries: 0.5 })] });
+    const t = trip(inputs({ plannedSpend: { groceries: 2000 }, distanceKm: { bridge: 100, ferry: 100 } }), ref, 'ferry');
+    // Trip Cost 595 + 2 x 100 km x 6 L / 100 x 19.5 = 595 + 234
+    expect(t.tripCostDkk).toBeCloseTo(829, 10);
+    expect(t.netSavingDkk).toBeCloseTo(1000 - 829, 10);
+  });
+
+  it('a negative Price Gap lowers the Gross Saving, and Net Saving can be a loss', () => {
+    const ref = reference({ priceGaps: [gaps('hyllie', { groceries: -0.1 }), gaps('vala', { groceries: 0.0 })] });
+    const t = trip(inputs({ plannedSpend: { groceries: 1000 } }), ref, 'bridge');
+    expect(t.grossSavingDkk).toBeCloseTo(-100, 10);
+    expect(t.netSavingDkk).toBeCloseTo(-100 - 840, 10);
+  });
+
+  it('an unknown Price Gap is not treated as 0 %: it is listed and adds nothing', () => {
+    const ref = reference({ priceGaps: [gaps('hyllie', { groceries: 0.2, 'soft-drinks': null })] });
+    const t = trip(inputs({ plannedSpend: spend }), ref, 'bridge');
+    expect(t.grossSavingDkk).toBeCloseTo(200, 10);
+    expect(t.unknownGapCategoryIds).toEqual(['soft-drinks']);
+    // No data at all for the Destination.
+    expect(trip(inputs({ plannedSpend: spend }), ref, 'ferry').unknownGapCategoryIds).toEqual(['groceries', 'soft-drinks']);
+    // No Planned Spend in a Category: nothing to report as unknown.
+    expect(trip(inputs({ plannedSpend: { groceries: 100 } }), ref, 'bridge').unknownGapCategoryIds).toEqual([]);
+  });
+
+  it('with no Planned Spend the Net Saving is minus the Trip Cost', () => {
+    const t = trip(inputs(), reference(), 'bridge');
+    expect(t.grossSavingDkk).toBe(0);
+    expect(t.netSavingDkk).toBe(-t.tripCostDkk);
+  });
+
+  it('the cheaper trip is the one with the higher Net Saving, not the lower Trip Cost', () => {
+    // Ferry is the lower Trip Cost (595 vs 840) but Hyllie saves 1000 kr more on groceries.
+    const ref = reference({ priceGaps: [gaps('hyllie', { groceries: 0.4 }), gaps('vala', { groceries: 0.2 })] });
+    const result = calculateTrips(inputs({ plannedSpend: { groceries: 5000 } }), ref);
+    expect(result.trips.find((t) => t.crossingId === 'ferry')!.tripCostDkk).toBeLessThan(
+      result.trips.find((t) => t.crossingId === 'bridge')!.tripCostDkk,
+    );
+    expect(result.cheaperCrossingId).toBe('bridge');
+    expect(result.trips.filter((t) => t.isCheaper)).toHaveLength(1);
   });
 });
