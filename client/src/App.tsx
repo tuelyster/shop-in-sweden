@@ -7,6 +7,7 @@ import {
   type PricePick,
   ENERGY_TYPES,
   type EnergyType,
+  type CrossingId,
   MULTI_TRIP_BRACKETS,
   type MultiTripBracket,
   type ReferenceData,
@@ -91,6 +92,10 @@ function CategoryGap({ gap }: { gap: CategoryPriceGap }) {
   );
 }
 
+type PostcodeLookup =
+  | { postcode: string; status: 'idle' | 'unknown' | 'error' }
+  | { postcode: string; status: 'ok'; name: string; distanceKm: Record<CrossingId, number> };
+
 export function App() {
   const { values, setInput } = useUrlInputs(inputs);
   const {
@@ -101,6 +106,7 @@ export function App() {
     energyType,
     consumption,
     energyPrice,
+    postcode,
     distanceBridge,
     distanceFerry,
     spendGroceries,
@@ -126,6 +132,32 @@ export function App() {
     };
   }, [tripDate]);
 
+  // Postcode lookup: fills a distance only where no manual value is entered.
+  const [lookup, setLookup] = useState<PostcodeLookup>({ postcode: '', status: 'idle' });
+  useEffect(() => {
+    if (!/^\d{4}$/.test(postcode)) return;
+    let current = true;
+    fetch(`/api/postcodes/${postcode}/distances`)
+      .then(async (res) => {
+        if (res.ok) {
+          const body = (await res.json()) as { name: string; distanceKm: Record<CrossingId, number> };
+          return { postcode, status: 'ok', name: body.name, distanceKm: body.distanceKm } as const;
+        }
+        return { postcode, status: res.status === 404 ? 'unknown' : 'error' } as const;
+      })
+      .catch(() => ({ postcode, status: 'error' }) as const)
+      .then((result) => current && setLookup(result));
+    return () => {
+      current = false;
+    };
+  }, [postcode]);
+  // Only trust a lookup that belongs to the postcode currently typed.
+  const found = lookup.postcode === postcode ? lookup : null;
+  const looked = found?.status === 'ok' ? found.distanceKm : null;
+  const bridgeKm = distanceBridge ?? looked?.bridge ?? null;
+  const ferryKm = distanceFerry ?? looked?.ferry ?? null;
+  const postcodeProblem = found?.status === 'unknown' || found?.status === 'error' ? found.status : null;
+
   const comparison = useMemo(() => {
     if (!reference) return null;
     try {
@@ -138,7 +170,7 @@ export function App() {
           energyType,
           consumptionPer100Km: consumption,
           energyPriceDkk: energyPrice,
-          distanceKm: { bridge: distanceBridge, ferry: distanceFerry },
+          distanceKm: { bridge: bridgeKm, ferry: ferryKm },
           plannedSpend: {
             groceries: spendGroceries,
             'candy-snacks': spendCandySnacks,
@@ -161,8 +193,8 @@ export function App() {
     energyType,
     consumption,
     energyPrice,
-    distanceBridge,
-    distanceFerry,
+    bridgeKm,
+    ferryKm,
     spendGroceries,
     spendCandySnacks,
     spendSoftDrinks,
@@ -174,7 +206,7 @@ export function App() {
   const petrol = energyType === 'petrol';
   const consumptionUnit = petrol ? 'L/100 km' : 'kWh/100 km';
   const priceUnit = petrol ? 'kr. pr. liter' : 'kr. pr. kWh';
-  const distanceMissing = distanceBridge === null || distanceFerry === null;
+  const distanceMissing = bridgeKm === null || ferryKm === null;
 
   const numberChange = (key: 'consumption' | 'energyPrice' | 'distanceBridge' | 'distanceFerry') =>
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -251,12 +283,40 @@ export function App() {
           </select>
         </label>
         <label className="field">
+          <span>Postnummer (hvor du kører fra)</span>
+          <input
+            type="text"
+            inputMode="numeric"
+            autoComplete="postal-code"
+            maxLength={4}
+            value={postcode}
+            aria-invalid={postcodeProblem !== null}
+            onChange={(e) => setInput('postcode', e.target.value.replace(/\D/g, '').slice(0, 4))}
+          />
+        </label>
+        {found?.status === 'ok' && (
+          <p className="hint" data-testid="postcode-found">
+            {postcode} {found.name}: kørselsafstanden er udfyldt, men du kan rette den.
+          </p>
+        )}
+        {postcodeProblem === 'unknown' && (
+          <p role="alert" data-testid="postcode-error">
+            Vi kender ikke postnummeret {postcode}. Tjek det, eller indtast kørselsafstanden selv. Øer uden
+            vejforbindelse til Sverige, fx Bornholm, er ikke med.
+          </p>
+        )}
+        {postcodeProblem === 'error' && (
+          <p role="alert" data-testid="postcode-error">
+            Kunne ikke slå postnummeret op. Prøv igen senere, eller indtast kørselsafstanden selv.
+          </p>
+        )}
+        <label className="field">
           <span>Kørsel til Hyllie/Emporia (km, én vej)</span>
-          <input type="number" min="0" step="any" inputMode="decimal" value={distanceBridge ?? ''} onChange={numberChange('distanceBridge')} />
+          <input type="number" min="0" step="any" inputMode="decimal" value={bridgeKm ?? ''} onChange={numberChange('distanceBridge')} />
         </label>
         <label className="field">
           <span>Kørsel til Väla Centrum (km, én vej)</span>
-          <input type="number" min="0" step="any" inputMode="decimal" value={distanceFerry ?? ''} onChange={numberChange('distanceFerry')} />
+          <input type="number" min="0" step="any" inputMode="decimal" value={ferryKm ?? ''} onChange={numberChange('distanceFerry')} />
         </label>
         {petrol && (
           <label className="field">
@@ -330,7 +390,7 @@ export function App() {
           </label>
         ))}
       </fieldset>
-      {distanceMissing && comparison && comparison !== 'no-prices' && (
+      {distanceMissing && !postcodeProblem && comparison && comparison !== 'no-prices' && (
         <p className="hint" data-testid="distance-prompt">
           Indtast kørselsafstanden til begge destinationer for at se, hvad turen koster i brændstof eller strøm.
         </p>
@@ -351,7 +411,7 @@ export function App() {
       )}
       {!comparison && !error && <p>Henter priser …</p>}
       {comparison === 'no-prices' && <p role="alert">Vi har ingen priser for den valgte dato.</p>}
-      {comparison && comparison !== 'no-prices' && (
+      {comparison && comparison !== 'no-prices' && !(postcodeProblem && distanceMissing) && (
         <ul className="trips">
           {comparison.trips.map((trip) => (
             <li

@@ -119,9 +119,21 @@ export const fillUpLitres = defineInput<number>({
   serialise: (v) => String(v),
 });
 
+/**
+ * Starting Point: a Danish postcode. Up to four digits are kept while typing; only a full
+ * four-digit postcode triggers a distance lookup. Empty means not entered.
+ */
+export const postcode = defineInput<string>({
+  name: 'postnr',
+  defaultValue: () => '',
+  parse: (raw) => (/^\d{0,4}$/.test(raw) ? raw : undefined),
+  serialise: (v) => v,
+});
+
 /** Registry of every shareable input. Later tickets add theirs here. */
 export const inputs = {
   tripDate,
+  postcode,
   oresundGo,
   autoBizz,
   multiTripCard,

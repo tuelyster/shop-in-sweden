@@ -131,3 +131,50 @@ test('distances give Driving Cost, flip the cheaper trip, and are part of the sh
   await expect(other.getByTestId('shopping-trip').nth(1).getByTestId('driving-cost')).toContainText('10');
   await context.close();
 });
+
+test('a postcode fills both distances, a manual km wins, and both are in the shared URL', async ({ page, browser }) => {
+  const known = await (await page.request.get('/api/postcodes/8000/distances')).json();
+  await page.goto('/?dato=2026-11-14');
+  const bridge = page.getByLabel('Kørsel til Hyllie/Emporia (km, én vej)');
+  const ferry = page.getByLabel('Kørsel til Väla Centrum (km, én vej)');
+
+  await page.getByLabel(/Postnummer/).fill('8000');
+  await expect(page).toHaveURL(/postnr=8000/);
+  await expect(bridge).toHaveValue(String(known.distanceKm.bridge));
+  await expect(ferry).toHaveValue(String(known.distanceKm.ferry));
+  await expect(page.getByTestId('distance-prompt')).toHaveCount(0);
+  await expect(page.getByTestId('postcode-error')).toHaveCount(0);
+
+  // Editing a distance overrides the postcode value for that Destination only.
+  await bridge.fill('123');
+  await expect(page).toHaveURL(/km-bro=123/);
+  await expect(page).not.toHaveURL(/km-faerge=\d/);
+  await expect(ferry).toHaveValue(String(known.distanceKm.ferry));
+
+  const context = await browser.newContext();
+  const other = await context.newPage();
+  await other.goto(page.url());
+  await expect(other.getByLabel(/Postnummer/)).toHaveValue('8000');
+  await expect(other.getByLabel('Kørsel til Hyllie/Emporia (km, én vej)')).toHaveValue('123');
+  await expect(other.getByLabel('Kørsel til Väla Centrum (km, én vej)')).toHaveValue(String(known.distanceKm.ferry));
+  await context.close();
+
+  // A different postcode changes the distance that was not overridden.
+  const second = await (await page.request.get('/api/postcodes/2300/distances')).json();
+  await page.getByLabel(/Postnummer/).fill('2300');
+  await expect(ferry).toHaveValue(String(second.distanceKm.ferry));
+  await expect(bridge).toHaveValue('123');
+});
+
+test('an unknown postcode shows a Danish error and no trip result', async ({ page }) => {
+  await page.goto('/?dato=2026-11-14');
+  await page.getByLabel(/Postnummer/).fill('3700');
+  await expect(page.getByTestId('postcode-error')).toContainText('Vi kender ikke postnummeret 3700');
+  await expect(page.getByTestId('shopping-trip')).toHaveCount(0);
+  await expect(page.getByTestId('distance-prompt')).toHaveCount(0);
+
+  // Entering both distances by hand still gives a result.
+  await page.getByLabel('Kørsel til Hyllie/Emporia (km, én vej)').fill('100');
+  await page.getByLabel('Kørsel til Väla Centrum (km, én vej)').fill('80');
+  await expect(page.getByTestId('shopping-trip')).toHaveCount(2);
+});

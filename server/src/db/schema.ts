@@ -1,4 +1,4 @@
-import { integer, real, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { integer, primaryKey, real, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 export const crossings = sqliteTable('crossings', {
   id: text('id').primaryKey(),
@@ -175,3 +175,20 @@ export const exchangeRates =sqliteTable('exchange_rates', {
   source: text('source').notNull(),
   importedAt: text('imported_at').notNull(),
 });
+/**
+ * One-way road distance from a Danish postcode's centre to a Destination, via its Crossing and
+ * excluding the ferry leg. Generated once by server/scripts/build-postcode-distances.ts.
+ * A postcode with no road link to Sweden (Bornholm and other islands) has no rows.
+ */
+export const postcodeDistances = sqliteTable(
+  'postcode_distances',
+  {
+    postcode: text('postcode').notNull(),
+    name: text('name').notNull(),
+    destinationId: text('destination_id')
+      .notNull()
+      .references(() => destinations.id),
+    km: real('km').notNull(),
+  },
+  (t) => [primaryKey({ columns: [t.postcode, t.destinationId] })],
+);

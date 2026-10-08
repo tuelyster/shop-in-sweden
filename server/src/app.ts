@@ -15,7 +15,15 @@ import { readCatalogue } from './catalogue';
 import type { Db } from './db/connection';
 import { measurePriceGaps } from './match/price-gaps';
 import { latestPetrolPrice, type PetrolPrice } from './prices/store';
-import { crossingFees, crossings, destinations, priceObservations, seasons, vehicleDefaults } from './db/schema';
+import {
+  crossingFees,
+  crossings,
+  destinations,
+  postcodeDistances,
+  priceObservations,
+  seasons,
+  vehicleDefaults,
+} from './db/schema';
 
 const ISO_DATE = /^(\d{4})-(\d{2})-(\d{2})$/;
 
@@ -134,6 +142,21 @@ export function createApp(db: Db, options: AppOptions = {}): Hono {
       return c.json({ error: 'dato must be a date in the form YYYY-MM-DD' }, 400);
     }
     return c.json(loadReferenceData(db, tripDate, today));
+  });
+  // One-way road distance per Crossing's Destination (excluding the ferry leg).
+  app.get('/api/postcodes/:postcode/distances', (c) => {
+    const postcode = c.req.param('postcode');
+    if (!/^\d{4}$/.test(postcode)) return c.json({ error: 'malformed-postcode' }, 400);
+    const rows = db
+      .select()
+      .from(postcodeDistances)
+      .innerJoin(destinations, eq(destinations.id, postcodeDistances.destinationId))
+      .where(eq(postcodeDistances.postcode, postcode))
+      .all();
+    if (rows.length === 0) return c.json({ error: 'unknown-postcode' }, 404);
+    const distanceKm: Record<string, number> = {};
+    for (const r of rows) distanceKm[r.destinations.crossingId] = r.postcode_distances.km;
+    return c.json({ postcode, name: rows[0]!.postcode_distances.name, distanceKm });
   });
   return app;
 }
