@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 import { calculateTrips, type ReferenceData } from '@shop-in-sweden/shared';
 
+import { inputs } from './inputs';
+import { useUrlInputs } from './useUrlInputs';
+
 const dkk = new Intl.NumberFormat('da-DK', {
   style: 'currency',
   currency: 'DKK',
@@ -18,13 +21,25 @@ export function App() {
       .catch(() => setError(true));
   }, []);
 
+  const { values, setInput } = useUrlInputs(inputs);
+
   const comparison = reference ? calculateTrips({}, reference) : null;
 
   return (
     <main>
       <h1>Kan det betale sig at handle i Sverige?</h1>
       <p className="intro">Sammenlign overfarten til Sverige: Øresundsbroen eller færgen.</p>
-      {error && <p role="alert">Kunne ikke hente priserne. Prøv igen senere.</p>}
+      <label className="field">
+        <span>Dato for turen</span>
+        <input
+          type="date"
+          value={values.tripDate}
+          onChange={(e) => {
+            if (e.target.value) setInput('tripDate', e.target.value);
+          }}
+        />
+      </label>
+      {error &&<p role="alert">Kunne ikke hente priserne. Prøv igen senere.</p>}
       {!comparison && !error && <p>Henter priser …</p>}
       {comparison && (
         <ul className="trips">
