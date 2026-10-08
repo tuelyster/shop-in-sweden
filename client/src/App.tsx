@@ -15,6 +15,7 @@ import {
 
 import { exchangeRateText, freshnessText, STALE_WARNING } from './freshness';
 import { inputs } from './inputs';
+import { HOW_WE_CALCULATE_HASH, HowWeCalculate } from './HowWeCalculate';
 import { useUrlInputs } from './useUrlInputs';
 
 const dkk = new Intl.NumberFormat('da-DK', {
@@ -116,6 +117,17 @@ export function App() {
     spendPersonalCare,
     fillUpLitres,
   } = values;
+
+  // Two views, one app: the hash picks the page, so the inputs (and the query string) survive the trip.
+  const [hash, setHash] = useState(window.location.hash);
+  useEffect(() => {
+    const onChange = () => {
+      setHash(window.location.hash);
+      window.scrollTo(0, 0);
+    };
+    window.addEventListener('hashchange', onChange);
+    return () => window.removeEventListener('hashchange', onChange);
+  }, []);
 
   const [reference, setReference] = useState<ReferenceData | null>(null);
   const [error, setError] = useState(false);
@@ -222,10 +234,17 @@ export function App() {
     { key: 'spendPersonalCare', category: 'personal-care-household', value: spendPersonalCare },
   ] as const;
 
+  if (hash === HOW_WE_CALCULATE_HASH) return <HowWeCalculate reference={reference} />;
+
   return (
     <main>
       <h1>Kan det betale sig at handle i Sverige?</h1>
       <p className="intro">Sammenlign overfarten til Sverige: Øresundsbroen eller færgen.</p>
+      <p>
+        <a href={HOW_WE_CALCULATE_HASH} data-testid="how-we-calculate-link">
+          Sådan regner vi
+        </a>
+      </p>
       <label className="field">
         <span>Dato for turen</span>
         <input
@@ -390,6 +409,9 @@ export function App() {
             />
           </label>
         ))}
+        <p className="hint" data-testid="alcohol-meat-note">
+          Alkohol og kød er dyrere i Sverige, så dem kan du ikke indtaste her.
+        </p>
       </fieldset>
       {distanceMissing && !postcodeProblem && comparison && comparison !== 'no-prices' && (
         <p className="hint" data-testid="distance-prompt">
@@ -458,6 +480,12 @@ export function App() {
               {trip.unknownGapCategoryIds.length > 0 && (
                 <p className="hint" data-testid="unknown-gaps">
                   Ingen prisdata endnu for: {trip.unknownGapCategoryIds.map((id) => CATEGORY_LABELS[id] ?? id).join(', ')}.
+                </p>
+              )}
+              {trip.crossingId === 'ferry' && (
+                <p className="hint" data-testid="lavpris-note">
+                  Lavpris-billetter fra 199 kr pr. vej findes, hvis man bestiller i god tid. De er ikke med i beregningen
+                  (priserne ændrer sig, og billetterne kan ikke refunderes).
                 </p>
               )}
               <h3>Prisforskel i Sverige</h3>

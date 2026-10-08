@@ -33,3 +33,8 @@ h1 { font-size: 1.5rem; }
 .gap { margin: 0.25rem 0; }
 .gap summary { cursor: pointer; }
 .items { list-style: none; padding: 0; margin: 0.5rem 0; display: grid; gap: 0.5rem; font-size: 0.9rem; }
+.how section { margin: 1.5rem 0; }
+.how h2 { font-size: 1.25rem; }
+.how h3 { font-size: 1rem; margin: 1rem 0 0.25rem; }
+.glossary dt { font-weight: 600; margin-top: 0.5rem; }
+.glossary dd { margin: 0; color: #555; }

@@ -44,6 +44,31 @@ test('shows how current the prices are', async ({ page }) => {
   await expect(page.getByTestId('stale-warning')).toHaveCount(0);
 });
 
+test('the "Sådan regner vi" page is reachable and back, with inputs intact', async ({ page }) => {
+  await page.goto('/?dato=2026-11-14&postnr=8000&kr-dagligvarer=500');
+  await expect(page.getByTestId('alcohol-meat-note')).toContainText('Alkohol og kød er dyrere i Sverige');
+  await expect(page.getByTestId('lavpris-note').first()).toContainText('199 kr pr. vej');
+
+  await page.getByTestId('how-we-calculate-link').click();
+  await expect(page.getByRole('heading', { name: 'Sådan regner vi' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'GeoNames' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'CC BY 4.0' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'OpenStreetMap' })).toBeVisible();
+  await expect(page.getByTestId('reported-sources')).toContainText('oresundslinjen.dk');
+  await expect(page.getByTestId('shopping-trip')).toHaveCount(0);
+  await expect(page).toHaveURL(/dato=2026-11-14/);
+
+  await page.getByTestId('back-to-calculator').click();
+  await expect(page.getByLabel('Dato for turen')).toHaveValue('2026-11-14');
+  await expect(page.getByLabel(/Postnummer/)).toHaveValue('8000');
+  await expect(page.getByTestId('shopping-trip')).toHaveCount(2);
+  await expect(page).toHaveURL(/postnr=8000/);
+
+  // The page can be opened directly too.
+  await page.goto('/?dato=2026-11-14#/saadan-regner-vi');
+  await expect(page.getByRole('heading', { name: 'Sådan regner vi' })).toBeVisible();
+});
+
 test('invalid query values fall back to defaults',async ({ page }) => {
   await page.goto('/?dato=i-morgen&ukendt=1');
   await expect(page.getByLabel('Dato for turen')).toHaveValue(/^\d{4}-\d{2}-\d{2}$/);
